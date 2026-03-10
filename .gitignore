@@ -1,0 +1,50 @@
+# Large dataset files
+*.csv
+*.zip
+*.pkl
+*.parquet
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Database files
+*.db
+*.sqlite
+
+# Coverage
+coverage/
+.nyc_output/

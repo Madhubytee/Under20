@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "name": "Garlic Butter Pasta",
+    "ingredients": ["pasta", "butter", "garlic", "parmesan", "parsley"],
+    "cookTime": 15,
+    "calories": 450,
+    "protein": 12,
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "name": "Scrambled Eggs",
+    "ingredients": ["eggs", "butter", "salt", "pepper", "milk"],
+    "cookTime": 5,
+    "calories": 220,
+    "protein": 14,
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "name": "Avocado Toast",
+    "ingredients": ["bread", "avocado", "salt", "pepper", "lemon juice"],
+    "cookTime": 5,
+    "calories": 280,
+    "protein": 7,
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "name": "Avocado Egg Toast",
+    "ingredients": ["bread", "avocado", "eggs", "salt", "pepper", "olive oil"],
+    "cookTime": 10,
+    "calories": 380,
+    "protein": 16,
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "name": "Cheese Quesadilla",
+    "ingredients": ["flour tortilla", "cheddar cheese", "butter"],
+    "cookTime": 8,
+    "calories": 340,
+    "protein": 14,
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "name": "Chicken Quesadilla",
+    "ingredients": ["flour tortilla", "chicken breast", "cheddar cheese", "salsa", "butter"],
+    "cookTime": 15,
+    "calories": 480,
+    "protein": 32,
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "name": "Caprese Salad",
+    "ingredients": ["mozzarella", "tomato", "basil", "olive oil", "balsamic vinegar", "salt"],
+    "cookTime": 5,
+    "calories": 210,
+    "protein": 12,
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "name": "Grilled Cheese Sandwich",
+    "ingredients": ["bread", "cheddar cheese", "butter"],
+    "cookTime": 10,
+    "calories": 390,
+    "protein": 15,
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "name": "Tuna Salad",
+    "ingredients": ["canned tuna", "mayonnaise", "celery", "onion", "lemon juice", "salt", "pepper"],
+    "cookTime": 5,
+    "calories": 250,
+    "protein": 28,
+    "difficulty": "easy"
+  },
+  {
+    "id": 10,
+    "name": "Egg Fried Rice",
+    "ingredients": ["cooked rice", "eggs", "soy sauce", "sesame oil", "garlic", "green onion", "vegetable oil"],
+    "cookTime": 15,
+    "calories": 420,
+    "protein": 16,
+    "difficulty": "medium"
+  },
+  {
+    "id": 11,
+    "name": "Pesto Pasta",
+    "ingredients": ["pasta", "pesto", "parmesan", "olive oil", "garlic", "salt"],
+    "cookTime": 15,
+    "calories": 480,
+    "protein": 14,
+    "difficulty": "easy"
+  },
+  {
+    "id": 12,
+    "name": "Spaghetti Aglio e Olio",
+    "ingredients": ["spaghetti", "garlic", "olive oil", "red pepper flakes", "parsley", "parmesan"],
+    "cookTime": 15,
+    "calories": 430,
+    "protein": 13,
+    "difficulty": "medium"
+  },
+  {
+    "id": 13,
+    "name": "Buttered Noodles",
+    "ingredients": ["pasta", "butter", "parmesan", "salt", "pepper"],
+    "cookTime": 12,
+    "calories": 400,
+    "protein": 11,
+    "difficulty": "easy"
+  },
+  {
+    "id": 14,
+    "name": "Greek Yogurt Bowl",
+    "ingredients": ["greek yogurt", "honey", "granola", "berries"],
+    "cookTime": 2,
+    "calories": 280,
+    "protein": 18,
+    "difficulty": "easy"
+  },
+  {
+    "id": 15,
+    "name": "PB&J Sandwich",
+    "ingredients": ["bread", "peanut butter", "jelly"],
+    "cookTime": 2,
+    "calories": 360,
+    "protein": 12,
+    "difficulty": "easy"
+  },
+  {
+    "id": 16,
+    "name": "Peanut Butter Banana Toast",
+    "ingredients": ["bread", "peanut butter", "banana", "honey"],
+    "cookTime": 3,
+    "calories": 390,
+    "protein": 11,
+    "difficulty": "easy"
+  },
+  {
+    "id": 17,
+    "name": "Oatmeal with Berries",
+    "ingredients": ["oats", "milk", "berries", "honey", "salt"],
+    "cookTime": 5,
+    "calories": 300,
+    "protein": 10,
+    "difficulty": "easy"
+  },
+  {
+    "id": 18,
+    "name": "BLT Sandwich",
+    "ingredients": ["bread", "bacon", "lettuce", "tomato", "mayonnaise"],
+    "cookTime": 10,
+    "calories": 430,
+    "protein": 18,
+    "difficulty": "easy"
+  },
+  {
+    "id": 19,
+    "name": "Turkey Club Sandwich",
+    "ingredients": ["bread", "turkey", "lettuce", "tomato", "mayonnaise", "bacon"],
+    "cookTime": 5,
+    "calories": 480,
+    "protein": 30,
+    "difficulty": "easy"
+  },
+  {
+    "id": 20,
+    "name": "Caesar Salad",
+    "ingredients": ["romaine lettuce", "parmesan", "croutons", "caesar dressing", "lemon juice"],
+    "cookTime": 10,
+    "calories": 320,
+    "protein": 10,
+    "difficulty": "easy"
+  },
+  {
+    "id": 21,
+    "name": "Hummus Veggie Wrap",
+    "ingredients": ["flour tortilla", "hummus", "cucumber", "tomato", "spinach", "feta cheese"],
+    "cookTime": 5,
+    "calories": 310,
+    "protein": 11,
+    "difficulty": "easy"
+  },
+  {
+    "id": 22,
+    "name": "Berry Smoothie",
+    "ingredients": ["berries", "banana", "milk", "greek yogurt", "honey"],
+    "cookTime": 3,
+    "calories": 240,
+    "protein": 10,
+    "difficulty": "easy"
+  },
+  {
+    "id": 23,
+    "name": "Guacamole",
+    "ingredients": ["avocado", "lime juice", "cilantro", "onion", "tomato", "salt", "jalapeño"],
+    "cookTime": 5,
+    "calories": 180,
+    "protein": 3,
+    "difficulty": "easy"
+  },
+  {
+    "id": 24,
+    "name": "Nachos with Cheese",
+    "ingredients": ["tortilla chips", "cheddar cheese", "salsa", "sour cream", "jalapeño"],
+    "cookTime": 10,
+    "calories": 560,
+    "protein": 14,
+    "difficulty": "easy"
+  },
+  {
+    "id": 25,
+    "name": "Instant Ramen Upgrade",
+    "ingredients": ["ramen noodles", "eggs", "soy sauce", "sesame oil", "green onion", "sriracha"],
+    "cookTime": 10,
+    "calories": 480,
+    "protein": 18,
+    "difficulty": "easy"
+  },
+  {
+    "id": 26,
+    "name": "Chickpea Salad",
+    "ingredients": ["canned chickpeas", "cucumber", "tomato", "red onion", "olive oil", "lemon juice", "parsley"],
+    "cookTime": 5,
+    "calories": 290,
+    "protein": 12,
+    "difficulty": "easy"
+  },
+  {
+    "id": 27,
+    "name": "Egg Salad Sandwich",
+    "ingredients": ["eggs", "mayonnaise", "mustard", "celery", "bread", "salt", "pepper"],
+    "cookTime": 10,
+    "calories": 400,
+    "protein": 20,
+    "difficulty": "easy"
+  },
+  {
+    "id": 28,
+    "name": "Tomato Soup",
+    "ingredients": ["canned tomatoes", "vegetable broth", "garlic", "onion", "olive oil", "basil", "salt"],
+    "cookTime": 15,
+    "calories": 180,
+    "protein": 4,
+    "difficulty": "easy"
+  },
+  {
+    "id": 29,
+    "name": "Mac and Cheese",
+    "ingredients": ["macaroni", "butter", "milk", "cheddar cheese", "salt", "pepper"],
+    "cookTime": 15,
+    "calories": 530,
+    "protein": 18,
+    "difficulty": "easy"
+  },
+  {
+    "id": 30,
+    "name": "Lemon Garlic Shrimp",
+    "ingredients": ["shrimp", "butter", "garlic", "lemon juice", "parsley", "salt", "pepper"],
+    "cookTime": 12,
+    "calories": 240,
+    "protein": 28,
+    "difficulty": "medium"
+  },
+  {
+    "id": 31,
+    "name": "Bruschetta",
+    "ingredients": ["baguette", "tomato", "garlic", "basil", "olive oil", "balsamic vinegar", "salt"],
+    "cookTime": 10,
+    "calories": 220,
+    "protein": 6,
+    "difficulty": "easy"
+  },
+  {
+    "id": 32,
+    "name": "Sesame Noodles",
+    "ingredients": ["spaghetti", "soy sauce", "sesame oil", "peanut butter", "garlic", "ginger", "green onion"],
+    "cookTime": 15,
+    "calories": 470,
+    "protein": 15,
+    "difficulty": "easy"
+  },
+  {
+    "id": 33,
+    "name": "Fried Egg Rice Bowl",
+    "ingredients": ["cooked rice", "eggs", "soy sauce", "sesame oil", "green onion", "vegetable oil"],
+    "cookTime": 10,
+    "calories": 380,
+    "protein": 14,
+    "difficulty": "easy"
+  },
+  {
+    "id": 34,
+    "name": "French Omelette",
+    "ingredients": ["eggs", "butter", "salt", "pepper", "chives"],
+    "cookTime": 10,
+    "calories": 260,
+    "protein": 16,
+    "difficulty": "medium"
+  },
+  {
+    "id": 35,
+    "name": "Yogurt Parfait",
+    "ingredients": ["greek yogurt", "granola", "berries", "honey"],
+    "cookTime": 3,
+    "calories": 250,
+    "protein": 14,
+    "difficulty": "easy"
+  },
+  {
+    "id": 36,
+    "name": "Cucumber Salad",
+    "ingredients": ["cucumber", "red onion", "vinegar", "sugar", "dill", "salt"],
+    "cookTime": 5,
+    "calories": 60,
+    "protein": 2,
+    "difficulty": "easy"
+  },
+  {
+    "id": 37,
+    "name": "Shrimp Cocktail",
+    "ingredients": ["shrimp", "cocktail sauce", "lemon juice", "horseradish", "ketchup"],
+    "cookTime": 5,
+    "calories": 130,
+    "protein": 20,
+    "difficulty": "easy"
+  },
+  {
+    "id": 38,
+    "name": "Mango Salsa",
+    "ingredients": ["mango", "red onion", "jalapeño", "cilantro", "lime juice", "salt"],
+    "cookTime": 5,
+    "calories": 90,
+    "protein": 1,
+    "difficulty": "easy"
+  },
+  {
+    "id": 39,
+    "name": "Caprese Panini",
+    "ingredients": ["bread", "mozzarella", "tomato", "basil", "pesto", "olive oil"],
+    "cookTime": 10,
+    "calories": 410,
+    "protein": 18,
+    "difficulty": "easy"
+  },
+  {
+    "id": 40,
+    "name": "Veggie Stir Fry",
+    "ingredients": ["broccoli", "bell pepper", "carrot", "soy sauce", "garlic", "ginger", "sesame oil", "vegetable oil"],
+    "cookTime": 15,
+    "calories": 200,
+    "protein": 7,
+    "difficulty": "medium"
+  },
+  {
+    "id": 41,
+    "name": "Microwave Scrambled Eggs",
+    "ingredients": ["eggs", "milk", "salt", "pepper", "cheddar cheese"],
+    "cookTime": 3,
+    "calories": 230,
+    "protein": 17,
+    "difficulty": "easy"
+  },
+  {
+    "id": 42,
+    "name": "Banana Pancakes",
+    "ingredients": ["banana", "eggs", "oats", "milk", "vanilla extract", "cinnamon"],
+    "cookTime": 15,
+    "calories": 310,
+    "protein": 12,
+    "difficulty": "easy"
+  },
+  {
+    "id": 43,
+    "name": "Corn Tortilla Tacos",
+    "ingredients": ["corn tortilla", "ground beef", "taco seasoning", "salsa", "sour cream", "lettuce", "cheddar cheese"],
+    "cookTime": 15,
+    "calories": 490,
+    "protein": 28,
+    "difficulty": "medium"
+  },
+  {
+    "id": 44,
+    "name": "Microwave Oatmeal",
+    "ingredients": ["oats", "water", "salt", "honey", "cinnamon"],
+    "cookTime": 5,
+    "calories": 180,
+    "protein": 6,
+    "difficulty": "easy"
+  },
+  {
+    "id": 45,
+    "name": "Chicken Caesar Wrap",
+    "ingredients": ["flour tortilla", "chicken breast", "romaine lettuce", "parmesan", "caesar dressing", "croutons"],
+    "cookTime": 10,
+    "calories": 520,
+    "protein": 34,
+    "difficulty": "easy"
+  },
+  {
+    "id": 46,
+    "name": "Pasta Carbonara",
+    "ingredients": ["spaghetti", "bacon", "eggs", "parmesan", "garlic", "black pepper"],
+    "cookTime": 15,
+    "calories": 580,
+    "protein": 26,
+    "difficulty": "medium"
+  },
+  {
+    "id": 47,
+    "name": "Tomato Basil Bruschetta",
+    "ingredients": ["baguette", "tomato", "basil", "olive oil", "garlic", "salt", "pepper"],
+    "cookTime": 8,
+    "calories": 200,
+    "protein": 5,
+    "difficulty": "easy"
+  },
+  {
+    "id": 48,
+    "name": "Spinach and Feta Omelette",
+    "ingredients": ["eggs", "spinach", "feta cheese", "butter", "salt", "pepper"],
+    "cookTime": 10,
+    "calories": 290,
+    "protein": 20,
+    "difficulty": "medium"
+  },
+  {
+    "id": 49,
+    "name": "Peanut Noodles",
+    "ingredients": ["spaghetti", "peanut butter", "soy sauce", "lime juice", "garlic", "ginger", "honey", "sriracha"],
+    "cookTime": 15,
+    "calories": 510,
+    "protein": 18,
+    "difficulty": "easy"
+  },
+  {
+    "id": 50,
+    "name": "Classic Greek Salad",
+    "ingredients": ["cucumber", "tomato", "red onion", "kalamata olives", "feta cheese", "olive oil", "oregano"],
+    "cookTime": 5,
+    "calories": 230,
+    "protein": 8,
+    "difficulty": "easy"
+  }
+]
