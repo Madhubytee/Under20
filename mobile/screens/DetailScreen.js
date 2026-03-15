@@ -3,26 +3,17 @@ import {
   View, Text, ScrollView, TouchableOpacity,
   StyleSheet, SafeAreaView, Alert,
 } from 'react-native';
-import axios from 'axios';
-import { API_BASE } from '../config';
 
 export default function DetailScreen({ route, navigation }) {
   const { recipe, pantry } = route.params;
   const [saved, setSaved] = useState(false);
 
-  const missing = recipe.ingredients.filter(i => !pantry.includes(i));
   const have = recipe.ingredients.filter(i => pantry.includes(i));
+  const missing = recipe.ingredients.filter(i => !pantry.includes(i));
 
-  async function saveRecipe() {
-    try {
-      await axios.post(`${API_BASE}/users/saveRecipe`, { recipeId: recipe.id });
-      setSaved(true);
-      Alert.alert('Saved!', `${recipe.name} added to your favorites.`);
-    } catch {
-      // Save locally if backend unavailable
-      setSaved(true);
-      Alert.alert('Saved!', `${recipe.name} added to your favorites.`);
-    }
+  function saveRecipe() {
+    setSaved(true);
+    Alert.alert('Saved!', `${recipe.name} added to your favorites.`);
   }
 
   return (
@@ -34,7 +25,6 @@ export default function DetailScreen({ route, navigation }) {
 
         <Text style={styles.name}>{recipe.name}</Text>
 
-        {/* Stats row */}
         <View style={styles.statsRow}>
           <View style={styles.stat}>
             <Text style={styles.statValue}>{recipe.cookTime}</Text>
@@ -54,23 +44,21 @@ export default function DetailScreen({ route, navigation }) {
           </View>
         </View>
 
-        {/* Ingredients you have */}
         <Text style={styles.sectionTitle}>You have ({have.length})</Text>
         {have.map(i => (
-          <View key={i} style={styles.ingredientRow}>
+          <View key={i} style={styles.row}>
             <Text style={styles.check}>✓</Text>
-            <Text style={styles.ingredientText}>{i}</Text>
+            <Text style={styles.rowText}>{i}</Text>
           </View>
         ))}
 
-        {/* Missing ingredients */}
         {missing.length > 0 && (
           <>
             <Text style={styles.sectionTitle}>Still need ({missing.length})</Text>
             {missing.map(i => (
-              <View key={i} style={styles.ingredientRow}>
+              <View key={i} style={styles.row}>
                 <Text style={styles.cross}>✕</Text>
-                <Text style={[styles.ingredientText, { color: '#aaa' }]}>{i}</Text>
+                <Text style={[styles.rowText, { color: '#aaa' }]}>{i}</Text>
               </View>
             ))}
           </>
@@ -82,7 +70,7 @@ export default function DetailScreen({ route, navigation }) {
         onPress={saveRecipe}
         disabled={saved}
       >
-        <Text style={styles.saveBtnText}>{saved ? '✓ Saved' : '♡ Save Recipe'}</Text>
+        <Text style={styles.saveBtnText}>{saved ? '✓ Saved' : 'Save Recipe'}</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -101,10 +89,10 @@ const styles = StyleSheet.create({
   statValue: { fontSize: 20, fontWeight: '700', color: '#f5a623' },
   statLabel: { fontSize: 12, color: '#aaa', marginTop: 2 },
   sectionTitle: { fontSize: 16, fontWeight: '700', color: '#fff', marginBottom: 10, marginTop: 8 },
-  ingredientRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
+  row: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
   check: { color: '#4caf50', fontSize: 16, marginRight: 10, width: 20 },
   cross: { color: '#f44336', fontSize: 16, marginRight: 10, width: 20 },
-  ingredientText: { fontSize: 15, color: '#fff', textTransform: 'capitalize' },
+  rowText: { fontSize: 15, color: '#fff', textTransform: 'capitalize' },
   saveBtn: {
     backgroundColor: '#f5a623', borderRadius: 16,
     paddingVertical: 16, alignItems: 'center', marginTop: 12,

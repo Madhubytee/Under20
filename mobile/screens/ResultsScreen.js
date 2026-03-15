@@ -13,11 +13,9 @@ export default function ResultsScreen({ route, navigation }) {
     return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.title}>No Matches</Text>
-        <Text style={styles.subtitle}>
-          Try adding more ingredients to your pantry.
-        </Text>
+        <Text style={styles.subtitle}>Try adding more ingredients to your pantry.</Text>
         <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
-          <Text style={styles.backBtnText}>← Back to Pantry</Text>
+          <Text style={styles.backBtnText}>Back to Pantry</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
@@ -25,7 +23,7 @@ export default function ResultsScreen({ route, navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>{recipes.length} Recipe{recipes.length > 1 ? 's' : ''} Found</Text>
+      <Text style={styles.title}>{recipes.length} Recipe{recipes.length !== 1 ? 's' : ''} Found</Text>
       <Text style={styles.subtitle}>All under 20 minutes</Text>
 
       <FlatList
@@ -40,15 +38,13 @@ export default function ResultsScreen({ route, navigation }) {
               <Text style={styles.cardName}>{item.name}</Text>
               <Text style={styles.cookTime}>{item.cookTime} min</Text>
             </View>
-
             <View style={styles.cardMeta}>
               <Text style={[styles.difficulty, { color: DIFFICULTY_COLOR[item.difficulty] || '#aaa' }]}>
                 {item.difficulty}
               </Text>
-              <Text style={styles.calorie}>{item.calories} cal</Text>
-              <Text style={styles.protein}>{item.protein}g protein</Text>
+              <Text style={styles.metaText}>{item.calories} cal</Text>
+              <Text style={styles.metaText}>{item.protein}g protein</Text>
             </View>
-
             <Text style={styles.ingredients} numberOfLines={2}>
               {item.ingredients.join(', ')}
             </Text>
@@ -73,8 +69,7 @@ const styles = StyleSheet.create({
   cookTime: { fontSize: 14, color: '#f5a623', fontWeight: '600' },
   cardMeta: { flexDirection: 'row', gap: 12, marginVertical: 8 },
   difficulty: { fontSize: 13, fontWeight: '600', textTransform: 'capitalize' },
-  calorie: { fontSize: 13, color: '#aaa' },
-  protein: { fontSize: 13, color: '#aaa' },
+  metaText: { fontSize: 13, color: '#aaa' },
   ingredients: { fontSize: 13, color: '#666', marginTop: 4 },
   backBtn: {
     backgroundColor: '#f5a623', borderRadius: 16,

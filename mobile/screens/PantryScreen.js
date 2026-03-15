@@ -65,6 +65,7 @@ export default function PantryScreen({ navigation }) {
       <FlatList
         data={pantry}
         keyExtractor={item => item}
+        numColumns={3}
         renderItem={({ item }) => (
           <View style={styles.tag}>
             <Text style={styles.tagText}>{item}</Text>
@@ -73,8 +74,6 @@ export default function PantryScreen({ navigation }) {
             </TouchableOpacity>
           </View>
         )}
-        horizontal={false}
-        numColumns={3}
         contentContainerStyle={styles.tagList}
       />
 
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18, justifyContent: 'center',
   },
   addBtnText: { fontSize: 24, color: '#000', fontWeight: '700' },
-  tagList: { gap: 8, paddingBottom: 16 },
+  tagList: { paddingBottom: 16 },
   tag: {
     flexDirection: 'row', alignItems: 'center',
     backgroundColor: '#1e1e1e', borderRadius: 20,
