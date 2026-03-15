@@ -34,7 +34,7 @@ export default function PantryScreen({ navigation }) {
     setLoading(true);
     try {
       const res = await axios.post(`${API_BASE}/recipes/search`, { ingredients: pantry });
-      navigation.navigate('Results', { recipes: res.data, pantry });
+      navigation.navigate('Results', { recipes: res.data.matched, suggestions: res.data.suggestions, pantry });
     } catch (err) {
       Alert.alert('Error', 'Could not reach the server. Is the backend running?');
     } finally {
