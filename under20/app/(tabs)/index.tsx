@@ -1,3 +1,4 @@
+import { TextInput } from "react-native";
 import React from 'react';
 import {
   View,
@@ -92,8 +93,45 @@ function RecipeCard({
 }
 
 export default function RecipesScreen() {
+  const [input, setInput] = React.useState("");
+  const [pantry, setPantry] = React.useState<string[]>([]);
+
   const { toggleFavorite, isFavorite } = useFavorites();
-  const recipes = recipesData as Recipe[];
+
+  const addIngredient = () => {
+    if (!input.trim()) return;
+    setPantry([...pantry, input.trim().toLowerCase()]);
+    setInput("");
+  };
+
+  const allRecipes = recipesData as Recipe[];
+
+  const recipes =
+  pantry.length === 0
+    ? allRecipes
+    : allRecipes
+        .map(recipe => {
+          const recipeIngredients = recipe.ingredients.map(i =>
+            i.toLowerCase()
+          );
+
+          let matchCount = 0;
+
+          pantry.forEach(p => {
+            if (
+              recipeIngredients.some(i => i.includes(p))
+            ) {
+              matchCount++;
+            }
+          });
+
+          return { ...recipe, matchCount };
+        })
+        .filter(recipe => recipe.matchCount > 0)
+        .sort((a, b) => b.matchCount - a.matchCount);
+
+  console.log("PANTRY:", pantry);
+  console.log("RECIPES SHOWN:", recipes.length);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -102,11 +140,50 @@ export default function RecipesScreen() {
           <Text style={styles.logoLight}>under</Text>
           <Text style={styles.logoAccent}>20</Text>
         </Text>
-        <Text style={styles.tagline}>Decide faster. Cook sooner. Eat better.</Text>
+        <Text style={styles.tagline}>
+          Decide faster. Cook sooner. Eat better.
+        </Text>
+      </View>
+
+      <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
+        <TextInput
+          placeholder="Add ingredient (e.g. egg)"
+          value={input}
+          onChangeText={setInput}
+          style={{
+            borderWidth: 1,
+            borderColor: "#E7E5E4",
+            borderRadius: 10,
+            padding: 10,
+            marginBottom: 8,
+            backgroundColor: "white"
+          }}
+        />
+
+        <TouchableOpacity
+          onPress={addIngredient}
+          style={{
+            backgroundColor: "#52B788",
+            padding: 10,
+            borderRadius: 10,
+            alignItems: "center",
+            marginBottom: 10
+          }}
+        >
+          <Text style={{ color: "white", fontWeight: "600" }}>
+            Add Ingredient
+          </Text>
+        </TouchableOpacity>
+
+        <Text style={{ fontSize: 12, color: "#6B7280" }}>
+          Pantry: {pantry.join(", ")}
+        </Text>
       </View>
 
       <View style={styles.countBar}>
-        <Text style={styles.countText}>{recipes.length} recipes</Text>
+        <Text style={styles.countText}>
+          {recipes.length} recipes
+        </Text>
       </View>
 
       <FlatList
