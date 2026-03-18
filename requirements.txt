@@ -1,0 +1,20 @@
+# Under20 — Requirements
+
+# Runtime
+Node.js >= 18.x
+npm >= 9.x
+
+# Frontend
+expo ~54.0.33
+react 19.1.0
+react-native 0.81.5
+expo-router ~6.0.23
+typescript ~5.9.2
+
+# Backend (coming soon)
+# express ^4.x
+# mongoose ^8.x
+# jsonwebtoken ^9.x
+# bcryptjs ^2.x
+# dotenv ^16.x
+# cors ^2.x

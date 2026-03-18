@@ -1,0 +1,4970 @@
+[
+  {
+    "id": 1,
+    "name": "Aww  Marinated Olives",
+    "ingredients": [
+      "Fennel seeds",
+      "Green olives",
+      "Ripe olives",
+      "Garlic",
+      "Peppercorn",
+      "Orange rind",
+      "Orange juice",
+      "Red chile",
+      "Extra virgin olive oil"
+    ],
+    "cookTime": 15,
+    "calories": 381,
+    "protein": 3,
+    "difficulty": "medium",
+    "steps": [
+      "Toast the fennel seeds and lightly crush them",
+      "Place all the ingredients in a bowl , stir well",
+      "Cover and leave to marinate",
+      "Keep refrigerated and use within 1 to 2 days"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Berry  Good Sandwich Spread",
+    "ingredients": [
+      "Whole berry cranberry sauce",
+      "Sour cream",
+      "Prepared horseradish"
+    ],
+    "cookTime": 5,
+    "calories": 79,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "In medium size bowl , coarsely mash cranberry sauce",
+      "Stir in sour cream and horseradish until well blended"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Calm Your Nerves  Tonic",
+    "ingredients": [
+      "Gentian root",
+      "Scullcap herb",
+      "Burnet root",
+      "Wood bethony",
+      "Spearmint"
+    ],
+    "cookTime": 5,
+    "calories": 8,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Combine herbs",
+      "Dosage: one-half teaspoonful mixed in one-half glass of cold water , followed by a glass of hot water , one hour before each meal and upon retiring",
+      "This can be put in gelatin capsules",
+      "Two no",
+      "00 capsules would contain the required amount for one dose",
+      "More can be taken with beneficial results"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Chinese  Candy",
+    "ingredients": [
+      "Butterscotch chips",
+      "Chinese noodles",
+      "Salted peanuts"
+    ],
+    "cookTime": 15,
+    "calories": 233,
+    "protein": 3,
+    "difficulty": "medium",
+    "steps": [
+      "Melt butterscotch chips in heavy saucepan over low heat",
+      "Fold in peanuts and chinese noodles until coated",
+      "Drop by tablespoon onto waxed paper",
+      "Let stand in cool place until firm"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Deep Fried Dessert Thingys",
+    "ingredients": [
+      "All-purpose flour",
+      "Granulated sugar",
+      "Baking powder",
+      "Salt",
+      "Vanilla extract",
+      "Egg",
+      "Milk",
+      "Vegetable oil",
+      "Bread",
+      "Brown sugar",
+      "Ground cinnamon",
+      "Butter",
+      "Powdered sugar"
+    ],
+    "cookTime": 20,
+    "calories": 1663,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "In a large bowl , mix flour , granulated sugar , baking powder and salt",
+      "Make a well in the center of the flour mixture , and pour in milk , vanilla , egg and 2 tablespoons oil",
+      "Mix until smooth",
+      "Heat remaining vegetable oil to 400 degrees in a small deep fryer",
+      "Oil is hot enough when it starts to ripple",
+      "Be careful not to overheat",
+      "Butter one side of each bread slice",
+      "Sprinkle the brown sugar and cinnamon evenly onto the buttered side of the bread slices",
+      "Make sandwiches by placing the slices of bread together with the brown sugar on the inside",
+      "Cut the sandwiches into quarters",
+      "Now is a good time to test the oil by dropping in a very small amount of batter",
+      "Batter should sizzle and brown in about 20 seconds",
+      "Oil needs to be hot enough to melt the brown sugar inside the sandwiches but not so hot that it scorches the batter",
+      "Dip the sandwiches into the batter mixture",
+      "Using deep fryer tongs , carefully place the battered sandwiches into the heated oil",
+      "Be cautious when deep frying",
+      "Try to avoid burns from splattering hot oil",
+      "Remove sandwiches from the oil when they are golden brown",
+      "Set aside to cool for a couple of minutes",
+      "Sprinkle with powdered sugar and serve"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Emotional Balance  Spice Mixture",
+    "ingredients": [
+      "Ground black pepper",
+      "Ground ginger",
+      "Ground coriander",
+      "Ground cumin",
+      "Ground turmeric",
+      "Black cumin"
+    ],
+    "cookTime": 10,
+    "calories": 183,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "Mix the spices together and store in an airtight container",
+      "Saute small amounts in butter / ghee to spice vegetables and grains"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Grilled  Ranch Bread",
+    "ingredients": [
+      "Butter",
+      "Dry ranch dressing mix",
+      "French bread"
+    ],
+    "cookTime": 13,
+    "calories": 1650,
+    "protein": 40,
+    "difficulty": "medium",
+    "steps": [
+      "Cream the butter with the dressing mix",
+      "Spread evenly on the bread halves",
+      "Place under the broiler for 2-3 minutes , until golden and the butter begins to seep and bubble",
+      "Serve hot"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Healthy For Them  Yogurt Popsicles",
+    "ingredients": [
+      "Milk",
+      "Frozen juice concentrate",
+      "Plain yogurt"
+    ],
+    "cookTime": 10,
+    "calories": 165,
+    "protein": 2,
+    "difficulty": "easy",
+    "steps": [
+      "Mix all the ingredients using a blender",
+      "Pour into popsicle molds",
+      "Freeze and enjoy !"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Homemade  Vegetable Soup From A Can",
+    "ingredients": [
+      "Low sodium chicken broth",
+      "Diced tomatoes",
+      "Zucchini",
+      "Corn",
+      "Potatoes",
+      "Wax beans",
+      "Green beans",
+      "Carrots"
+    ],
+    "cookTime": 12,
+    "calories": 276,
+    "protein": 12,
+    "difficulty": "medium",
+    "steps": [
+      "Combine all ingredients in large pot",
+      "Bring to a boil and simmer for 3 minutes",
+      "Serve",
+      "I use the tomatoes that come flavored with basil , oregano , and garlic",
+      "You can substitute whatever vegetables you like",
+      "If you don't want to use the zucchini , add a can of tomato sauce to give it some substance"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "I Stole The Idea From Mirj  Sesame Noodles",
+    "ingredients": [
+      "Angel hair pasta",
+      "Toasted sesame oil",
+      "Soy sauce",
+      "Honey",
+      "Garlic",
+      "Green onions",
+      "Toasted sesame seeds",
+      "Stir fry vegetables"
+    ],
+    "cookTime": 18,
+    "calories": 783,
+    "protein": 18,
+    "difficulty": "hard",
+    "steps": [
+      "In a large pot , cook your angel hair pasta until almost al dente",
+      "Drain well , put in a bowl and set aside",
+      "In a small tupperware container with a lid , mix sesame oil , soy sauce , honey , garlic and sesame seeds",
+      "Put the lid on the container and shake , shake , shake it like a polaroid picture",
+      "Pour the sauce over the angel hair and toss well",
+      "The heat of the pasta will cook the garlic a bit so it won't be totally raw",
+      "Mix in the green onions and stir fry veggies",
+      "Serve"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Italian  Fries",
+    "ingredients": [
+      "Frozen french fries",
+      "Oil",
+      "Salt & freshly ground black pepper",
+      "Parmesan cheese",
+      "Oregano",
+      "Basil",
+      "Flat leaf parsley"
+    ],
+    "cookTime": 15,
+    "calories": 241,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "Deep fry french fries according to package directions",
+      "Drain well on paper towels , and transfer to a serving platter",
+      "Season with salt and pepper , then sprinkle on remaining ingredients",
+      "Serve with your favorite condiments"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Mennonite  Corn Fritters",
+    "ingredients": [
+      "Fresh corn",
+      "Eggs",
+      "Flour",
+      "Salt",
+      "Pepper",
+      "Baking powder",
+      "Cream",
+      "Fat"
+    ],
+    "cookTime": 15,
+    "calories": 67,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Combine eggs , flour , baking powder , salt& pepper with the corn",
+      "Mix thoroughly",
+      "Add cream to mixture",
+      "Melt fat in frying pan& drop corn mixture by spoonfuls into the hot fat",
+      "Brown on both sides",
+      "Serve w / syrup"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Mock A Mole   Low Fat Guacamole",
+    "ingredients": [
+      "Frozen peas",
+      "Hass avocado",
+      "Salt",
+      "Lemons, juice of",
+      "Tomatoes",
+      "Onion",
+      "Cilantro"
+    ],
+    "cookTime": 15,
+    "calories": 116,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Thaw peas by running hot water over them in a strainer until they are bright green",
+      "Puree peas in food processor",
+      "Add 1 / 4 of one avocado , salt , and juice of one lemon or lime",
+      "Puree again and transfer to a bowl",
+      "Coarsely mash the remaining avocado and stir in tomato and onion",
+      "Taste and add more salt / lemon to your taste",
+      "Stir in cilantro"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Momma S Special  Marinade",
+    "ingredients": [
+      "Lemon juice",
+      "Oil",
+      "Worcestershire sauce",
+      "Basil",
+      "Soy sauce",
+      "Garlic powder",
+      "Pepper"
+    ],
+    "cookTime": 10,
+    "calories": 199,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Depending on how much meat i have i usually have to either double or triple this recipe the longer your meat marinates the better it tastes",
+      "This recipe was originally for salmon , but i think it can be used universally",
+      "I've also used this same recipe for steak and chicken",
+      "It is wonderful"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Munch Without Guilt  Tomatoes",
+    "ingredients": [
+      "Tomatoes",
+      "Crackers",
+      "Mayonnaise",
+      "Black pepper"
+    ],
+    "cookTime": 10,
+    "calories": 3,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Put a slice of tomato on each biscuit / cracker",
+      "Smear with little mayo and sprinkle black pepper",
+      "Munch without guilt !"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "My Muffuletta Sandwich",
+    "ingredients": [
+      "Ciabatta",
+      "Provolone cheese",
+      "Genoa salami",
+      "Ham",
+      "Tomatoes",
+      "Sweet onion",
+      "Green olives",
+      "Kalamata olive",
+      "Fresh basil",
+      "Capers",
+      "Garlic",
+      "Brine",
+      "Oregano leaves",
+      "Olive oil",
+      "Red wine vinegar",
+      "Fresh parsley",
+      "Carrot"
+    ],
+    "cookTime": 20,
+    "calories": 181,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Mix everything in food processor",
+      "Chop fine for spread",
+      "Refrigerate until ready to use"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Never Weep  Whipped Cream",
+    "ingredients": [
+      "Whipping cream",
+      "Vanilla instant pudding mix",
+      "Powdered sugar",
+      "Vanilla extract"
+    ],
+    "cookTime": 5,
+    "calories": 276,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Whip all ingredients together until firm peaks form",
+      "Cover leftovers tightly , preferably in an air-tight plastic container",
+      "This stays the same consistency until used",
+      "It will keep for a week in the fridge without deflating"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Pour Over Anything  Mushroom Gravy",
+    "ingredients": [
+      "Onion",
+      "Mushroom pieces",
+      "Sodium-free vegetable broth",
+      "Tomato puree",
+      "Cornstarch",
+      "White wine",
+      "Black pepper",
+      "Tabasco sauce"
+    ],
+    "cookTime": 20,
+    "calories": 33,
+    "protein": 1,
+    "difficulty": "medium",
+    "steps": [
+      "In a small saucepan , saut onion and mushrooms in a small amount oil",
+      "Mix dissolved cornstarch into a cup of vegetable broth",
+      "Slowly add to onions and mushrooms",
+      "Add the other ingredients too",
+      "Check the seasonings and cook gently until thickened",
+      "Use on vegetables , over cooked rice or noodles , in casseroles , or over mashed potatoes"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Say What   Banana Sandwich",
+    "ingredients": [
+      "White bread",
+      "Mayonnaise",
+      "Bananas"
+    ],
+    "cookTime": 5,
+    "calories": 238,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "Spread a tablespoon on one side of each slice on bread",
+      "Peel and cut the bananas into 1 / 4-inch round slices",
+      "Lay the slices on two of the slices of bread and then top with the other half",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Sour Cream  Avocado Dip  Vegan",
+    "ingredients": [
+      "Soft silken tofu",
+      "Avocado",
+      "Chunky salsa",
+      "Fresh cilantro",
+      "Lime juice",
+      "Hot sauce",
+      "Salt and pepper"
+    ],
+    "cookTime": 10,
+    "calories": 13,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Peel and pit avocado , put in a large mixing bowl",
+      "Add entire block of tofu and salsa",
+      "Combine ingredients using a hand mixer on medium speed for about 1 minute or until the mixture becomes smooth",
+      "Add remaining ingredients , mix on low speed until all ingredients are blended together",
+      "Chill for one hour and serve",
+      "Store leftovers in the fridge in an air-tight container"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Sugared Grapes",
+    "ingredients": [
+      "Green grape",
+      "Egg whites",
+      "Sugar"
+    ],
+    "cookTime": 15,
+    "calories": 140,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "For one regular size bunch of grapes , 2 egg whites",
+      "Brush grapes with egg whites and then sprinkle sugar to totaly cover grapes",
+      "Freeze until needed the day of",
+      "This makes a very pretty garnish that's really yummmy !",
+      "The crystallized sugar makes the grapes crunchy and sweet !"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "The Elvis  Smoothie",
+    "ingredients": [
+      "Banana",
+      "Natural-style peanut butter",
+      "2% low-fat milk",
+      "Sugar-free non-fat vanilla yogurt"
+    ],
+    "cookTime": 2,
+    "calories": 354,
+    "protein": 13,
+    "difficulty": "medium",
+    "steps": [
+      "Place all ingredients in blender",
+      "Blend until very smooth",
+      "Serve immediately",
+      "For a vegan smoothie , make with soy milk and soy yogurt"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Tide Me Over   Indian Chaat  Simple Veggie Salad",
+    "ingredients": [
+      "Cucumber",
+      "Potato",
+      "Chopped tomato",
+      "Plain yogurt",
+      "Chat masala",
+      "Paprika",
+      "Salt"
+    ],
+    "cookTime": 2,
+    "calories": 73,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Toss everything well in a serving bowl",
+      "Grab a fork or large spoon and eat immediately , or refrigerate until hunger strikes , and then eat !",
+      "Feel extremely pleased with yourself that you snacked on this instead of that bag of chips you were eyeing",
+      "Proceed to eat several helpings of dessert after dinner as reward"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "1 Easiest Dr  Pepper Ham Glaze Ever",
+    "ingredients": [
+      "Dr. pepper cola",
+      "Orange marmalade",
+      "Brown sugar"
+    ],
+    "cookTime": 13,
+    "calories": 90,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Mix all 3 ingredients in a pan , bring to a boil , and glaze ham throughout cooking process of the ham",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "250 Chocolate Chip Cookies Recipe",
+    "ingredients": [
+      "Butter",
+      "Brown sugar",
+      "Vanilla",
+      "Blended oatmeal",
+      "Baking soda",
+      "Hershey chocolate candy bars",
+      "Nuts",
+      "Flour",
+      "Sugar",
+      "Eggs",
+      "Baking powder",
+      "Semi-sweet chocolate chips"
+    ],
+    "cookTime": 6,
+    "calories": 150,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Blended oatmeal: measure and blend in a blender to fine powder",
+      "Cream butter and both sugars",
+      "Add eggs and vanilla",
+      "Mix together with flour , oatmeal , salt , baking powder and soda",
+      "Add chips , candy , and nuts",
+      "Refrigerate for 1 / 2 an hour",
+      "Roll into balls and place 2 inches apart on cookie sheet",
+      "Bake for 6 minute at 375 degrees"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "250 00 Chocolate Chip Cookies",
+    "ingredients": [
+      "Butter",
+      "White sugar",
+      "Brown sugar",
+      "Eggs",
+      "Vanilla",
+      "Flour",
+      "Oatmeal",
+      "Salt",
+      "Baking powder",
+      "Baking soda",
+      "Chocolate chips",
+      "Hershey's semi-sweet baking chocolate",
+      "Nuts"
+    ],
+    "cookTime": 20,
+    "calories": 5287,
+    "protein": 82,
+    "difficulty": "hard",
+    "steps": [
+      "Mix all ingredients together just until blended",
+      "Spoon large tbspfuls onto a baking sheet",
+      "Bake at 350 for 10-14 minutes"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "5 Tacos",
+    "ingredients": [
+      "Ground beef",
+      "Taco seasoning",
+      "Taco shells",
+      "Lettuce",
+      "Tomatoes",
+      "Onion",
+      "Salsa",
+      "Cheddar cheese",
+      "Corn cobs"
+    ],
+    "cookTime": 20,
+    "calories": 249,
+    "protein": 20,
+    "difficulty": "medium",
+    "steps": [
+      "Cook meat",
+      "Add taco seasoning",
+      "Place meat into taco shells / tortillas",
+      "Top with tomatoes , onions , lettuce , salsa and cheese",
+      "Boil corn cobs 5-7 minutes"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Go To Bbq Sauce For Ribs",
+    "ingredients": [
+      "Tomato ketchup",
+      "Dark brown sugar",
+      "Applesauce",
+      "Ponzu sauce",
+      "Maple syrup",
+      "Liquid smoke",
+      "Apple cider vinegar",
+      "Salt",
+      "Oregano",
+      "Granulated garlic",
+      "Cayenne"
+    ],
+    "cookTime": 13,
+    "calories": 234,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Mix all ingredients together",
+      "Heat on medium heat in a saucepan until bubbly",
+      "Turn down and keep warm until ready to mop onto your meat"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Add In Anything  Muffins",
+    "ingredients": [
+      "Flour",
+      "Sugar",
+      "Baking powder",
+      "Baking soda",
+      "Salt",
+      "Butter",
+      "Sour cream",
+      "Egg",
+      "Vanilla"
+    ],
+    "cookTime": 15,
+    "calories": 209,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Set oven to 400 degrees",
+      "Set oven rack to second-lowest position",
+      "Grease 12 regular size muffin tins or line with paper muffin liners",
+      "In a bowl sift together flour , 1 / 2 cup plus 2 tablespoons sugar , baking powder , baking soda and salt",
+      "In another bowl whisk together melted butter with sour cream , egg and vanilla or almond extract",
+      "Stir in the butter mixture into the flour mixture",
+      "Stir with a wooden spoon just until combined",
+      "Divide the batter between each muffin tin",
+      "If you want you can sprinkle with a topping",
+      "Bake for about 20 minutes or until muffins test done"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Almost Grilled  Cheese Sandwich",
+    "ingredients": [
+      "White bread",
+      "Processed cheese",
+      "Butter"
+    ],
+    "cookTime": 5,
+    "calories": 195,
+    "protein": 8,
+    "difficulty": "medium",
+    "steps": [
+      "Toast the bread slices",
+      "Spread one side of each bread slice very lightly with butter",
+      "Put cheese slice between buttered sides of bread",
+      "Heat in the microwave until cheese starts to melt",
+      "In my oven this takes no more than 15 to 20 seconds"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Bbq Spray Recipe    It Really Works",
+    "ingredients": [
+      "Red wine vinegar",
+      "Lemon juice",
+      "Water"
+    ],
+    "cookTime": 5,
+    "calories": 47,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Mix ingredients together and add to a clean spray bottle",
+      "Spray and \"wet\" your bbq meat",
+      "Seal the meat in a plastic bag and refrigerate at least 4 hours or overnight",
+      "Grill the meat over indirect heat according to your recipe , spraying every 15minutes during the cooking time",
+      "Remove meat from grill and serve"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Berry French Toast  Oatmeal",
+    "ingredients": [
+      "Old fashioned oats",
+      "Water",
+      "Berries",
+      "Ground flax seeds",
+      "Sugar-free syrup",
+      "I can't believe it's not butter spread"
+    ],
+    "cookTime": 12,
+    "calories": 191,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "Add 1 / 2 cup old-fashioned oats and 1 cup water into a large microwaveable bowl",
+      "Cook in microwave on 50% power for 6 minutes",
+      "Place frozen berries in small bowl and defrost in microwave until the juice from the berries is released",
+      "Add defrosted berries , sugar free syrup , butter spray , and flax seed together and stir well",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "California Roll   Salad",
+    "ingredients": [
+      "White rice",
+      "Seasoned rice vinegar",
+      "Lettuce",
+      "Cucumber",
+      "Avocado",
+      "Imitation crabmeat",
+      "Soy sauce",
+      "Pickled ginger"
+    ],
+    "cookTime": 12,
+    "calories": 456,
+    "protein": 17,
+    "difficulty": "hard",
+    "steps": [
+      "Prepare rice according to directions",
+      "Pour rice into medium bowl and toss with 1 tbsp vinegar",
+      "Set aside",
+      "Thinly slice cucumber and avacado",
+      "Break up crabmeat into chunks",
+      "Mix lettuce leaves with seasoned rice , cucumber , avocado slices and crabmeat",
+      "In separate cup , mix together soy sauce and remaining 2 tbl of seasoned rice vinegar",
+      "Drizzle this dressing over salad , and add pickled ginger on top of salad"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Chef Salad  Dressing",
+    "ingredients": [
+      "Miracle whip",
+      "Sugar",
+      "Cider vinegar",
+      "Ketchup",
+      "Vegetable oil",
+      "Pepper",
+      "Garlic clove",
+      "Salt",
+      "Dry mustard",
+      "Paprika",
+      "Tabasco sauce"
+    ],
+    "cookTime": 10,
+    "calories": 447,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Mix all ingredients until smooth and well blended",
+      "Store in refrigerator",
+      "Will keep up to 2 weeks"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Chic  Greek Salad",
+    "ingredients": [
+      "Seedless cucumber",
+      "Red ripe tomatoes",
+      "Red onion",
+      "Red bell pepper",
+      "Water-packed artichoke hearts",
+      "Italian parsley",
+      "Kosher salt & freshly ground black pepper",
+      "Lemon, juice of",
+      "Shallot",
+      "Red wine vinegar",
+      "Oregano",
+      "Extra virgin olive oil",
+      "Tuna in vegetable oil",
+      "Pepperoncini peppers",
+      "Kalamata olive"
+    ],
+    "cookTime": 12,
+    "calories": 339,
+    "protein": 22,
+    "difficulty": "hard",
+    "steps": [
+      "Arrange the cucumbers , tomatoes , onion , red pepper , artichoke hearts and parsley on a platter",
+      "Squeeze the lemon juice over the platter",
+      "Season with salt and pepper",
+      "Place shallots , vinegar and oregano in a bowl and let stand for 5 minutes",
+      "Whisk in olive oil in a slow stream",
+      "Pour dressing over salad",
+      "Garnish salad with chunks of tuna , pepperoncini peppers and olives"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Crab  Noodle Bowl",
+    "ingredients": [
+      "Stir fry vegetables",
+      "Imitation crabmeat",
+      "Ramen noodles",
+      "Water",
+      "Teriyaki marinade"
+    ],
+    "cookTime": 7,
+    "calories": 403,
+    "protein": 21,
+    "difficulty": "medium",
+    "steps": [
+      "In large non-stick pan , cook veggies on medium heat covered for about 3 minutes",
+      "Mix 1 packet of seasoning with water",
+      "Add water , ramen and crab to veggies and stir continuously until noodles are soft and most of water is absorbed",
+      "Pour over marinade",
+      "Heat through and serve"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Creamsicle  Smoothie",
+    "ingredients": [
+      "Mangoes",
+      "Oranges",
+      "Vanilla bean",
+      "Strawberries",
+      "Ice cubes"
+    ],
+    "cookTime": 15,
+    "calories": 249,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Peel mangoes and remove as much flesh around pit as you can",
+      "Peel oranges",
+      "If you have a good blender , don't worry about the orange seeds , they'll get blended up just fine , as well as the vanilla bean",
+      "Put all ingredients in blender , blend to desired consistency and consume !",
+      "Makes 3 large servings"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Denauseating  With Ginger Tea",
+    "ingredients": [
+      "Water",
+      "Ginger",
+      "Tea bag",
+      "Honey",
+      "Milk"
+    ],
+    "cookTime": 10,
+    "calories": 14,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Bring water to boil with crushed ginger in it",
+      "Let it simmer for 5-7 minutes on medium heat",
+      "Strain and pour in the cup / mug , add tea bag and stir honey",
+      "You can add a dash of milk if you want",
+      "It is very good to sip anyway"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Fire  Sauce",
+    "ingredients": [
+      "Tomato paste",
+      "Water",
+      "Vinegar",
+      "Canned jalapeno slices",
+      "Chili powder",
+      "Dried onion flakes",
+      "Salt",
+      "Cornstarch",
+      "Cayenne pepper",
+      "Sugar",
+      "Onion powder",
+      "Garlic powder"
+    ],
+    "cookTime": 10,
+    "calories": 80,
+    "protein": 3,
+    "difficulty": "hard",
+    "steps": [
+      "Combine the tomato paste and water in a saucepan",
+      "Whisk until smooth",
+      "Add the remaining ingredients to the tomato mixture",
+      "Heat over medium / high heat until it begins to boil",
+      "Continue to cook , stirring often , for 4 to 5 minutes",
+      "Remove from heat",
+      "When sauce has cooled , pour into a glass airtight container and refrigerate",
+      "Stores well in the refrigerator"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Fried  Cauliflower",
+    "ingredients": [
+      "Egg",
+      "Plain breadcrumbs",
+      "Cauliflower florets",
+      "Vegetable oil",
+      "Salt",
+      "Pepper",
+      "Parsley sprig"
+    ],
+    "cookTime": 15,
+    "calories": 161,
+    "protein": 6,
+    "difficulty": "hard",
+    "steps": [
+      "In a shallow medium bowl , beat egg lightly",
+      "Place bread crumbs in a plastic or paper bag",
+      "Dip cauliflower into egg to coat",
+      "Place florets in bag with crumbs",
+      "Seal or close bag and shake well",
+      "In 10 inch non-stick skillet , heat oil",
+      "Add coated cauliflower and saute until browned on all sides",
+      "Season with salt and pepper if desired",
+      "And if desired garnish with parsley sprigs"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Geebee Special  Sandwiches",
+    "ingredients": [
+      "Ham",
+      "American cheese",
+      "Sweet pickle relish",
+      "Ketchup",
+      "Hamburger buns"
+    ],
+    "cookTime": 20,
+    "calories": 328,
+    "protein": 25,
+    "difficulty": "medium",
+    "steps": [
+      "In skillet over medium heat , fry ham until lightly browned",
+      "Separate ham into 6 mounds and lower heat",
+      "Put one slice of cheese on each mound , cover and turn off heat",
+      "Place each mound onto hamburger bun , top with relish , then ketchup , sprinkle of black pepper , and serve"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Greens To Go  Smoothie",
+    "ingredients": [
+      "Banana",
+      "Water",
+      "Honey",
+      "Apple",
+      "Coconut milk",
+      "Flax seed oil",
+      "Oat bran",
+      "Greens"
+    ],
+    "cookTime": 6,
+    "calories": 210,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Add all ingredients , except greens to a blender",
+      "Stuff the rest of the blender with greens - about three to five good handfuls - they shrink when blended ! lettuce , romaine , spinach , chard , kale , collards , parsley , or whatever you have in the fridge or garden",
+      "Blend until smooth",
+      "You could use more fruit than greens and slowly add more greens as you get used to them"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Hawaiian  Chicken Salad Appetizer",
+    "ingredients": [
+      "Sour cream",
+      "Knorr vegetable soup mix",
+      "Green onion",
+      "Water chestnuts",
+      "Hellmann's mayonnaise",
+      "Hawaiian bread"
+    ],
+    "cookTime": 15,
+    "calories": 206,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Combine ingredients except for the bread",
+      "Chill in refrigerator",
+      "When ready to serve , cut the top part of the hawaiian king bread off leaving a hallow space to put in the chicken salad",
+      "Cut up the bread into chunks",
+      "Use the bread to dip into the chicken salad"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Jamba Juice At Home   Lime It Up  Smoothie",
+    "ingredients": [
+      "Frozen limeade concentrate",
+      "Mango",
+      "Strawberry",
+      "Lime sorbet",
+      "Ice"
+    ],
+    "cookTime": 10,
+    "calories": 287,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Pour the limeade mix in the blender",
+      "Add the strawberries , mangoes , sherbet / sorbet and ice cubes",
+      "Blend until you have a smooth consistency",
+      "Pour into glass and drink up"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Jamba Juice At Home  Strawberries Wild  Smoothie",
+    "ingredients": [
+      "Apple juice",
+      "Strawberry",
+      "Banana",
+      "Non-fat vanilla frozen yogurt",
+      "Ice"
+    ],
+    "cookTime": 10,
+    "calories": 76,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Pour the apple juice in the blender",
+      "Add the strawberries , bananas , frozen yogurt and ice cubes",
+      "Blend until smooth with a thick consistency",
+      "If vegan use suitable sugar"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Kelly S Creamy Cheddar Pea Salad",
+    "ingredients": [
+      "Frozen peas",
+      "Celery",
+      "Hard-boiled eggs",
+      "Onion",
+      "Cheddar cheese",
+      "Mayonnaise",
+      "Sweet pickle relish",
+      "Sugar",
+      "Seasoning salt",
+      "Mustard"
+    ],
+    "cookTime": 20,
+    "calories": 173,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "In large bowl , combine mayo , relish , sugar , seas",
+      "Salt and mustard",
+      "Gently fold in rest of ingredients adding peas last so they don't get broken up and mushy",
+      "Chill",
+      "If you like it extra creamy , double the sauce"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Leftover  Lo Mein For Two",
+    "ingredients": [
+      "Cooked pasta",
+      "Carrots",
+      "Peas",
+      "Egg",
+      "Cooked chicken",
+      "Soy sauce",
+      "Chicken broth"
+    ],
+    "cookTime": 9,
+    "calories": 303,
+    "protein": 18,
+    "difficulty": "medium",
+    "steps": [
+      "Combine everything but pasta on stove top and heat until bubbling",
+      "Add pasta and serve"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Leftovers  Dessert",
+    "ingredients": [
+      "Cream cheese",
+      "Cool whip",
+      "Cake crumbs",
+      "Mixed fruit"
+    ],
+    "cookTime": 5,
+    "calories": 567,
+    "protein": 7,
+    "difficulty": "medium",
+    "steps": [
+      "Combine cream cheese and cool whip",
+      "Fold fruits into cream cheese mixture",
+      "Crumble half of the cake or any other sort of sweet crumbs in a glass",
+      "Layer some of the fruit mixture , the rest of the cake , then the rest of the fruit",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Loaded   Deviled Eggs",
+    "ingredients": [
+      "Eggs",
+      "Bacon",
+      "Fresh chives",
+      "White vinegar",
+      "Mild cheddar cheese",
+      "Sour cream",
+      "Paprika"
+    ],
+    "cookTime": 20,
+    "calories": 104,
+    "protein": 7,
+    "difficulty": "medium",
+    "steps": [
+      "Transfer egg yolks from halves to mixing bowl & combine with remaining ingredients",
+      "Add the sour cream or buttermilk last & use more as needed to reach desired smoothness",
+      "Spoon yolk mixture into halves",
+      "The bulk will have grown substantially , so pile it high & \"dust\" with a sprinkle of paprika"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Man  Rice Krispies Treats",
+    "ingredients": [
+      "Marshmallows",
+      "Butter",
+      "Rice krispies"
+    ],
+    "cookTime": 20,
+    "calories": 265,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Over low heat , carefully melt butter",
+      "Add marshmallows and stir until just melted",
+      "Remove from heat , stir in cereal and spread into a 10",
+      "5 x 15 inch pan that has been buttered or sprayed"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Party  Taco Dip",
+    "ingredients": [
+      "Cream cheese",
+      "Sour cream",
+      "Mayonnaise",
+      "Taco seasoning mix",
+      "Lettuce",
+      "Black olives",
+      "Tomatoes",
+      "Green onion",
+      "Green pepper",
+      "Mexican blend cheese"
+    ],
+    "cookTime": 10,
+    "calories": 163,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "In a large mixing bowl blend the following ingredients: cream cheese , sour cream , mayonnaise",
+      "Stir in dry ortega taco seasoning mix",
+      "Spread in 9x13-inch pan and top with any / all of the optional ingredients listed above",
+      "Portions should be to your liking-- put on as little or as much as you would like",
+      "Serve with tostitos white corn chips !"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Pass Me Another   Hot Clam Dip",
+    "ingredients": [
+      "Sharp cheddar cheese",
+      "Green onions",
+      "Green bell peppers",
+      "Paprika",
+      "Worcestershire sauce",
+      "Tabasco sauce",
+      "Minced clams"
+    ],
+    "cookTime": 15,
+    "calories": 120,
+    "protein": 10,
+    "difficulty": "medium",
+    "steps": [
+      "Mix together and bake until cheese melts",
+      "Best when served warm with assorted crackers",
+      "Can be used chilled as a spread"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Perfect  Chocolate Frosting",
+    "ingredients": [
+      "Semisweet chocolate",
+      "Heavy cream",
+      "Butter",
+      "Confectioners' sugar"
+    ],
+    "cookTime": 15,
+    "calories": 4077,
+    "protein": 26,
+    "difficulty": "hard",
+    "steps": [
+      "Place a large bowl , filled halfway with ice , in the sink",
+      "In a medium size pot over medium low heat , melt chocolate , cream , and butter",
+      "Stirring constantly , cook the mixture until all of the butter and chocolate melts and thickens",
+      "Cook for 5-6 minutes",
+      "Do not let boil",
+      "Remove pot from heat",
+      "Whisk in the sifted confectioners' sugar until mixture becomes smooth , then put the pot on top of the bowl of ice",
+      "Beat with an electric mixer on low speed for 4-5 minutes until frosting becomes smooth , thick , and fudgy",
+      "Remove from ice",
+      "Spread onto cooled cake layers",
+      "The frosting will thicken as it sets up",
+      "If the frosting gets too hard to spread , put back on low heat and stir constantly until you get the spreading consistency desired",
+      "I have been adding 1 tbs",
+      "Of light corn syrup to the initial heavy cream and chocolate mixture to add more glossiness to the frosting"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Pink Stuff     Cherry Pie Filling  Pineapple Dessert",
+    "ingredients": [
+      "Cherry pie filling",
+      "Sweetened condensed milk",
+      "Crushed pineapple",
+      "Pecans",
+      "Small marshmallow",
+      "Frozen whipped topping"
+    ],
+    "cookTime": 5,
+    "calories": 339,
+    "protein": 4,
+    "difficulty": "medium",
+    "steps": [
+      "Combine all ingredients and mix well",
+      "Serve chilled",
+      "Your family and friends will go nuts"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Quick Biscuit Bread",
+    "ingredients": [
+      "Refrigerated biscuits",
+      "Olive oil",
+      "Mozzarella cheese",
+      "Garlic salt",
+      "Italian seasoning"
+    ],
+    "cookTime": 20,
+    "calories": 124,
+    "protein": 3,
+    "difficulty": "hard",
+    "steps": [
+      "Preheat oven to 400 degrees",
+      "Lightly grease a cookie sheet",
+      "Remove the buiscuits from the can and separate",
+      "Place one buiscuit in the center and place the remaining buiscuit around it slightly overlapping",
+      "Now flatten them out with your fingers into a 10 inch circle",
+      "Brush with the olive oil",
+      "Sprinkle with the remaining ingredients",
+      "You can use any kind of cheese you have on hand",
+      "Chili powder and monterey jack and some chopped chillies give you a great tex-mex bread",
+      "Bake about 15 minute until edges are nice and brown",
+      "Pull apart to serve"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Red River Shoot Out   Pigskins",
+    "ingredients": [
+      "Chili sauce",
+      "Honey",
+      "Country-style dijon mustard",
+      "Little smokies sausages"
+    ],
+    "cookTime": 15,
+    "calories": 174,
+    "protein": 3,
+    "difficulty": "medium",
+    "steps": [
+      "In a 4-cup glass measure , stir together chili sauce , honey and mustard",
+      "Microwave on high for 3 minutes",
+      "Stirring after every minute",
+      "Add \"little smokies , \" microwave on high for 2 minutes or until heated through",
+      "Keep warm"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Red Robin  Drink Recipe  Mai Tai",
+    "ingredients": [
+      "Grenadine",
+      "Orgeat syrup",
+      "White rum",
+      "Orange curacao",
+      "Orange juice",
+      "Prepared sweet-and-sour mix",
+      "Pineapple juice",
+      "Bacardi dark rum",
+      "Meyer's dark rum"
+    ],
+    "cookTime": 1,
+    "calories": 161,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Add grenadine and orgeat into a bottom of glass",
+      "Mound ice into glass",
+      "Add white rum and orange curaco",
+      "Add oj , sweet and sour , and pineapple juices",
+      "\"float\" bacardi dark rum and myers dark rum on top",
+      "Should go in a glass aprox 13- 15 ounces"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Sexy Greek   Cocktail",
+    "ingredients": [
+      "Ouzo",
+      "Orange juice",
+      "Ice cube",
+      "Orange slice"
+    ],
+    "cookTime": 5,
+    "calories": 95,
+    "protein": 1,
+    "difficulty": "easy",
+    "steps": [
+      "Just mix together ouzo and orange juice and pour over ice in a collins glass",
+      "Garnish with an orange slice and get friendly"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Slightly Spicy  Black Bean Burgers",
+    "ingredients": [
+      "Black beans",
+      "Oil",
+      "Frozen corn",
+      "Garlic",
+      "Onion",
+      "Cumin",
+      "Green chili sauce",
+      "Salsa",
+      "Chili powder",
+      "Flour",
+      "Dry breadcrumbs"
+    ],
+    "cookTime": 20,
+    "calories": 337,
+    "protein": 14,
+    "difficulty": "hard",
+    "steps": [
+      "Place beans in a large bowl and sit aside",
+      "Heat oil in a large frying pan",
+      "Add onion , garlic , corn and cumin",
+      "Saut about 2-3 minutes over medium heat",
+      "Add your green chili sauce and saut another minute or two",
+      "Place in bowl with beans , let cool and mash with stick blender , it is okay if not every piece is mashed",
+      "Add salsa , chili powder , flour and breadcrumbs",
+      "Stir to blend ingredients with a rubber spatula",
+      "Form in 4 patties and place on wax paper",
+      "Store in tupperware until ready to cook",
+      "To cook , spray on one side and saut on medium heat until browned , repeat on other side",
+      "I serve these on toasted burger buns with pepperjack cheese , mayo , lettuce and tomato but serve it as you like"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Stove Top   Stuffing",
+    "ingredients": [
+      "Onion",
+      "Celery seed",
+      "Butter",
+      "Parsley",
+      "Pepper",
+      "Salt",
+      "Dried sage",
+      "Dried thyme",
+      "Chicken broth",
+      "Breadcrumbs"
+    ],
+    "cookTime": 20,
+    "calories": 235,
+    "protein": 6,
+    "difficulty": "hard",
+    "steps": [
+      "Melt 1 tablespoon butter in saute pan",
+      "Stir in minced onions and celery seed",
+      "In a large mixing bowl , mix parsley , salt & pepper , sage and thyme",
+      "Stir into butter mixture in pan",
+      "Stir in chicken broth and 1 / 4 cup butter",
+      "Once everything is mixed together in pan then add in bread crumbs",
+      "Stir to combine and then cover",
+      "Remove from heat and let sit 8 - 10 minutes"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "The U Of L Game Day Dip",
+    "ingredients": [
+      "Cream cheese",
+      "Diced tomatoes with green chilies",
+      "Diced green chilies",
+      "Sausage"
+    ],
+    "cookTime": 15,
+    "calories": 1557,
+    "protein": 42,
+    "difficulty": "easy",
+    "steps": [
+      "Fry sausage in skillet then drain",
+      "Cut cream cheese in cubes and put in crock pot",
+      "Then add all other ingredients and let set and get warm"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "White  Sangria",
+    "ingredients": [
+      "Dry white wine",
+      "Lemon-flavored vodka",
+      "Peach schnapps",
+      "Peach puree",
+      "Apple",
+      "Lime",
+      "Lemon",
+      "Peach",
+      "Lemon juice",
+      "Lime juice",
+      "Lemonade"
+    ],
+    "cookTime": 5,
+    "calories": 158,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Pour wine , vodka , schnapps and peach coulis in a pitcher with the slices of fruits 12 hours before serving the sangria",
+      "Keep in the fridge",
+      "Just before serving , add ice , fruit juices and complete with lemonade"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Wild Game   Moose Sloppy Joes",
+    "ingredients": [
+      "Ground moose",
+      "Onion",
+      "Brown sugar",
+      "Hot sauce",
+      "Prepared mustard",
+      "Ketchup",
+      "Barbecue sauce",
+      "Salt and pepper"
+    ],
+    "cookTime": 15,
+    "calories": 102,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Brown moose and onion in skillet and drain",
+      "Add other ingredients and simmer for 5 minutes",
+      "Serve over buns or any other type of bread",
+      "You can also use venison / red deer hamburg in this recipe"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "You Bring The Macaroni Salad   Macaroni Salad",
+    "ingredients": [
+      "Small shell pasta",
+      "Mayonnaise",
+      "Miracle whip",
+      "Sweet onion",
+      "Hard-boiled eggs",
+      "Sweet pickle juice",
+      "Sugar",
+      "Colby cheese"
+    ],
+    "cookTime": 20,
+    "calories": 297,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "Honestly , i never measure \"exactly",
+      "\"",
+      "Also , use as much or as little cheese as you would like",
+      "Cook macaroni according to directions",
+      "When draining , run cold water over to keep it from sticking together and to \"chill\" it",
+      "Mix mayonnaise , miracle whip , onion , pickle juice and sugar together to make \"sauce",
+      "\"",
+      "After macaroni is completely drained , mix macaroni , \"sauce\" , eggs and cheese until everything is coated and mixed well",
+      "The longer it chills , the better it gets !"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Yummy N  Easiest  Warm Blueberry Sauce",
+    "ingredients": [
+      "Blueberries",
+      "Sugar",
+      "Cinnamon",
+      "Nutmeg"
+    ],
+    "cookTime": 20,
+    "calories": 326,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Place all ingredients in a saucepan",
+      "Bring to a boil",
+      "Reduce the heat and simmer for 5 minutes",
+      "Yum , it is ready !"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "007  Martini",
+    "ingredients": [
+      "Dry vermouth",
+      "Vodka",
+      "Gin",
+      "Lillet blanc"
+    ],
+    "cookTime": 5,
+    "calories": 146,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Rinse martini glass with extra dry vermouth",
+      "Add vodka , gin , and lillet blanc to a cocktail shaker filled with crushed ice",
+      "Shake vigorously",
+      "Pour into prepared martini glass"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "99 Bananas  Foster Oatmeal",
+    "ingredients": [
+      "Oatmeal",
+      "Water",
+      "Brown sugar cinnamon syrup",
+      "Brown sugar",
+      "Butter",
+      "Banana",
+      "Coffee-mate cinnamon vanilla liquid creamer",
+      "Banana schnapps",
+      "Chocolate whipped cream"
+    ],
+    "cookTime": 10,
+    "calories": 288,
+    "protein": 4,
+    "difficulty": "medium",
+    "steps": [
+      "Cook oatmeal in amount of water called for on your oatmeal , and add the divinci syrup",
+      "Slice the banana into the oatmeal so it can cook into the oats",
+      "Cook , over low heat , for 6-8 minutes , stirring frequently",
+      "Add rest of ingredients , except the whipped topping",
+      "Bring to a gentle boil , and remove",
+      "Top with a generous serving of chocolate flavored whipped topping which will melt into the oatmeal giving it a delicate but delicious chocolate flavor"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Almost  Starbucks Frappuccino",
+    "ingredients": [
+      "Strong coffee",
+      "Chocolate ice cream",
+      "Chocolate syrup",
+      "Sugar",
+      "Ice",
+      "Whipped cream"
+    ],
+    "cookTime": 5,
+    "calories": 313,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "In a blender combine coffee with ice cream and chocolate syrup",
+      "Blend until smooth",
+      "Add in sugar and blend slightly until combined",
+      "Place about 1 cup crushed ice in two large tall glasses",
+      "Divide the mixture into the glasses",
+      "Top with a dollup of whipped cream"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Amigos  Crisp Chicken Burritos",
+    "ingredients": [
+      "Canned chicken",
+      "Green chilies",
+      "Cream cheese",
+      "Green onions",
+      "Flour tortillas",
+      "Cooking oil"
+    ],
+    "cookTime": 12,
+    "calories": 2453,
+    "protein": 31,
+    "difficulty": "hard",
+    "steps": [
+      "Let cream cheese come to room temperature",
+      "Drain the canned chicken",
+      "Mix cream cheese , green chiles , green onion and chicken until well blended",
+      "Cut two sides of the tortillas so you have two straight sides on each side",
+      "Spread chicken mixture thinly on 3 / 4 of the tortilla",
+      "Roll tortilla up starting with the end you spread the chicken mixture on",
+      "Seal the plain end with water",
+      "Heat oil to about 375-400 degrees",
+      "Drop burritos into hot oil and fry for about 2 minutes",
+      "Keep turning so they fry evenly",
+      "When they start to turn golden , they are done",
+      "Drain on a paper plate covered with a paper towel",
+      "These are so easy and goes great with salsa , guacamole , or ranch dressing"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Amish  Cake Frosting   Icing",
+    "ingredients": [
+      "Cream cheese",
+      "Brown sugar",
+      "Vanilla",
+      "Salt",
+      "Cool whip"
+    ],
+    "cookTime": 5,
+    "calories": 1826,
+    "protein": 16,
+    "difficulty": "easy",
+    "steps": [
+      "Beat cream cheese , sugar , vanilla& salt until fluffy",
+      "Fold in cool whip"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Any Type  Nut Butter",
+    "ingredients": [
+      "Butter",
+      "Nuts",
+      "Salt",
+      "Pepper"
+    ],
+    "cookTime": 15,
+    "calories": 3647,
+    "protein": 15,
+    "difficulty": "medium",
+    "steps": [
+      "Cream butter in a small bowl with an electric mixer",
+      "Transfer to blender or food processor",
+      "Add remaining ingredients and blend well",
+      "Place butter in plastic wrap and form into a log shape or place in a ramekin and cover tightly"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Baked  Apple Cinnamon Oatmeal",
+    "ingredients": [
+      "Apple",
+      "Brown sugar",
+      "Cinnamon",
+      "Oats",
+      "Dried cranberries",
+      "Margarine",
+      "Oatmeal"
+    ],
+    "cookTime": 10,
+    "calories": 109,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Core and peel apple",
+      "Place in a microwaveable safe bowl and sprinkle brown sugar and cinnamon in apple",
+      "Stuff it with cranberries and oats and top it with butter",
+      "Cover with saran wrap and microwave for about 3 1 / 2 minutes",
+      "Let it rest for about 2 minutes",
+      "Chop the apple and add it to the dry instant oatmeal",
+      "Follow the packet directions and add the juice from the cooked apple to the bowl",
+      "Microwave about 1 1 / 2 minutes"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Better Than Bouillon  Gravy",
+    "ingredients": [
+      "Water",
+      "Beef base",
+      "Cornstarch",
+      "Pepper"
+    ],
+    "cookTime": 10,
+    "calories": 42,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Measure 4 cups of water into saucepan and heat at med-high to gentle boil",
+      "While waiting for water in saucepan to boil , whisk together 1 / 4 cup water with 2 1 / 2 t better than bouillon in a bowl until smooth",
+      "Whisk this mixture into the boiling water , stir while bringing to a gentle boil again",
+      "Reduce heat to low",
+      "Mix the corn starch with 1 / 2 cup cold water in a bowl or large measuring cup",
+      "Whisk well until the corn starch is thoroughly dissolved",
+      "Gently pour the cornstarch mixture into the saucepan , adding a little bit at a time while you continue to whisk",
+      "Increase heat and whisk for 2 minutes until thickened",
+      "Add pepper to taste"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Caramel  Apples",
+    "ingredients": [
+      "Apples",
+      "Wooden popsicle sticks",
+      "Butter",
+      "Dark brown sugar",
+      "Milk"
+    ],
+    "cookTime": 7,
+    "calories": 254,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Pierce apples with popsicle sticks , set aside",
+      "Melt butter in a medium saucepan",
+      "Add remaining ingrediants , and gently bring to a boil , stirring frequently",
+      "Cover , reduce heat and simmer for 3 minutes",
+      "Do not uncover to stir !",
+      "Remove from heat",
+      "Mixture should be thin , but sticky , and saucepan sides should be steamy",
+      "Stir well , and allow to thicken slightly before dipping apples",
+      "Apples may be double dipped if desired",
+      "Refrigerate 1-2 hours until caramel is set"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Cheese  Sauce  Dairy Free",
+    "ingredients": [
+      "Rice milk",
+      "Nutritional yeast flakes",
+      "Cornstarch",
+      "Dry mustard"
+    ],
+    "cookTime": 10,
+    "calories": 252,
+    "protein": 20,
+    "difficulty": "hard",
+    "steps": [
+      "Heat \"milk\" or broth on med",
+      "Heat",
+      "Take a couple tbsp of the hot liquid and mix it with the cornstarch until it dissolves",
+      "Set aside",
+      "Add yeast flakes and spices to hot liquid",
+      "Stir until dissolved",
+      "Add cornstarch to mixture and let it bubble on low heat until it reaches the thickness you want",
+      "You can use more or less liquid , depending on just how thick you want it to be",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Cheeseburger  Cookies And  Fries",
+    "ingredients": [
+      "Vanilla wafer cookies",
+      "Shredded coconut",
+      "Peppermint patties",
+      "Sesame seeds",
+      "Vanilla frosting",
+      "Honey",
+      "Green food coloring",
+      "Red food coloring",
+      "Yellow food coloring",
+      "Potato sticks"
+    ],
+    "cookTime": 20,
+    "calories": 144,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Place coconut into a ziploc sandwich bag and drop in several drops of green food coloring",
+      "Roll around in your hands until all the coconut is tinted",
+      "Set aside",
+      "In a separate bowl , tint some frosting red like ketchup and in another bowl , tint frosting yellow like mustard",
+      "Set frosting aside",
+      "Decide how many cookies you need , unwrap that many peppermint patties and set out twice as many wafter cookies",
+      "Set half the wafer cookies , flat side up , onto a cookie sheet",
+      "Put a small dab of vanilla frosting onto cookie and gently press down a peppermint patty",
+      "Spread some \"ketchup\" and some \"mustard\" on top of the patty , sprinkle some \"lettuce\" on it and then place another cookie on top",
+      "Brush a little honey on the top \"bun\" and sprinkle some sesame seeds onto them",
+      "Set aside",
+      "Take triangularly cut sheets of paper and fold them to resemble a french fry 'bag'",
+      "If you want , use markers first to draw some golden arches and write \"mc ___ on them",
+      "Then , tape them together and fill with some potato sticks",
+      "Place a cheeseburger and bag of fries on a small paper plate and serve !"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Cheesecake Factory  Crab Cakes",
+    "ingredients": [
+      "Lump crabmeat",
+      "Plain breadcrumbs",
+      "Mayonnaise",
+      "Green onions",
+      "Red bell peppers",
+      "Egg",
+      "Fresh parsley",
+      "Old bay seasoning",
+      "Prepared yellow mustard",
+      "Panko breadcrumbs",
+      "Vegetable oil"
+    ],
+    "cookTime": 10,
+    "calories": 99,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "Measure all the ingredients for the crab cakes-- except the panko and vegetable oil-- into a large bowl",
+      "Use a spatula to carefully fold the ingredients together",
+      "Be sure not to over stir the mixture or those tasty lumps of crab will fall apart",
+      "The best crab cakes have nice big chunks of crab in'em",
+      "Use your hands or a spoon to fill six cups of a clean muffin tin with equal amounts of the crab mixture",
+      "Press down a bit on each crab cake so that the top is flat",
+      "Don't press too hard or the crab cakes will be hard to get out",
+      "Cover the muffin tin with plastic wrap and pop it in the fridge for a couple hours",
+      "This step will help the cakes stay together when they're browned in the oil",
+      "After the crab cakes have chilled through , heat up about 1 / 4-inch of vegetable oil in large skillet over medium / low heat",
+      "Fill a shallow bowl with the panko breadcrumbs",
+      "Carefully turn the crab cakes out onto a plate",
+      "Gently roll each crab cake around in the panko breadcrumbs",
+      "Each crab cake should be wearing a light coating of panko",
+      "Test the oil by dropping a pinch of panko into the pan",
+      "It should sizzle",
+      "Saut the crab cakes in the hot oil for 1 1 / 2 to 3 minutes on each side or until the cakes are golden brown",
+      "Drain crab cakes on paper towels or a rack very briefly , then serve them up hot with the remoulade sauce alongside in a little dish",
+      "Makes 6 small crab cakes",
+      "Serve with remoulade sauce"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Chic To Be Greek  Salad   From Salad Creations",
+    "ingredients": [
+      "Romaine lettuce",
+      "Feta cheese",
+      "Pepperoncini peppers",
+      "Red onion",
+      "Black olives"
+    ],
+    "cookTime": 10,
+    "calories": 403,
+    "protein": 22,
+    "difficulty": "easy",
+    "steps": [
+      "Put your lettuce in serving dish and layer the rest of the ingredients on top",
+      "Also at salad creations , what were known for is our chopped salads",
+      "Usually we would chop this up altogether , and then serve it"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Cloud Nine",
+    "ingredients": [
+      "Cream cheese",
+      "Whipped cream",
+      "Crushed pineapple",
+      "Pineapple juice"
+    ],
+    "cookTime": 4,
+    "calories": 148,
+    "protein": 2,
+    "difficulty": "easy",
+    "steps": [
+      "Mix cream cheese and pineapple juice until well blended",
+      "Add whipped cream and crushed pineapple mix well",
+      "Chill till ready to serve"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Comfort Able Kamikaze",
+    "ingredients": [
+      "Southern comfort",
+      "Triple sec",
+      "Lime juice",
+      "Ice cubes"
+    ],
+    "cookTime": 2,
+    "calories": 110,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Shake for 15 seconds",
+      "Serve straight up or on the rocks , whichever you prefer"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Company  Green Beans",
+    "ingredients": [
+      "Bacon",
+      "Onion",
+      "Green beans",
+      "Whole tomatoes"
+    ],
+    "cookTime": 20,
+    "calories": 135,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Cut bacon slices cross-ways into 1 / 2 inch pieces",
+      "Fry bacon in a sauce pan until just crisp",
+      "Remove bacon from pan and let drain on paper towels",
+      "Pour off all but a couple teaspoons of bacon fat",
+      "Add onion to pan and cook just until translucent and soft",
+      "If using whole tomatoes , cut them up using a sharp knife while they're still in the can",
+      "Add tomatoes to the pan along with the drained can of green beans",
+      "Add bacon and heat until all ingredients are thoroughly heated",
+      "Serve in small bowls because it's kind of \"soupy\""
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Crabby  Cracker Spread",
+    "ingredients": [
+      "Cream cheese",
+      "Onions",
+      "Lemon juice",
+      "Worcestershire sauce",
+      "Mayonnaise",
+      "Garlic salt",
+      "Black pepper",
+      "Imitation crabmeat",
+      "Seafood cocktail sauce"
+    ],
+    "cookTime": 20,
+    "calories": 131,
+    "protein": 4,
+    "difficulty": "medium",
+    "steps": [
+      "Mince crabmeat in food proccessor",
+      "Combine all other ingredients and mix well with electric mixer",
+      "Add crab and mix well to combine",
+      "May be formed into ball , if desired",
+      "To serve , pour cocktail sauce over top to cover , and serve with wheat thins or triscuit crackers"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Crazy Easy   Lo Mein",
+    "ingredients": [
+      "Spaghetti noodles",
+      "Cooked ground beef",
+      "Beef gravy",
+      "Stir fry vegetables",
+      "Soy sauce",
+      "Garlic powder",
+      "Ground ginger",
+      "Pepper"
+    ],
+    "cookTime": 20,
+    "calories": 811,
+    "protein": 54,
+    "difficulty": "medium",
+    "steps": [
+      "Combine the cooked hamburger , both jars of beef gravy , soy sauce , thawed veggies and all the spices in a large , deep skillet",
+      "Cover and simmer mixture for 8-10 minutes",
+      "While the sauce is simmering , cook the spaghetti noodles",
+      "Add the cooked drained noodles to the meat / veggie sauce and stir well"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Cream Of Whatever  Soup",
+    "ingredients": [
+      "Butter",
+      "Flour",
+      "Garlic clove",
+      "Milk",
+      "Onion powder",
+      "Salt",
+      "Pepper",
+      "Dried thyme",
+      "Dried parsley"
+    ],
+    "cookTime": 10,
+    "calories": 107,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "In a small saucepan over medium heat , melt butter",
+      "Add minced garlic and saute 1 minute",
+      "Add flour and stir quickly , forming a paste and mixing well",
+      "Slowly add milk a little at a time , while stirring constantly to avoid scalding",
+      "Once milk is added and mixed well , reduce heat to medium-low and add herbs",
+      "Add salt / pepper to your liking",
+      "Turn off the heat and let the soup simmer for a couple of minutes , stirring occasionally",
+      "Use as a soup base or pour into your casserole"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Creamed  Spinach",
+    "ingredients": [
+      "Frozen spinach",
+      "Onion",
+      "Yogurt",
+      "Parmesan cheese"
+    ],
+    "cookTime": 12,
+    "calories": 92,
+    "protein": 8,
+    "difficulty": "hard",
+    "steps": [
+      "I keep drained yogurt available in my fridge all the time",
+      "I use a coffee filter and a wire strainer",
+      "I usually drain it over night , but even a half hour makes a big difference",
+      "Once you drain the yogurt , it becomes very thick and much less tart",
+      "Cook spinach according to package directions",
+      "While it cooks , saute chopped onions until slightly browned",
+      "Drain spinach well and combine with all other ingredients while still hot"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Death By Chocolate  Copycat Dark Chocolate Sauce",
+    "ingredients": [
+      "Cocoa",
+      "Sugar",
+      "Water"
+    ],
+    "cookTime": 5,
+    "calories": 81,
+    "protein": 1,
+    "difficulty": "medium",
+    "steps": [
+      "Mix cocoa and sugar thoroughly",
+      "Stir in water in small amounts , until desired consistency is reached",
+      "Keep in tightly sealed container in refrigerator",
+      "Best served on second day , to make sure sugar completely dissolves"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Dirty  Broccoli",
+    "ingredients": [
+      "Broccoli",
+      "Water",
+      "Olive oil",
+      "Garlic cloves",
+      "Plain breadcrumbs",
+      "Dried oregano",
+      "Salt",
+      "Fresh ground black pepper"
+    ],
+    "cookTime": 13,
+    "calories": 137,
+    "protein": 5,
+    "difficulty": "hard",
+    "steps": [
+      "Microwave broccoli spears and water , covered , for 5 minutes on high",
+      "Drain and set aside",
+      "While the broccoli is cooking , heat the oil in a large skillet over medium-high heat",
+      "Add the garlic and cook for 1 minute",
+      "Add the bread crumbs , oregano , salt , and pepper",
+      "Cook , stirring until the crumbs are toasted and golden brown -- about 2 minutes",
+      "Add the broccoli and toss to coat with bread crumbs"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Dorito  Popcorn Seasoning",
+    "ingredients": [
+      "Nutritional yeast",
+      "Garlic powder",
+      "Onion powder",
+      "Cumin",
+      "Paprika",
+      "Chili powder",
+      "Cayenne pepper",
+      "Sea salt"
+    ],
+    "cookTime": 5,
+    "calories": 786,
+    "protein": 84,
+    "difficulty": "medium",
+    "steps": [
+      "Combine all seasonings and blend in a coffee grinder , or blender , to make a fine powder",
+      "Store in a seasoning jar",
+      "Sprinkle seasoning over freshly popped popcorn and toss to coat"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Emerald Ecstasy  Green Smoothie",
+    "ingredients": [
+      "Green grapes",
+      "Banana",
+      "Fresh pineapple",
+      "Apple",
+      "Fresh spinach",
+      "Ice"
+    ],
+    "cookTime": 6,
+    "calories": 168,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Turn the machine quickly from variable speed 1 to 10 then flip the switch to high",
+      "Push the ingredients down into the blades until the entire mixture is blending",
+      "I find it easier to push the food continuously down one corner of the container and eventually it begins to blend",
+      "The apple may require a bit of \"pounding\" before it begins to mix",
+      "When the mixture is first blending it should be so thick and slushy that it is thick like a thick \"slushy\"",
+      "If it is too liquid at the beginning , add more ice so it is thick and \"slushy\"",
+      "This allows you to blend for 1-2 minutes without warming the drink up from the friction of the blades",
+      "It also allows you to break the foods down to the most bioavailable level",
+      "This is a \"beginner\" green smoothie that 98% of the population will love !"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Famous  Garlic Noodles",
+    "ingredients": [
+      "Yakisoba noodles",
+      "Cooking oil",
+      "Fresh garlic",
+      "Garlic powder",
+      "Chicken broth",
+      "Soy sauce",
+      "Fish sauce",
+      "Oyster sauce"
+    ],
+    "cookTime": 20,
+    "calories": 41,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Loosen the yakisoba noodles in a large pan",
+      "In a large saut pan , add the cooking oil , cook in medium heat",
+      "Add the fresh garlic , about 10 seconds , add the granulated garlic",
+      "Add the noodles right away , then , add the chicken broth",
+      "Stir the noodles around to blend with the garlic mix",
+      "Add the soy sauce , and then the fish sauce",
+      "Stir constantly but be careful not to break the noodles apart",
+      "Cook until noodles are smooth and coated",
+      "Add the oyster sauce and stir about 5 more minutes",
+      "Serve plain or with any of the toppings mentioned above"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Fooled Me  Flourless Peanut Butter Cookies",
+    "ingredients": [
+      "Natural-style peanut butter",
+      "Crunchy peanut butter",
+      "Egg",
+      "Splenda sugar substitute",
+      "Dark brown sugar",
+      "Gluten free baking powder",
+      "Vanilla"
+    ],
+    "cookTime": 15,
+    "calories": 115,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Beat egg",
+      "Add splenda , dark brown sugar , baking powder and vanilla",
+      "Beat with a fork until free of lumps",
+      "Add both peanut butters to the egg / sugar mixture",
+      "Beat with a fork until well combined -- about 40 strokes",
+      "Refrigerate dough for 30 minutes",
+      "Preheat oven to 350 degrees f",
+      "Cover 11x17 baking sheet with parchment paper",
+      "Divide chilled dough into fourths",
+      "From each fourth , shape 4 balls of dough",
+      "Space balls of dough evenly on prepared baking sheet",
+      "Flatten dough slightly with tines of fork",
+      "Make a second set of tine marks at a 90-degree angle to the first set",
+      "Bake cookies for 9-10 minutes",
+      "Let cool for two minutes on baking sheet , then transfer cookies to wire rack to complete cooling",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Fraicheur  Vinaigrette",
+    "ingredients": [
+      "White wine vinegar",
+      "Granulated sugar",
+      "Salt",
+      "Dry mustard",
+      "Paprika",
+      "Instant minced garlic",
+      "Olive oil"
+    ],
+    "cookTime": 5,
+    "calories": 168,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "In an airtight container , combine vinegar , sugar , salt , mustard , paprika , and garlic",
+      "Close container and give it a good shake",
+      "Add oil , close container , and shake until evenly blended"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Fried  Bacon In The Oven",
+    "ingredients": [
+      "Bacon",
+      "Pepper"
+    ],
+    "cookTime": 20,
+    "calories": 262,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "To avoid grease splatters on the top of your stove or having to wash an extra splatter screen , simply put bacon in a cast iron skillet with the lid on in a preheated 450 oven for about 15 minutes",
+      "Remove the skillet , drain the bacon , and the oven stays clean and so does the top of your stove",
+      "Enjoy now and / or you can crumble up the leftover bacon to use in omelets or other recipes for later",
+      "Simply put them in a freezer bag and use later",
+      "It's especially efficient when you've already heated the oven for another dish"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "From The Field  Balsamic Vinaigrette",
+    "ingredients": [
+      "Red wine vinegar",
+      "Balsamic vinegar",
+      "Dry mustard",
+      "Canola oil",
+      "Fresh sage",
+      "Fresh basil",
+      "Fresh dill",
+      "Salt",
+      "Pepper"
+    ],
+    "cookTime": 5,
+    "calories": 193,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Mince herbs",
+      "Measurements are approximate",
+      "Use appropriate amount to match your taste",
+      "Combine vinegars and mustard",
+      "Gently whisk in oil",
+      "Add rest of ingredients and mix well"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Gilded  Zucchini",
+    "ingredients": [
+      "Zucchini",
+      "Salt",
+      "Eggs",
+      "Milk",
+      "Breadcrumbs",
+      "Oil"
+    ],
+    "cookTime": 20,
+    "calories": 82,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "Wash and peel the zucchini and cut into long strips",
+      "Season with salt and pepper",
+      "Mix the eggs , milk and salt , dip the zucchini strips into the mixture and then roll in the breadcrumbs",
+      "Saute until crisp on the outside but not overcooked , about 2-3 minutes",
+      "Serve"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Granny Squash   Creamed Squash",
+    "ingredients": [
+      "Yellow squash",
+      "Yellow onion",
+      "Evaporated milk",
+      "Salt",
+      "Pepper",
+      "Water"
+    ],
+    "cookTime": 20,
+    "calories": 106,
+    "protein": 6,
+    "difficulty": "hard",
+    "steps": [
+      "Combine water , squash and onions in a saucepan",
+      "Bring to a boil",
+      "Cook for about 10 or 15 mins until squash is tender",
+      "Drain water and return mixture to the pan",
+      "Smash squash mixture with a fork until thoroughly broken down",
+      "Stir in evaporated milk",
+      "Season with salt and pepper"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Green Eggs  Kid Friendly   High In Iron",
+    "ingredients": [
+      "Cream",
+      "Water",
+      "Parmesan cheese",
+      "Sea salt",
+      "Pepper",
+      "Mustard greens",
+      "Eggs",
+      "Butter",
+      "Olive oil flavored cooking spray"
+    ],
+    "cookTime": 8,
+    "calories": 139,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "Combine cream , water , parmesan , salt and pepper in blender",
+      "Blend until smooth",
+      "About 15-30 seconds",
+      "Add eggs and blend until mixed",
+      "Gently heat small frying pan",
+      "Add butter and olive oil spray to coat",
+      "Add egg mixture and cook gently over low-med heat , as you would cook scrambled eggs"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Grilled   Salmon",
+    "ingredients": [
+      "Salmon fillets",
+      "Blackening seasoning"
+    ],
+    "cookTime": 15,
+    "calories": 178,
+    "protein": 28,
+    "difficulty": "hard",
+    "steps": [
+      "Just spray cast iron skillet with cooking spray and turn burner on high",
+      "Rub seasonings on both sides salmon",
+      "When pan is smoking hot , add salmon",
+      "Cook for about 2-3 minutes",
+      "Turn and cook for another 2-3 minutes",
+      "Turn again if needed to prevent meat from burning",
+      "Turn electric burner off",
+      "Immediately cover skillet and leave it on the hot burner another 4-5 minutes or until meat is done",
+      "Do not overcook , as the meat will dry out",
+      "It will look as if it were cooked on the grill , nice and brown on the outside and juicy on the inside",
+      "I also use this same method to cook boneless , skinless chicken breasts and boneless pork loin chops and vary the seasonings to complement the meat",
+      "With just a tiny bit of practice , you'll know exactly how long to let the skillet sit on the burner after you have turned it off-- so you get the meat done and it's still very juicy"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Guilt Free Ice Cream Wannabe",
+    "ingredients": [
+      "Fat free greek yogurt",
+      "Unsweetened cocoa powder",
+      "Artificial sweetener",
+      "Frozen unsweetened mixed berries",
+      "Fiber one cereal"
+    ],
+    "cookTime": 5,
+    "calories": 209,
+    "protein": 18,
+    "difficulty": "medium",
+    "steps": [
+      "Combine greek yogurt , cocoa powder , and splenda in bowl and stir until well mixed",
+      "Stir in mixed berries until well distributed",
+      "Top with sprinkles of fiber one cereal",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Healthified  Decadent Hot Chocolate",
+    "ingredients": [
+      "Sugar",
+      "Unsweetened baking cocoa",
+      "Nonfat milk",
+      "Fat-free half-and-half",
+      "Semi-sweet chocolate chips",
+      "Vanilla"
+    ],
+    "cookTime": 15,
+    "calories": 152,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "Mix together the sugar and cocoa in a 2-quart saucepan",
+      "Stir in the skim milk and half and half until well blended and cook until heated",
+      "Do not bring to a boil",
+      "Remove pan from heat",
+      "Whisk in chocolate chips and stir until chips are melted and the milk mixture is smooth",
+      "Stir in vanilla and pour into 4 mugs to serve"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Healthy  5 Minute Mug Cake",
+    "ingredients": [
+      "White flour",
+      "Whole wheat flour",
+      "Dark unsweetened cocoa",
+      "Raw sugar",
+      "Egg",
+      "Canola oil",
+      "Applesauce",
+      "Dark chocolate chips",
+      "Vanilla extract"
+    ],
+    "cookTime": 5,
+    "calories": 488,
+    "protein": 11,
+    "difficulty": "medium",
+    "steps": [
+      "Mix dry ingredients well in a large mug",
+      "Add all wet ingredients to mug and mix until batter is smooth",
+      "Place in microwave for approximately 3 minutes on high",
+      "Carefully remove mug and allow 2 minutes for the cake to cool , then flip over onto a plate and enjoy !"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Hibachi  Style Salad Dressing",
+    "ingredients": [
+      "Rice vinegar",
+      "Lemon juice",
+      "Soy sauce",
+      "Honey",
+      "Ginger juice",
+      "Sesame oil",
+      "Mayonnaise"
+    ],
+    "cookTime": 15,
+    "calories": 97,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "To make ginger juice , peel some fresh ginger and cut into small pieces",
+      "Put pieces in a garlic press and squeeze",
+      "Combine all ingredients except mayonnaise in a small bowl and whisk until honey is dissolved",
+      "Add mayonnaise and whisk again until smooth",
+      "Good on green salads , cucumbers , and just about anything else !"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Human  Puppy Chow",
+    "ingredients": [
+      "Butter",
+      "Peanut butter",
+      "Confectioners' sugar",
+      "Chocolate chips",
+      "Rice chex"
+    ],
+    "cookTime": 15,
+    "calories": 629,
+    "protein": 7,
+    "difficulty": "medium",
+    "steps": [
+      "Melt together the butter , chocolate chips and peanut butter",
+      "After it is melted , pour over and entire box of rice chex",
+      "Stir to coat",
+      "Place powdered sugar in a paper bag",
+      "Pour coated cereal in and shake",
+      "Lay cereal on wax paper until cool"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "I Don T Have Any Tahini  Hummus",
+    "ingredients": [
+      "Chickpeas",
+      "Garlic cloves",
+      "Lemon juice",
+      "Ground cumin",
+      "Salt"
+    ],
+    "cookTime": 15,
+    "calories": 86,
+    "protein": 4,
+    "difficulty": "medium",
+    "steps": [
+      "Drain chickpeas and blend",
+      "Add remaining ingredients and blend until smooth",
+      "To make it a tahini recipe , add 1 / 4 cup tahini",
+      "Or you could add 1 cup cooked carrots"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "If You Like Pina Coladas  Protein Smoothie",
+    "ingredients": [
+      "Cold water",
+      "Vanilla protein powder",
+      "Oat flour",
+      "Unsweetened pineapple chunks",
+      "Coconut extract",
+      "Ice cubes"
+    ],
+    "cookTime": 5,
+    "calories": 65,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Pour water into blender",
+      "Add protein powder and oat flour",
+      "Blend on medium for 15 seconds",
+      "Add pineapple and coconut extract",
+      "Blend for 30 seconds",
+      "Add ice and blend on high for 30 seconds",
+      "Pour into tall glass and serve"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "In The Pink  Lemonade",
+    "ingredients": [
+      "Lemon juice",
+      "Sugar",
+      "Cold water",
+      "Red food coloring",
+      "Fruit"
+    ],
+    "cookTime": 5,
+    "calories": 138,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Mix all ingredients together well in a 2 quart pitcher",
+      "Chill until ready to serve"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "It S That Easy  Graham Cracker Delight",
+    "ingredients": [
+      "Graham crackers",
+      "Cream cheese",
+      "Powdered sugar",
+      "Fruit"
+    ],
+    "cookTime": 2,
+    "calories": 294,
+    "protein": 5,
+    "difficulty": "easy",
+    "steps": [
+      "First , mix cream-cheese and powder-sugar in bowl",
+      "Then , evenly distribute cream-cheese onto graham-crackers",
+      "To top it off , try slices of strawberries , pears , etc"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Leave Me For You  Chili",
+    "ingredients": [
+      "V8 vegetable juice",
+      "Chili seasoning mix",
+      "Chili starter",
+      "Ground beef",
+      "Kidney beans"
+    ],
+    "cookTime": 10,
+    "calories": 366,
+    "protein": 29,
+    "difficulty": "hard",
+    "steps": [
+      "Make ahead meal:",
+      "Break up hamburger",
+      "Mix all ingredients in crock pot",
+      "Cook on low 7-8 hours",
+      "Stir before serving",
+      "Faster meal:",
+      "Brown hamburger",
+      "Mix all ingredients in large pot and bring to boil"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Lighter  Chocolate Peanut Butter Pie",
+    "ingredients": [
+      "Skim milk",
+      "Low-fat peanut butter",
+      "Cool whip",
+      "Instant chocolate pudding mix",
+      "Shortbread pie crust",
+      "Peanuts",
+      "Chocolate"
+    ],
+    "cookTime": 15,
+    "calories": 260,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Mix the 4 tablespoons of milk with the peanut butter",
+      "Stir in container of cool whip",
+      "In a separate bowl , whisk 11 oz",
+      "Of milk with the pudding for 2 min",
+      "Fold the cool whip mixture into the pudding",
+      "Spoon mixture into shortbread crust",
+      "Garnish with chopped chocolate and peanuts",
+      "Chill for 4 hours"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Lighter  Pistachio Pudding Salad",
+    "ingredients": [
+      "Pineapple chunks",
+      "Light whipped topping",
+      "Fat-free cottage cheese",
+      "Fat-free sugar-free instant pistachio pudding mix"
+    ],
+    "cookTime": 10,
+    "calories": 172,
+    "protein": 14,
+    "difficulty": "medium",
+    "steps": [
+      "Soften whipped topping",
+      "Drain pineapple",
+      "Mix all ingredients together",
+      "Chill"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Little Kick  Jalapeno Burgers",
+    "ingredients": [
+      "Jalapeno peppers",
+      "Fresh cilantro",
+      "Light beer",
+      "Hot pepper sauce",
+      "Garlic cloves",
+      "Pepper",
+      "Salt",
+      "Cayenne pepper",
+      "Lean ground turkey",
+      "Monterey jack pepper cheese",
+      "Dinner rolls",
+      "Salsa",
+      "Fat free sour cream",
+      "Lettuce"
+    ],
+    "cookTime": 16,
+    "calories": 266,
+    "protein": 22,
+    "difficulty": "hard",
+    "steps": [
+      "In a large bowl , combine the first eight ingredients",
+      "Crumble turkey over mixture and mix well",
+      "Shape into 6 patties",
+      "Coat grill rack with cooking spray before starting the grill",
+      "Grill burgers , covered , over medium heat for 2-3 minutes on each side or until no longer pink",
+      "Top with cheese",
+      "Cover and grill 1-2 minutes longer or until cheese is melted",
+      "Serve on rolls with salsa sour cream and lettuce"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Lofthouse  Sugar Cookies",
+    "ingredients": [
+      "French vanilla cake mix",
+      "Vegetable oil",
+      "Eggs"
+    ],
+    "cookTime": 18,
+    "calories": 3104,
+    "protein": 36,
+    "difficulty": "hard",
+    "steps": [
+      "Preheat oven to 375f",
+      "Blend , cake mix , eggs , and oil until moistened",
+      "Roll into 1\" balls",
+      "Place on ungreased cookie sheet",
+      "Flatten with a glass or cookie stamp",
+      "Bake at 375f for 6-8 minutes",
+      "Allow to cool 1 minute before removing to cooling rack",
+      "While the cookies are still a little warm , spread on some buttercream frosting",
+      "Allow the frosting to set up before storing"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Magic  Coleslaw",
+    "ingredients": [
+      "Fat-free mayonnaise",
+      "Equal sugar substitute",
+      "Cider vinegar",
+      "Salt",
+      "Dry mustard",
+      "Celery seed",
+      "Coleslaw mix",
+      "Onion",
+      "Green bell pepper",
+      "Red bell pepper"
+    ],
+    "cookTime": 20,
+    "calories": 73,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "In a large bowl , mix the dressing ingredients together with a wire whisk",
+      "Whisk in 1 / 4 cup water",
+      "Combine the coleslaw ingredients in a large bowl",
+      "Pour dressing over the coleslaw mix and toss well to combine",
+      "Refrigerate until chilled"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Mcgriddle  Pancakes Breakfast Sandwich",
+    "ingredients": [
+      "Bisquick",
+      "Egg",
+      "Syrup",
+      "Milk",
+      "American cheese",
+      "Bacon"
+    ],
+    "cookTime": 15,
+    "calories": 480,
+    "protein": 14,
+    "difficulty": "medium",
+    "steps": [
+      "Mix first four ingredients",
+      "Pour 1 / 4 cup batter for each pancake onto a 300 degree griddle",
+      "Flip when pancakes start to bubble",
+      "Place warm cheese on meat , sandwich between pancakes"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Moose Milk",
+    "ingredients": [
+      "Eggnog",
+      "Dark rum",
+      "Half-and-half cream",
+      "Nutmeg",
+      "Ice"
+    ],
+    "cookTime": 10,
+    "calories": 350,
+    "protein": 8,
+    "difficulty": "easy",
+    "steps": [
+      "Mix ingredients in a punchbowl , adding nutmeg last , and to taste",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Muffalata  Sandwich By Any Name Tastes Great",
+    "ingredients": [
+      "Whole wheat hoagie rolls",
+      "Pesto sauce",
+      "Olive salad",
+      "Artichoke hearts",
+      "Turkey",
+      "Ham",
+      "Salami",
+      "Provolone cheese"
+    ],
+    "cookTime": 20,
+    "calories": 679,
+    "protein": 39,
+    "difficulty": "hard",
+    "steps": [
+      "Open up the sandwich rolls and scoop out most of the center",
+      "In a small mixing bowl combine 2 tablespoons of pesto with the tepanade , artichoke slices and stir to mix well",
+      "On the rolls: spread 1 / 2 tablespoon of remaining pesto on each side of the rolls",
+      "Divide the olive artichoke pesto mixture between the two rolls and spread on each roll",
+      "Take slices of the turkey , ham and salami and cheese and place on top of the olive mixture , dividing them between the two sandwiches",
+      "At this point you can make these hot or cold sandwiches",
+      "For hot::",
+      "Heat heavy cast iron skillet , place the two rolls and top with another pan or i use my tea kettle with water in it to squish them down",
+      "Heat through , turning over halfway",
+      "For cold:",
+      "Squish the two sides of the sandwich together and wrap tightly with suran wrap and place in fridge",
+      "This gives the flavors time to marry , serve and enjoy !"
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Need A Pick Me Up  Banana Peanut Butter Smoothie  No",
+    "ingredients": [
+      "Banana",
+      "Milk",
+      "Creamy peanut butter",
+      "Unsweetened cocoa powder"
+    ],
+    "cookTime": 10,
+    "calories": 283,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "Cut banana into chunks",
+      "Combine 1 / 3 banana chunks and milk and use hand blender or regular blender to mix well",
+      "I use a hand blender and blend in a hard plastic cup",
+      "Slowly add rest of banana and blend",
+      "Add peanut butter",
+      "Blend well",
+      "Add cocoa powder and push powder underneath liquid so as to not splatter when turning on blender",
+      "Blend well",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "No Sausage     Gravy For Biscuits And Gravy",
+    "ingredients": [
+      "Butter",
+      "Flour",
+      "Milk",
+      "Poultry seasoning",
+      "Salt",
+      "Pepper"
+    ],
+    "cookTime": 7,
+    "calories": 145,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Melt butter in a saucepan over medium heat",
+      "Sprinkle flour over melted butter and whisk together to form a paste",
+      "Allow this to cook for a minute",
+      "Pour in milk , all at once , whisking constantly",
+      "Add seasonings , whisking constantly",
+      "Allow the gravy to come to a boil , still whisking",
+      "Taste and adjust seasoning , if necessary"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "No Time Flat  Nuked Nachos With Salsa And Cheese",
+    "ingredients": [
+      "Refried beans",
+      "Sour cream",
+      "Salsa",
+      "Cheddar cheese",
+      "Corn tortilla chips"
+    ],
+    "cookTime": 10,
+    "calories": 271,
+    "protein": 12,
+    "difficulty": "hard",
+    "steps": [
+      "With a large spoon , spread out the beans in a ring on a large microwave-safe dinner plate , leaving about 4 inches in the center of the plate ,",
+      "Smear the sour cream and then the salsa over the beans",
+      "Sprinkle about half of the cheese over everything",
+      "Microwave on high for 2 minutes",
+      "Remove the plate from the microwave , pile the chips in the center of the plate",
+      "Sprinkle the remaining cheese over the chips",
+      "Return the plate to the oven and microwave on high for another minute or until the cheese has melted",
+      "Remove carefully as the plate will be hot",
+      "Serve hot"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Oh Boy  Waffles",
+    "ingredients": [
+      "Eggs",
+      "Milk",
+      "Oil",
+      "Flour",
+      "Baking powder",
+      "Salt",
+      "Sugar"
+    ],
+    "cookTime": 15,
+    "calories": 183,
+    "protein": 4,
+    "difficulty": "medium",
+    "steps": [
+      "Mix wet ingredients together",
+      "Sift dry ingredients into separate bowl",
+      "Add wet ingredients",
+      "Mix till moistened",
+      "Bake in preheated waffle maker 7-8 minutes until done and golden brown",
+      "Cooking time is for all the waffles"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Old Bay  Grilled Steak Fries",
+    "ingredients": [
+      "Bay leaf powder",
+      "Celery salt",
+      "Dry mustard",
+      "Paprika",
+      "Ground black pepper",
+      "White pepper",
+      "Ground nutmeg",
+      "Ground cloves",
+      "Ground allspice",
+      "Ground ginger",
+      "Crushed red pepper flakes",
+      "Ground cardamom",
+      "Potatoes",
+      "Salt",
+      "Vegetable oil"
+    ],
+    "cookTime": 20,
+    "calories": 561,
+    "protein": 12,
+    "difficulty": "hard",
+    "steps": [
+      "Combine spices in a bowl",
+      "Place potatoes in a pot of cold water , add salt , and cook until potatoes are tender but firm , about 10 minutes",
+      "Drain , let cool , and cut each potato lengthwise into 8 slices",
+      "Heat grill to high",
+      "Brush potatoes w / oil , season w / the spice rub , and grill until golden brown and cooked through , about 3 to 5 minutes"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Olive Garden  Salad And Dressing Recipe",
+    "ingredients": [
+      "Mayonnaise",
+      "White vinegar",
+      "Vegetable oil",
+      "Corn syrup",
+      "Parmesan cheese",
+      "Romano cheese",
+      "Fresh garlic clove",
+      "Italian seasoning",
+      "Parsley flakes",
+      "Lemon juice",
+      "Sugar",
+      "Dole italian salad variety",
+      "Purple onions",
+      "Jumbo black olives",
+      "Banana peppers",
+      "Crouton",
+      "Roma tomatoes",
+      "Pepper"
+    ],
+    "cookTime": 15,
+    "calories": 195,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "For the dressing: mix the first eleven ingredients in a blender until well mixed",
+      "If this is a little to tart for your own personal taste , add 1 tablespoon of sugar",
+      "For the salad: pour 1 / 2 package of the salad blend into a large salad bowl",
+      "Top with 1 / 2 of the onion , olives , banana peppers , croutons and tomatoes",
+      "Add dressing to taste and toss well",
+      "Add the other 1 / 2 bag of salad and more dressing to taste",
+      "Toss well",
+      "Top the salad with the remaining onion , olives , banana peppers , croutons and tomatoes",
+      "Pass the grated parmesan cheese and black pepper mill at the table"
+    ]
+  },
+  {
+    "id": 123,
+    "name": "One Of  Cookies  No Bake  4 Ingredients",
+    "ingredients": [
+      "Sugar",
+      "Light corn syrup",
+      "Creamy peanut butter",
+      "Corn flakes"
+    ],
+    "cookTime": 13,
+    "calories": 187,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "In a large saucepan , mix sugar and corn syrup and bring to a boil , stirring frequently",
+      "Boil for 1 minute",
+      "Remove from heat and blend in peanut butter",
+      "Add cornflakes , stirring gently to coat",
+      "Working quickly , drop mixture in 1 / 4 cup lumps , 2\" apart onto countertop lined with waxed paper",
+      "Using fingers , shape each cookie into rounded mound as necessary",
+      "Let stand at room temp for 20-30 minutes to set",
+      "Store in airtight container at room temperature"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "P Anana Confetti Circles",
+    "ingredients": [
+      "Banana",
+      "Peanut butter",
+      "Candy sprinkles"
+    ],
+    "cookTime": 5,
+    "calories": 147,
+    "protein": 4,
+    "difficulty": "easy",
+    "steps": [
+      "Arrange sliced banana on a plate",
+      "Put a small dollop of peanut butter on each slice",
+      "Then sprinkle with colored candies"
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Pancakes  In A Bowl",
+    "ingredients": [
+      "Bisquick",
+      "Water",
+      "Powdered sugar",
+      "Syrup",
+      "Fruit"
+    ],
+    "cookTime": 3,
+    "calories": 274,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "Combine the bisquick heart smart and water or milk",
+      "Stir well",
+      "Microwave on high for 2 minutes",
+      "Top with powdered sugar , syrup , fruit , or whatever you would like !"
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Payday  Candy Bar Squares",
+    "ingredients": [
+      "Salted peanuts",
+      "Butter",
+      "Peanut butter chips",
+      "Sweetened condensed milk",
+      "Miniature marshmallows"
+    ],
+    "cookTime": 10,
+    "calories": 311,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "Put half the peanuts in lightly greased 11x7 pan",
+      "Melt butter and chips on low",
+      "Remove from heat",
+      "Add milk and marshmallows",
+      "Stir well",
+      "Pour over peanuts",
+      "Sprinkle with remaining peanuts",
+      "Chill and cut into bars"
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Peas  Fit For A King Or Queen",
+    "ingredients": [
+      "Extra virgin olive oil",
+      "Bacon",
+      "Shallots",
+      "Red pepper flakes",
+      "Frozen peas"
+    ],
+    "cookTime": 20,
+    "calories": 418,
+    "protein": 12,
+    "difficulty": "hard",
+    "steps": [
+      "Heat oil in large skillet over medium heat",
+      "Cut bacon or pancetta into small dice and cook in the oil until golden brown and fat has rendered",
+      "Remove the bacon to paper towels to drain",
+      "Cut the peeled shallots in half and slice very thin",
+      "Cook them in the rendered drippings until soft , along with the pepper flakes",
+      "Add the thawed peas and heat through",
+      "Distributing the shallots well",
+      "Add in the bacon or pancetta and toss",
+      "Serve",
+      "The original recipe called for pancetta which now runs between $20",
+      "00 and 22",
+      "00 per lb",
+      "So i used a good quality thick sliced smoked bacon with great results ! :-)"
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Philly  Guacamole Dip",
+    "ingredients": [
+      "Avocados",
+      "Lemon juice",
+      "Philadelphia cream cheese",
+      "Onion",
+      "Salt",
+      "Garlic salt",
+      "Hot pepper sauce",
+      "Chopped tomato"
+    ],
+    "cookTime": 15,
+    "calories": 372,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "Mash avocados with juice",
+      "Combine avocado mixture , cream cheese , onions , and seasonings , mixing until well blended",
+      "Stir in tomatoes",
+      "Serve with tortilla chips"
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Philly  Roll Sushi",
+    "ingredients": [
+      "Cream cheese",
+      "Smoked salmon",
+      "English cucumber",
+      "Nori",
+      "Sushi rice",
+      "Toasted sesame seeds"
+    ],
+    "cookTime": 10,
+    "calories": 407,
+    "protein": 12,
+    "difficulty": "hard",
+    "steps": [
+      "Place one full sheet of sushi nori on a bamboo rolling mat , shiny side down",
+      "Cover the sheet lightly with the prepared sushi rice- leaving the remaining inch and a half of nori bare lengthwise away from you",
+      "Place your toppings lengthwise onto the center of your rice",
+      "Fold your mat over , centering your ingredients with respect to your rice sheet to the far edge of your rice",
+      "With even pressure , tighten your roll by pressing and pulling on your mat",
+      "Finish your rolling by rolling your tightened roll over the last flap of nori",
+      "Repeat the tightening process if necessary",
+      "Repeat the process for the 2nd roll",
+      "Cut each roll into eight pieces",
+      "Best served while very fresh !"
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Pita The Great    Tuna Salad",
+    "ingredients": [
+      "Tuna in water",
+      "Sweet red pepper",
+      "Green onions",
+      "Cilantro",
+      "Honey",
+      "Lime juice",
+      "Low-fat mayonnaise",
+      "Black pepper",
+      "Hot pepper sauce",
+      "Cumin",
+      "Salt",
+      "Pita bread",
+      "English cucumber",
+      "Alfalfa sprouts"
+    ],
+    "cookTime": 10,
+    "calories": 240,
+    "protein": 26,
+    "difficulty": "hard",
+    "steps": [
+      "Combine tuna , red pepper , green onion and cilantro in a bowl",
+      "Whisk together the honey , lime juice , mayo , black pepper , hot pepper sauce , cumin and salt",
+      "Pour over the tuna mixture and toss to combine",
+      "Open pita pockets and line each with 1 / 4 of the cucumber slices and 1 / 4 of the alfalfa sprouts",
+      "Divide the tuna mixture evenly among the pita pockets"
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Puerto Rican Style  Fried Rice",
+    "ingredients": [
+      "Cooked white rice",
+      "Oil",
+      "Cooked pork",
+      "Green olives",
+      "Pigeon peas",
+      "Roasted sweet red peppers",
+      "Garlic powder",
+      "Adobo seasoning",
+      "Ground black pepper",
+      "Fresh cilantro"
+    ],
+    "cookTime": 15,
+    "calories": 659,
+    "protein": 27,
+    "difficulty": "hard",
+    "steps": [
+      "Have all of the ingredients ready to add to your pan before you start",
+      "For the annato oil , in a small saucepan , heat 1 / 4 cup of oil or lard over low heat until it is hot",
+      "Add 3 tbls",
+      "Of annato seeds , and stir , for one minute",
+      "Let this cool , stirring occasionally , while you gather your ingredients",
+      "Strain when it is cool",
+      "Preheat a non-stick pan or wok , over high heat for one minute",
+      "Add to your pan the annato oil , heat for 30 seconds",
+      "Add the pork , and toss this in the hot oil for 30-45 seconds",
+      "Add the pigeon peas , the olives , and the peppers , toss for 45 seconds - 1 minute",
+      "Add the rice , garlic , adobo , and the black pepper",
+      "Toss and mix , coating all of the rice w / the oil , and breaking up any clumps of rice",
+      "Continue tossing it until it is heated through",
+      "Plate it up , and garnish with a fresh sprig of cilantro",
+      "This rice is very hearty , and if you want to make this a meal , just add some extra pork , fry up a few tostones , and get a tub of potato salad from the deli !"
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Radler Mass   German Beer Cooler",
+    "ingredients": [
+      "Beer",
+      "Carbonated lemon-lime beverage",
+      "Ice",
+      "Lemon twist"
+    ],
+    "cookTime": 5,
+    "calories": 201,
+    "protein": 1,
+    "difficulty": "medium",
+    "steps": [
+      "Take equal parts of beer and lemon lime soda over just a little ice to keep it chilled",
+      "Be careful it will foam up a lot so take it slow",
+      "As you come to taste it , you can change how much beer or soda - if you really like beer the combination can be 3 / 4 beer to 1 / 4 soda",
+      "In germany , at least where i lived in the bavarian area in the south , this is very popular with the young people",
+      "Worth a try ! :)"
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Sherried  Mushroom Sauce",
+    "ingredients": [
+      "Fresh mushrooms",
+      "Onion",
+      "Garlic clove",
+      "Butter",
+      "Parsley",
+      "Cake flour",
+      "Meat stock",
+      "Dry sherry",
+      "Sour cream",
+      "Salt",
+      "Black pepper"
+    ],
+    "cookTime": 20,
+    "calories": 159,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Saut mushrooms , onion & garlic in heated butter",
+      "Add cake flour and stir over high heat for a few minutes",
+      "Heat stock and sherry together and add gradually to mushroom mixture , while stirring",
+      "Simmer for a few minutes",
+      "Add sour cream and parsley and season with salt and pepper to taste"
+    ]
+  },
+  {
+    "id": 134,
+    "name": "So I Cheated  Refrigerator Dills",
+    "ingredients": [
+      "Dill pickle",
+      "Onion",
+      "Cayenne",
+      "Garlic cloves",
+      "Vinegar",
+      "Canning salt",
+      "Water",
+      "Dill"
+    ],
+    "cookTime": 20,
+    "calories": 432,
+    "protein": 18,
+    "difficulty": "hard",
+    "steps": [
+      "Remove pickles from jar and discard juice",
+      "Put some dill in bottom of empty pickly jar",
+      "Slice pickles into circles and add to jar along with onion and garlic cloves",
+      "Top jar with remaining dill",
+      "Boil vinegar salt and water and pour over pickles in jar",
+      "Replace jar top and let cool",
+      "Store in refrigerator"
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Somebody Stole My Cookie  Cookies",
+    "ingredients": [
+      "Corn syrup",
+      "Sugar",
+      "Peanut butter",
+      "Rice krispies",
+      "Chocolate chips",
+      "Butterscotch chips"
+    ],
+    "cookTime": 10,
+    "calories": 441,
+    "protein": 9,
+    "difficulty": "medium",
+    "steps": [
+      "Bring the corn syrup and sugar to a boil",
+      "Stir in the peanut butter and pour the mixture over the cereal , stir",
+      "Put into a greased 9 x 13 pan",
+      "Melt the chocolate chips and the butterscotch chips , pour over the cereal mixture and spread evenly",
+      "Cool , cut into squares and eat"
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Special  Oatmeal Cookies   Vegan",
+    "ingredients": [
+      "Whole wheat flour",
+      "Rolled oats",
+      "Baking powder",
+      "Salt",
+      "Cinnamon",
+      "Virgin olive oil",
+      "Cornstarch",
+      "Soymilk",
+      "Sugar",
+      "Vanilla extract",
+      "Raisins"
+    ],
+    "cookTime": 20,
+    "calories": 216,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Mix all ingredients together , adding the rasiens last",
+      "Form into cookie shapes on a non-stick pan",
+      "Bake at 350 degrees for about 10 minutes"
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Special  Salsa     For Parties",
+    "ingredients": [
+      "Salsa",
+      "Cream cheese",
+      "Cheddar cheese",
+      "Jalapenos"
+    ],
+    "cookTime": 15,
+    "calories": 138,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "Mix salsa and cream cheese until desired consistency",
+      "Sprinkle with cheese",
+      "Microwave until cheese has melted",
+      "You may either mix it in to the salsa and cream cheese , or just keep in on top to dip through",
+      "You can also stick this in the fridge and chill , then sprinkle with cheese , for a cool yet spicy alternative !"
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Subway  White Chocolate Macadamia Nut Cookies",
+    "ingredients": [
+      "Butter",
+      "Brown sugar",
+      "Granulated sugar",
+      "Eggs",
+      "Vanilla",
+      "Unbleached white flour",
+      "Baking soda",
+      "Salt",
+      "White chocolate chips",
+      "Macadamia nuts"
+    ],
+    "cookTime": 20,
+    "calories": 222,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Make sure the oven keeps the right temperature",
+      "The cookies may need a minute or two more or less than stated",
+      "Preheat oven to 350 degrees f",
+      "Line baking sheets with parchment paper",
+      "Measure flour , baking soda and salt in a large bowl and blend together",
+      "Set aside",
+      "In a large mixing bowl , preferably a heavy-duty mixer , and using the paddle or beater attachment , beat butter until creamy",
+      "Add brown sugar and beat again",
+      "Scrape down the bowl and add the granualted sugar",
+      "Beat until fluffy",
+      "Add eggs one at a time , beating after each addition",
+      "Add vanilla , beat and scrape again",
+      "On low speed , add flour mixture 2 cups at a time , and mix well",
+      "Mix in white chocolate and macadamia nuts",
+      "Mix only until blended",
+      "Using a cookie scoop , place dough on prepared baking sheets , spacing evenly to allow for spreading",
+      "Bake at 350 degrees for 10-12 minutes or until lightly browned",
+      "Do not over bake these cookies",
+      "They continue to bake for a few minutes after they are removed from the oven",
+      "Transfer to cooling racks",
+      "Store in air tight container or plastic bag to stay soft and moist",
+      "Makes 48 warm and gooey cookies"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Sweet Dreams  Shake",
+    "ingredients": [
+      "Milk",
+      "Banana",
+      "Honey"
+    ],
+    "cookTime": 10,
+    "calories": 325,
+    "protein": 9,
+    "difficulty": "easy",
+    "steps": [
+      "Mix all ingredients in a blender until well blended",
+      "Serve immediately"
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Sweet  Carrots",
+    "ingredients": [
+      "Boiling water",
+      "Salt",
+      "Carrots",
+      "Margarine",
+      "Sugar substitute",
+      "Lemon juice",
+      "Parsley"
+    ],
+    "cookTime": 15,
+    "calories": 50,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Bring water to boil in saucepan",
+      "Add salt and carrots",
+      "Cover pan and cook until water is evaporated",
+      "Remove from heat",
+      "Add margarine and sugar substitute to taste",
+      "Toss with lemon juice and parsley",
+      "Serve immediately"
+    ]
+  },
+  {
+    "id": 141,
+    "name": "The Other White Meat  Chicken Salad Sandwich",
+    "ingredients": [
+      "Pork chops",
+      "Red onions",
+      "Carrot",
+      "Lemon juice",
+      "Mayonnaise",
+      "Celery seeds",
+      "Dried cranberries",
+      "Pecans",
+      "Asian pear",
+      "Salt & pepper"
+    ],
+    "cookTime": 20,
+    "calories": 427,
+    "protein": 22,
+    "difficulty": "hard",
+    "steps": [
+      "Combine all ingredients in large bowl , stir til combined",
+      "Serve immediately or refrigerate for an hour or two to let flavors mingle",
+      "We especially like it on cracked wheat bread but sourdough or croissants would be delicious as well"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "The  Marinade",
+    "ingredients": [
+      "Minced garlic cloves",
+      "Mccormick's montreal brand steak seasoning",
+      "Paprika",
+      "Hot sauce",
+      "Worcestershire sauce",
+      "Red wine vinegar",
+      "Extra virgin olive oil",
+      "Flank steak"
+    ],
+    "cookTime": 15,
+    "calories": 354,
+    "protein": 24,
+    "difficulty": "medium",
+    "steps": [
+      "Mix all ingredients in a bowl , using a whisk is best to incorporate the oil",
+      "Place meat of choice into a ziploc bag and cover with marinade",
+      "Seal the bag and place in fridge until ready to cook , 2-4 hours or overnight",
+      "Turning a few times",
+      "When ready to cook , remove from marinade and discard ziplock bag and remaining marinade",
+      "Grill flank steak until done to your liking"
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Turn The Oven Off  Cookies",
+    "ingredients": [
+      "Vanilla",
+      "Chocolate chips",
+      "Egg whites",
+      "Sugar"
+    ],
+    "cookTime": 20,
+    "calories": 40,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Set oven , yes you still have to turn the oven on , for now , to 400 degrees",
+      "Cover a cookie sheet with foil",
+      "Beat egg whites until stiff",
+      "Add sugar , 1 / 8th at a time , beat until crystals disappear",
+      "Add vanilla and mix 2 minutes",
+      "Stir in chocolate chips",
+      "Drop by teaspoons onto cookie sheet",
+      "Turn oven off",
+      "Leave cookies in oven for 2 hours",
+      "Store in air tight container after cool"
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Twist Your Own Way  Mayonnaise  This One Is With Garlic Twist",
+    "ingredients": [
+      "Mayonnaise",
+      "Garlic",
+      "Olive oil",
+      "Lemon juice",
+      "Hot pepper sauce"
+    ],
+    "cookTime": 7,
+    "calories": 252,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Whisk together all ingredients",
+      "Cover and store in the refrigerator",
+      "I also love to sprinkle freshly ground black pepper whenever i put this on my sandwich"
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Vodka Still Works",
+    "ingredients": [
+      "Angostura bitters",
+      "Vodka",
+      "Ginger beer"
+    ],
+    "cookTime": 5,
+    "calories": 208,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Place the bitters in a tall glass and combine them with vodka using a cocktail spoon",
+      "Add ice to the glass then fill it with ginger beer and stir again",
+      "Serve with a straw"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Weight Watchers   Ice Cream  Sandwiches Del",
+    "ingredients": [
+      "Chocolate graham cracker",
+      "Cool whip lite",
+      "Raspberry spreadable fruit",
+      "Miniature chocolate chips"
+    ],
+    "cookTime": 1,
+    "calories": 47,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Break graham cracker in half",
+      "Spread fruit spread on top of one half",
+      "Spread cool whip on top of that",
+      "Sprinkle with chocolate chips",
+      "Top with other graham cracker half and squoosh down",
+      "Freeze",
+      "Eat"
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Whitt S  Bbq Sauce",
+    "ingredients": [
+      "White vinegar",
+      "Water",
+      "Sugar",
+      "Chili powder",
+      "Black pepper",
+      "White pepper",
+      "Red pepper",
+      "Cayenne pepper"
+    ],
+    "cookTime": 5,
+    "calories": 42,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Mix all ingredients in jar or bottle , shake well",
+      "Tastes best when allowed to sit overnight"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "You Like Cheese   Garlic Bread Spread",
+    "ingredients": [
+      "Mozzarella cheese",
+      "Romano cheese",
+      "Parmesan cheese",
+      "Fresh coarse ground black pepper",
+      "Garlic",
+      "Extra virgin olive oil",
+      "Fresh lemon juice"
+    ],
+    "cookTime": 20,
+    "calories": 1058,
+    "protein": 51,
+    "difficulty": "medium",
+    "steps": [
+      "In large mixing bowl , mix all ingredients together",
+      "Fold until all is blended",
+      "Keep refrigerated in mason jars with lids , or in containers with tightly fitting lids",
+      "To make garlic bread , slice french bread and place on cookie sheet",
+      "Spoon spread onto bread",
+      "Toast , bake , or broil until cheese is bubbly and nicely browned"
+    ]
+  },
+  {
+    "id": 149,
+    "name": "You Want Me To Do What To The Buttered Noodles",
+    "ingredients": [
+      "Egg noodles",
+      "Butter"
+    ],
+    "cookTime": 15,
+    "calories": 532,
+    "protein": 12,
+    "difficulty": "hard",
+    "steps": [
+      "Boil water and prepare noodles as directed on the package",
+      "In a saucepan melt butter",
+      "Once the butter is melted stir and watch",
+      "Once the butter begins to turn golden and then brown",
+      "Wait until the butter has turned medium to dark brown and take off of heat",
+      "Drain noodles and pour butter over them",
+      "The butter will sizzle when it hits the noodles",
+      "There will be little brown flecks on the noodles"
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Ber Quick Banoffee Pudding   Dessert",
+    "ingredients": [
+      "Banana",
+      "Dulce de leche",
+      "Digestive biscuits"
+    ],
+    "cookTime": 20,
+    "calories": 105,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Pre-heat your oven to 200c / 400f",
+      "Slice up the banana and place it on an over-sized sheet of tin foil",
+      "Dot the two tablespoons of dulche du leche over the top of the bananas",
+      "Bring the opposite corners of the foil together to make a little banana parcel",
+      "Bake in the oven for approximately 15 minutes",
+      "While the banana is cooking , break your two digestive biscuits / graham crackers into little pieces in a bowl",
+      "When the bananas are cooked , empty them and the dulche du leche out onto your digestive biscuits / graham crackers and mix well",
+      "Leave to cool for a minute or so and then eat it all up while it's nice and hot !"
+    ]
+  },
+  {
+    "id": 151,
+    "name": "57 Chevy",
+    "ingredients": [
+      "Bourbon",
+      "Grand marnier",
+      "Vodka",
+      "Pineapple juice"
+    ],
+    "cookTime": 5,
+    "calories": 158,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Shake the bourbon , grand marnier and vodka",
+      "Pour into a cocktail glass and add pineapple juice to fill"
+    ]
+  },
+  {
+    "id": 152,
+    "name": "57 Chevy  Alcoholic Drink",
+    "ingredients": [
+      "White creme de cacao",
+      "Vodka",
+      "Ice"
+    ],
+    "cookTime": 5,
+    "calories": 69,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Combine over ice in rocks glass",
+      "Listen to bruce springsteen"
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Better Than Sex  Cheese Ball",
+    "ingredients": [
+      "Cream cheese",
+      "Butter",
+      "Green olives",
+      "Green onion",
+      "Walnuts"
+    ],
+    "cookTime": 10,
+    "calories": 134,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Soften the cream cheese and butter , then mix together in a bowl",
+      "Mix in green onion and olives",
+      "Form into a ball with your hands and roll the ball in the chopped walnuts",
+      "Chill for 2 to 3 hours or overnight",
+      "Serve with crackers or celery"
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Big Mac  Pizza",
+    "ingredients": [
+      "Thousand island dressing",
+      "Prepared pizza crust",
+      "Lean ground beef",
+      "Colby-monterey jack cheese",
+      "Bacon",
+      "Dill pickle",
+      "Prepared mustard",
+      "Lettuce",
+      "Tomatoes"
+    ],
+    "cookTime": 20,
+    "calories": 991,
+    "protein": 50,
+    "difficulty": "hard",
+    "steps": [
+      "Heat oven 400",
+      "Spread dressing over pizza crust using less or more depending on your taste",
+      "Spread hamburger on top",
+      "Top with the cheese and bacon",
+      "Bake about 8 min until cheese is melted",
+      "Top with lettuce , pickles , tomatoe , onion , and mustard",
+      "Cut into slices and serve immediately",
+      "I cut the pizza right after it comes out of the oven and let everybody top it themselves , with their favorite toppings"
+    ]
+  },
+  {
+    "id": 155,
+    "name": "Chinese Buffet  Green Beans",
+    "ingredients": [
+      "Peanut oil",
+      "Garlic cloves",
+      "Fresh green beans",
+      "White sugar",
+      "Oyster sauce",
+      "Soy sauce"
+    ],
+    "cookTime": 15,
+    "calories": 86,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Heat peanut oil in a wok or large skillet over medium-high heat",
+      "Stir in the garlic , and cook until the edges begin to brown , about 20 seconds",
+      "Add the green beans",
+      "Cook and stir until the green beans begin to soften , about 5 minutes",
+      "Stir in the sugar , oyster sauce , and soy sauce",
+      "Continue cooking and stirring for several minutes until the beans have attained the desired degree of tenderness"
+    ]
+  },
+  {
+    "id": 156,
+    "name": "Cream  Of Mushroom Soup",
+    "ingredients": [
+      "Walnuts",
+      "Garlic",
+      "Water",
+      "Shoyu",
+      "Rosemary",
+      "Flax seeds",
+      "Mushroom",
+      "Sliced mushrooms"
+    ],
+    "cookTime": 10,
+    "calories": 473,
+    "protein": 14,
+    "difficulty": "medium",
+    "steps": [
+      "Place walnuts , garlic water , nama shoyu , and rosemary in blender and blend until creamy",
+      "Add ground flax seed and blend well",
+      "Pour into a serving dish and add mushrooms"
+    ]
+  },
+  {
+    "id": 157,
+    "name": "Get Up   Go  Bars",
+    "ingredients": [
+      "Sugar",
+      "Light corn syrup",
+      "Peanut butter",
+      "Grape-nuts cereal",
+      "Rolled oats",
+      "Sliced almonds",
+      "Dried cranberries"
+    ],
+    "cookTime": 10,
+    "calories": 245,
+    "protein": 6,
+    "difficulty": "medium",
+    "steps": [
+      "Line a 9\" x 13\" baking dish with foil and coat the foil with nonstick cooking spray",
+      "In a large saucepan , combine the sugar , corn syrup , and peanut butter over medium-high heat",
+      "Bring to a boil and cook for 1 minute , stirring constantly",
+      "Add the remaining ingredients",
+      "Mix well then spread evenly into the prepared pan",
+      "Let cool then cut into bars and serve , or cover until ready to serve"
+    ]
+  },
+  {
+    "id": 158,
+    "name": "Good For You  Berry Truffles",
+    "ingredients": [
+      "Walnuts",
+      "Dates",
+      "Frozen raspberries",
+      "Cocoa powder"
+    ],
+    "cookTime": 20,
+    "calories": 94,
+    "protein": 2,
+    "difficulty": "easy",
+    "steps": [
+      "Blend all , except crushed walnut or coconut , in a food processor , scraping sides occasionally till the mixture is smooth",
+      "Shape into small balls and roll in walnut or coconut",
+      "Store in refrigerator"
+    ]
+  },
+  {
+    "id": 159,
+    "name": "Guacamole  Dip",
+    "ingredients": [
+      "Avocados",
+      "Sour cream",
+      "Salsa"
+    ],
+    "cookTime": 10,
+    "calories": 215,
+    "protein": 3,
+    "difficulty": "hard",
+    "steps": [
+      "Cut avacado in half , remove seed , and scoop insides into a bowl",
+      "Mash the avacado like you would mash potatoes",
+      "Add salsa to taste",
+      "I usually add about 1 / 2 the jar , or more depending on how many avacados i use",
+      "Mix avacado and salsa very well",
+      "Add sour cream to the mixture , to taste",
+      "I usually add at least 4-8 oz of sour cream , but if i make a big batch i'll sometimes add more",
+      "Mine is usually a light color of green , but it is definately green"
+    ]
+  },
+  {
+    "id": 160,
+    "name": "Lighter  Hamburger Stroganoff",
+    "ingredients": [
+      "Lean ground beef",
+      "Butter",
+      "Wine",
+      "Onion",
+      "Mushrooms",
+      "Flour",
+      "Fat-free chicken broth",
+      "Nonfat sour cream",
+      "No yolks egg noodle substitute"
+    ],
+    "cookTime": 15,
+    "calories": 216,
+    "protein": 18,
+    "difficulty": "hard",
+    "steps": [
+      "Melt butter in large nonstick skillet",
+      "Add wine and onions",
+      "Cook until soft",
+      "Remove from skillet , set aside",
+      "Add meat to skillet",
+      "Cook thoroughly",
+      "Stir in flour",
+      "Slowly add broth while stirring",
+      "Add onion and drained mushrooms",
+      "Cook over med-low until thickened , stirring occasionally",
+      "Remove from heat",
+      "Add sour cream and heat through",
+      "Serve over cooked noodles"
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Lite  Stuffed Mushrooms",
+    "ingredients": [
+      "Mushrooms",
+      "2% fat cottage cheese",
+      "Jalapeno pepper",
+      "Garlic cloves",
+      "Cayenne pepper"
+    ],
+    "cookTime": 20,
+    "calories": 37,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "Place the mushrooms in a baking dish",
+      "Mix cottage cheese , jalapeno and garlic",
+      "Spoon into the mushroom caps",
+      "Sprinkle with cayenne or chile",
+      "Have oven rack in second position down in the oven turn on broiler and broil the mushrooms until the cottage cheese is bubbly and slightly brown",
+      "Serve warm"
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Nilla Wafer Martini",
+    "ingredients": [
+      "Amaretto",
+      "Vanilla vodka"
+    ],
+    "cookTime": 3,
+    "calories": 96,
+    "protein": 0,
+    "difficulty": "easy",
+    "steps": [
+      "Pour ingredients into cocktail shaker with ice",
+      "Shake and pour into martini glass",
+      "Enjoy"
+    ]
+  },
+  {
+    "id": 163,
+    "name": "Sin Amon Brown Sugar Oatmeal",
+    "ingredients": [
+      "Water",
+      "Ground cinnamon",
+      "Vanilla extract",
+      "Splenda brown sugar blend",
+      "I can't believe it's not butter spread",
+      "Rolled oats"
+    ],
+    "cookTime": 7,
+    "calories": 178,
+    "protein": 5,
+    "difficulty": "medium",
+    "steps": [
+      "Heat water , brown sugar blend and cinnamon to a boil",
+      "Add vanilla , oats and icbnb spray",
+      "Turn heat down to a simmer , cook about 3-5 minutes depending on what consistency you like for your oatmeal"
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Spring In Your Step  Smoothie  Raw Food",
+    "ingredients": [
+      "Papaya",
+      "Pineapple",
+      "Honeydew melon"
+    ],
+    "cookTime": 5,
+    "calories": 166,
+    "protein": 2,
+    "difficulty": "easy",
+    "steps": [
+      "Put all 3 ingredients into a blender bowl & blend until smooth !",
+      "Pour into two tall glasses & enjoy !"
+    ]
+  },
+  {
+    "id": 165,
+    "name": "Sweet  Broccoli Salad",
+    "ingredients": [
+      "Broccoli",
+      "Bacon",
+      "Sharp cheddar cheese",
+      "Red onion",
+      "Vinegar",
+      "Sugar",
+      "Mayonnaise",
+      "Miracle whip"
+    ],
+    "cookTime": 20,
+    "calories": 510,
+    "protein": 12,
+    "difficulty": "medium",
+    "steps": [
+      "Combine first 4 ingredients in a large bowl and mix",
+      "Combine remaining ingredients to make dressing",
+      "Pour dressing over broccoli mixture and mix well",
+      "Refrigerate",
+      "If this is going to sit a while before serving , i suggest you wait to add the bacon until just before you serve to keep the bacon crisp"
+    ]
+  },
+  {
+    "id": 166,
+    "name": "Taco  Hot Dogs",
+    "ingredients": [
+      "Hot chili sauce",
+      "Hot chili peppers",
+      "Hot dogs",
+      "Hot dog buns",
+      "Lettuce",
+      "Cheddar cheese"
+    ],
+    "cookTime": 20,
+    "calories": 303,
+    "protein": 11,
+    "difficulty": "hard",
+    "steps": [
+      "Combine chili sauce and chili pepper",
+      "Cook hot dogs in boiling water",
+      "Reduce heat",
+      "Cover & simmer 5-8 minutes",
+      "Place hot dogs on toasted buns",
+      "Spoon chili sauce mixture over hot dogs",
+      "Top with shredded lettuce and cheese"
+    ]
+  },
+  {
+    "id": 167,
+    "name": "Don T Eat The  Yellow Snowman Cookies",
+    "ingredients": [
+      "Lemon cake mix",
+      "Vegetable oil",
+      "Eggs",
+      "Flaked coconut",
+      "Decorative candies",
+      "Miniature chocolate chip",
+      "Candy sprinkles"
+    ],
+    "cookTime": 17,
+    "calories": 142,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Heat oven to 350f",
+      "In large bowl , combine cake mix , oil and eggs",
+      "Beat until well mixed",
+      "Place coconut in shallow bowl",
+      "For each cookie , use a cookie dough scoop to shape a 1-1 / 2-inch ball for the body , and a melon baller to shape a 1 / 2-inch ball for the head",
+      "Roll each ball in coconut",
+      "Place on ungreased cookie sheet with smaller ball touching larger ball",
+      "Place cookies 1-1 / 2-inches apart",
+      "Bake at 350 for 10-12 minutes or until coconut just begins to brown",
+      "Immediately press eyes into head and buttons down the front of the snowman's body for each cookie",
+      "Remove from cookie sheet to cool , taking care not to let the head separate from the body !"
+    ]
+  },
+  {
+    "id": 168,
+    "name": "I Wanna Live With A  Cinnamon  Girl  Honey",
+    "ingredients": [
+      "Cinnamon stick",
+      "Honey"
+    ],
+    "cookTime": 20,
+    "calories": 64,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Find a copy of \"cinnamon girl\" by neil young and play it in the kitchen while you work",
+      "Don't crank it up , just play it in the background",
+      "It's optional , of course , but i think the finished product seems to come out better",
+      "Wrap the cinnamon stick in a clean dish towel and whack it carefully with your bowling ball",
+      "You could use a rolling pin or heavy skillet , but that's boring",
+      "Add the cinnamon fragments to one cup of honey in a saucepan , and warm over low heat for 10 minutes",
+      "Let stand 3-4 hours , then strain into a sterilized jar",
+      "Store at room temperature",
+      "A nice gift for honey lovers , cinnamon lovers and neil young fans"
+    ]
+  },
+  {
+    "id": 169,
+    "name": "New  Vanishing Oatmeal Raisin Cookies",
+    "ingredients": [
+      "Butter",
+      "Brown sugar",
+      "Granulated sugar",
+      "Eggs",
+      "Vanilla",
+      "All-purpose flour",
+      "Baking soda",
+      "Ground cinnamon",
+      "Salt",
+      "Quick oats",
+      "Raisins"
+    ],
+    "cookTime": 20,
+    "calories": 193,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Heat oven to 350f",
+      "In a large bowl , beat butter and sugars on medium speed of electric mixer until creamy",
+      "Add eggs and vanilla",
+      "Beat well",
+      "Add combined flour , baking soda , cinnamon and salt",
+      "Mix well",
+      "Add oats and raisins",
+      "Mix well",
+      "Drop dough by rounded tablespoonfuls onto ungreased cookie sheets",
+      "Bake 8 to 10 minutes or until light golden brown",
+      "Cool 1 minute on cookie sheets",
+      "Remove to wire rack",
+      "Cool completely",
+      "Store tightly covered",
+      "For bar cookies bake 30 to 35 minutes in an ungreased 9 x 13 - inch metal baking pan"
+    ]
+  },
+  {
+    "id": 170,
+    "name": "Not  Meatballs",
+    "ingredients": [
+      "Ground meat substitute",
+      "Minced garlic cloves",
+      "Milk",
+      "Parmesan cheese",
+      "Egg",
+      "Basil",
+      "Oregano",
+      "Parsley",
+      "Caraway seed",
+      "Fennel seed",
+      "Breadcrumbs",
+      "Pine nuts"
+    ],
+    "cookTime": 20,
+    "calories": 96,
+    "protein": 6,
+    "difficulty": "hard",
+    "steps": [
+      "Whisk eggs and milk , add other ingredients except meat",
+      "Add meat , mix well w / hands--size how you want",
+      "Place on greased baking sheet or broiler pan",
+      "Bake for 10-20 minutes at 400f"
+    ]
+  },
+  {
+    "id": 171,
+    "name": "Paki  Garam Masala",
+    "ingredients": [
+      "Black peppercorns",
+      "Bay leaf",
+      "Star anise",
+      "Black cumin",
+      "Cumin",
+      "Green cardamoms",
+      "Black cardamom pod",
+      "Coriander",
+      "Mace",
+      "Fennel",
+      "Ground red chili pepper",
+      "Ground turmeric",
+      "Cinnamon",
+      "Clove"
+    ],
+    "cookTime": 5,
+    "calories": 38,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Grind all spices together in a spice mill",
+      "Make sure to use ground turmeric as , in its whole form , it's hard like a rock"
+    ]
+  },
+  {
+    "id": 172,
+    "name": "Shrimp  Cocktail Sauce",
+    "ingredients": [
+      "Catsup",
+      "Horseradish",
+      "Lemon juice",
+      "Worcestershire sauce",
+      "Salt",
+      "Pepper"
+    ],
+    "cookTime": 5,
+    "calories": 164,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Mix all ingredients and chill",
+      "When ready to serve dip shrimp and enjoy"
+    ]
+  },
+  {
+    "id": 173,
+    "name": "Spanish  Corn",
+    "ingredients": [
+      "Corn",
+      "Butter",
+      "Tomatoes",
+      "Green onion",
+      "Fresh cilantro"
+    ],
+    "cookTime": 15,
+    "calories": 348,
+    "protein": 8,
+    "difficulty": "easy",
+    "steps": [
+      "Melt butter in medium saucpan",
+      "Add rest of ingredients",
+      "Simmer on low for 10 minutes"
+    ]
+  },
+  {
+    "id": 174,
+    "name": "Very  Simple Fried Rice",
+    "ingredients": [
+      "Vegetable oil",
+      "White rice",
+      "Eggs",
+      "Green onions",
+      "Garlic cloves",
+      "Soy sauce",
+      "Salt",
+      "Ground pepper",
+      "Peas",
+      "Carrot",
+      "Corn kernel"
+    ],
+    "cookTime": 15,
+    "calories": 446,
+    "protein": 11,
+    "difficulty": "hard",
+    "steps": [
+      "Whip eggs until they are frothy",
+      "Scramble , then set aside",
+      "Steam carrots until slightly soft",
+      "If using frozen peas & corn , run under hot water to thaw",
+      "Break up any clumps in the rice",
+      "Over medium-high heat , heat oil in a large pan or wok",
+      "Add rice and stir for about 1 minute , until heated through",
+      "Reduce heat to medium",
+      "Add soy sauce , garlic , salt & pepper",
+      "Stir-fry for 1 minute",
+      "Add onions , peas , corn , carrots and eggs",
+      "Stir-fry for 1 minute , until heated through"
+    ]
+  },
+  {
+    "id": 175,
+    "name": "Copycat   Costa Vida Ranch Salad Dressing",
+    "ingredients": [
+      "Tomatillos",
+      "Lime juice",
+      "Cilantro",
+      "Scallions",
+      "Garlic cloves",
+      "Salt",
+      "Buttermilk",
+      "Mayonnaise",
+      "Sour cream",
+      "Ranch dressing mix",
+      "Cayenne pepper",
+      "Jalapeno"
+    ],
+    "cookTime": 7,
+    "calories": 81,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Put all ingredients in the blender and blend well",
+      "If you like it a little more mild , use less cayenne pepper and less of the jalepeno seeds",
+      "I usually only use 5-6 seeds & a tiny piece of the core",
+      "My mom uses the whole pepper seeds and all",
+      "\"cooking\" time does not include chilling time - chill in fridge for at least 2 hours to let the flavors meld"
+    ]
+  },
+  {
+    "id": 176,
+    "name": "Hot Kielbasa Dip",
+    "ingredients": [
+      "Cream cheese",
+      "Sour cream",
+      "Milk",
+      "Mayonnaise",
+      "Worcestershire sauce",
+      "Kielbasa",
+      "Parmesan cheese",
+      "Green onion"
+    ],
+    "cookTime": 15,
+    "calories": 512,
+    "protein": 16,
+    "difficulty": "medium",
+    "steps": [
+      "Microwave cream cheese for 1 minute or until soft",
+      "Stir in sour cream , milk , mayonaise and worcestershire sauce",
+      "Add kielbasa , onion and parmesan cheese",
+      "Put in crock pot on low",
+      "Serve with crackers , vegetables or rye bread"
+    ]
+  },
+  {
+    "id": 177,
+    "name": "Minestrone Salad",
+    "ingredients": [
+      "Bow tie pasta",
+      "Red kidney beans",
+      "Pepperoni",
+      "Italian plum tomatoes",
+      "Green pepper",
+      "Parsley",
+      "Parmesan cheese",
+      "Pepper",
+      "Italian dressing"
+    ],
+    "cookTime": 20,
+    "calories": 219,
+    "protein": 7,
+    "difficulty": "hard",
+    "steps": [
+      "Cook pasta to desired doneness as directed on package",
+      "Drain",
+      "Rinse with",
+      "Cold water to cool",
+      "In large bowl , combine cooked pasta and all remaining",
+      "Ingredients",
+      "Mix well",
+      "Serve immediately , or cover and refrigerate until",
+      "Serving time"
+    ]
+  },
+  {
+    "id": 178,
+    "name": "Holiday Punch   Cheers",
+    "ingredients": [
+      "Cranberry juice cocktail",
+      "Unsweetened pineapple juice",
+      "Orange juice",
+      "Lemon juice",
+      "Almond extract",
+      "Ginger ale",
+      "Dark rum",
+      "Maraschino cherries",
+      "Rum",
+      "Orange",
+      "Cinnamon stick"
+    ],
+    "cookTime": 15,
+    "calories": 170,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Combine first 6 ingredients in a large punch bowl or a large stock pot",
+      "Add 1 / 2 to a to punch bowl filled with lots of ice add 1 / 2 of the orange slices , ginger ale and rum",
+      "To serve garnish each glass with cherry , and a cinnamon stick pour in punch",
+      "Drink and be happy !",
+      "Happy safe holidays !",
+      "I`ve also froze all the ingredients combined except for cinnamon stick with good results"
+    ]
+  },
+  {
+    "id": 179,
+    "name": "Low Calorie  Lemon Chiffon Pie",
+    "ingredients": [
+      "Cornstarch",
+      "Unsweetened pineapple juice",
+      "Honey",
+      "Lemon juice",
+      "Lemon rind",
+      "Cool whip lite"
+    ],
+    "cookTime": 20,
+    "calories": 137,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Mix cornstarch with 1 / 4 cup of the pineapple juice",
+      "Bring remaining pineapple juice and honey to a boil",
+      "Stir in cornstarch mixture until thick",
+      "Reduce heat , add lemon juice and rind",
+      "Stir until blended",
+      "Boil for about one minute , stirring constantly",
+      "Chill , when chilled , combine with part of the cool whip and pour into crust",
+      "Put remainder of cool whip on top of filling"
+    ]
+  },
+  {
+    "id": 180,
+    "name": "S W O C   Pie Cookies",
+    "ingredients": [
+      "Milk chocolate chips",
+      "Shortening",
+      "Raisins",
+      "Almonds"
+    ],
+    "cookTime": 12,
+    "calories": 106,
+    "protein": 2,
+    "difficulty": "medium",
+    "steps": [
+      "Using a double boiler , melt chocolate chips and shortening together",
+      "Stir until smooth then remove from heat",
+      "Stir in raisins and almonds",
+      "Drop by tablespoonfuls onto waxed paper lined sheets",
+      "Chill until ready to serve"
+    ]
+  },
+  {
+    "id": 181,
+    "name": "Disgustingly Rich  Brownies",
+    "ingredients": [
+      "White sugar",
+      "Eggs",
+      "Cocoa powder",
+      "Flour",
+      "Salt",
+      "Butter",
+      "Vanilla extract",
+      "Walnuts",
+      "Soft cream cheese",
+      "Icing sugar"
+    ],
+    "cookTime": 10,
+    "calories": 392,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Preheat over to 350f",
+      "First , mix cocoa and sugar together and pour the melted butter inches mix well",
+      "Add the eggs and vanilla , again mix thoroughly",
+      "I add the salt now to avoid the trouble of sifting",
+      ":)",
+      "Stir in the flour until just combined",
+      "Bake in a greased 8 or 9 inch pan until the brownies pull away from the sides",
+      "Depending on how \"high\" your batter was , it can take anywhere from 20 min to 45",
+      "The insides should still be a bit moist , which makes the brownies taste \"fudgy\"",
+      "When i make a double batch , i use the same size pan and cook lower and slower so i get higher , thicker brownies",
+      "Wait until they cool completely before icing , or cutting"
+    ]
+  },
+  {
+    "id": 182,
+    "name": "Tasty S    Hidden Mickey Surprise Snack",
+    "ingredients": [
+      "Bell pepper",
+      "Ranch dressing",
+      "Salt and pepper",
+      "Honey mustard",
+      "Balsamic vinegar"
+    ],
+    "cookTime": 1,
+    "calories": 24,
+    "protein": 1,
+    "difficulty": "medium",
+    "steps": [
+      "Slice into a bell pepper crosswise and see if you can find a hidden mickey",
+      "Mommy did ! mommy was very surprised !",
+      "Eat with your favorite veggie dip as suggested",
+      "^^see photo above as an example of a hidden mickey",
+      "Pssst ! ~tasty~",
+      "You'll have better luck finding a hidden mickey"
+    ]
+  },
+  {
+    "id": 183,
+    "name": "Tasty Dish S      Not So Hot  Pumpkin Pie Steamer For 2",
+    "ingredients": [
+      "Milk",
+      "Pumpkin pie spice",
+      "Sugar",
+      "Pure vanilla extract",
+      "Cinnamon sticks",
+      "Nutmeg"
+    ],
+    "cookTime": 7,
+    "calories": 118,
+    "protein": 6,
+    "difficulty": "hard",
+    "steps": [
+      "On low or medium-low heat , warm the milk , honey and pumpkin pie spice or english mixed spice on the stove for a few minutes , stirring to melt the honey completely",
+      "{{warning ! }}: if preparing for children , don't heat the milk too hot or it will burn their mouths !",
+      "Remove pan from heat and stir in the vanilla extract",
+      "Carefully transfer the liquid to a blender and blend on high speed for at least a full minute or until the milk is light and frothy",
+      "You could also use a stick / immersion blender to froth the milk , if you prefer however yet another {{warning}}: make sure your pot is deep enough or the hot milk will splatter",
+      "Pour into two fancy tea cups and garnish each with a small cinnamon stick and a light sprinkle of nutmeg",
+      "~tasty~ likes to use her whole cinnamon stick as a straw !"
+    ]
+  },
+  {
+    "id": 184,
+    "name": "Tasty Dish S    Heffalumps And Woozles",
+    "ingredients": [
+      "Chocolate-covered peanuts",
+      "Pretzel"
+    ],
+    "cookTime": 5,
+    "calories": 818,
+    "protein": 21,
+    "difficulty": "medium",
+    "steps": [
+      "Put the peanuts and pretzels together in a bowl one by one",
+      "Mix",
+      "Then eat",
+      "Sing along with me: they're extraordinary ! so better bewary ! because they come in every shape and size , size , size , size",
+      "If honey's what you covet you'll find that they love it",
+      "Because they'll guzzle up the thing you prize !"
+    ]
+  },
+  {
+    "id": 185,
+    "name": "Tasty S    Deluxe Cinnamon Toast",
+    "ingredients": [
+      "Mixed spice",
+      "Vanilla powder",
+      "Sugar",
+      "Butter",
+      "Bread"
+    ],
+    "cookTime": 8,
+    "calories": 774,
+    "protein": 0,
+    "difficulty": "hard",
+    "steps": [
+      "Please",
+      "Adjust accordingly to your preference",
+      "In a small bowl combine the english mixed spice , vanilla powder and sugar of choice",
+      "Store in a container with a tight fitting lid",
+      "To make the deluxe cinnamon toast: spread butter on a slice of bread",
+      "It will melt into the bread as it toasts",
+      "Sprinkle about a scant one half teaspoon of the spice mixture on the bread",
+      "Toast until browned and sizzling but being careful not to burn the bread !",
+      "Ps i use a toaster which browns bread horizontally which means the butter doesn't drip down into the heating element",
+      "It is not recommended to use a toaster that toasts bread vertically to avoid the butter dripping into the mechanism-",
+      "An oven will work"
+    ]
+  },
+  {
+    "id": 186,
+    "name": "Tasty S    The Power Of Flower7 Salad",
+    "ingredients": [
+      "Baby spinach leaves",
+      "Green onions",
+      "Bell peppers",
+      "Black olives",
+      "Chive blossoms",
+      "Strawberries",
+      "Green peas",
+      "Mint leaf",
+      "Vinaigrette"
+    ],
+    "cookTime": 20,
+    "calories": 28,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Of course , how you arrange the produce and what produce you choose , is left to creative license",
+      "Place the baby spinach or mixed greens towards the bottom of a platter",
+      "Set the green onions on the platter-these are your \"flower stalks\"",
+      "Place the slices of bell pepper in a \"flower\" pattern on the green onion stems",
+      "Place the strawberry slices between slices of bell pepper \"petals\"",
+      "Arrange each black olive half in the middle of the flower and garnish each olive with a chive blossom",
+      "Put the green peas on top of the spinach or mixed greens",
+      "Place mint leaves around the edges of the platter",
+      "Serve salad with the vinaigrette",
+      "'be like the flower , turn your face to the sun'",
+      "Kahlil gibran"
+    ]
+  },
+  {
+    "id": 187,
+    "name": "Tasty   Approved Golden Quesadillas",
+    "ingredients": [
+      "Cheese",
+      "Flour tortilla"
+    ],
+    "cookTime": 7,
+    "calories": 218,
+    "protein": 10,
+    "difficulty": "hard",
+    "steps": [
+      "Keep trying !",
+      "In a small bowl , grate cheese and set aside",
+      "Heat a non-stick pan over medium-high heat until it becomes very warm to the touch",
+      "Sprinkle the shredded cheese of choice onto the surface of the pan , spreading out the cheese to the approximate diameter of the tortilla",
+      "When the cheese starts to melt , lay the tortilla on top of the cheese and press it down into the melting cheese",
+      "Let the tortilla sit , undisturbed , in the pan for approximately 30 seconds",
+      "Gently test around the edges by sliding a wide spatula under the tortilla",
+      "Lift tortilla slightly to check if the cheese has turned golden and is sticking to the tortilla",
+      "Once the cheese has stuck , slide the spatula completely under the tortilla and flip it over to brown the other side",
+      "Slide tortilla onto a platter",
+      "If desired , top with your favorite quesadilla fillings like guacamole , shredded lettuce , salsa , black olives , sour cream , etc"
+    ]
+  },
+  {
+    "id": 188,
+    "name": "Hawaiian Sunrise           Mimosa",
+    "ingredients": [
+      "Pineapple juice",
+      "Grenadine",
+      "Brut champagne"
+    ],
+    "cookTime": 5,
+    "calories": 182,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Divide pineapple juice among the 8 champagne glasses top with champagne glasses",
+      "Spoon 1 tablespoon grenadine syrup into each glass",
+      "Garnish with a pineapple cube",
+      "Serve immediately"
+    ]
+  },
+  {
+    "id": 189,
+    "name": "Spicy Cheese Dip",
+    "ingredients": [
+      "Cheddar cheese",
+      "Salt",
+      "Black pepper",
+      "Garlic powder",
+      "Jalapeno pepper",
+      "Milk",
+      "Paprika"
+    ],
+    "cookTime": 11,
+    "calories": 385,
+    "protein": 24,
+    "difficulty": "hard",
+    "steps": [
+      "Chop pepper into very small pieces , set aside",
+      "Turn stove on medium heat",
+      "Put cheese , milk , and chopped jalapeo in a pan and be sure to watch it until the cheese melts",
+      "When you're sure the cheese has melted , turn stove completely off",
+      "Place cheese concoction in a large bowl",
+      "Add rest of ingredients to bowl",
+      "Stir",
+      "If your cheese seems to have thickened , heat it on stove for maybe 3 minutes on low stirring occasionally",
+      "Serve immediately so the cheese won't thicken on your party goers"
+    ]
+  },
+  {
+    "id": 190,
+    "name": "Tasty Dish S   Banana Pudding In 2 Minutes",
+    "ingredients": [
+      "Banana",
+      "Plain yogurt",
+      "Ground nutmeg",
+      "Pure vanilla extract"
+    ],
+    "cookTime": 2,
+    "calories": 73,
+    "protein": 2,
+    "difficulty": "easy",
+    "steps": [
+      "Mash the banana then add the plain yogurt and stir until very creamy",
+      "Stir in the nutmeg and vanilla extract",
+      "Yield is estimated"
+    ]
+  },
+  {
+    "id": 191,
+    "name": "From Stephanie S Kitchen",
+    "ingredients": [
+      "Eggs",
+      "Milk",
+      "Fresh parsley",
+      "Cheddar cheese",
+      "Parmesan cheese",
+      "Cooked bacon"
+    ],
+    "cookTime": 12,
+    "calories": 98,
+    "protein": 7,
+    "difficulty": "medium",
+    "steps": [
+      "Beat eggs in a medium bowl",
+      "Add remaining ingredients",
+      "Grease a mini muffin tin",
+      "Fill cups with egg mixture until almost to the rim",
+      "Bake at 375 degrees for 10-15 minutes or until centers are set"
+    ]
+  },
+  {
+    "id": 192,
+    "name": "007 Cocktail",
+    "ingredients": [
+      "Carbonated lemon-lime beverage",
+      "Orange juice",
+      "Orange-infused vodka"
+    ],
+    "cookTime": 5,
+    "calories": 91,
+    "protein": 0,
+    "difficulty": "medium",
+    "steps": [
+      "Mix in tall glass preferrably , over ice",
+      "Wince , shudder , repeat",
+      "Enjoy",
+      "Cheers !"
+    ]
+  },
+  {
+    "id": 193,
+    "name": "1 Minute Cake",
+    "ingredients": [
+      "Flour",
+      "Sugar",
+      "Baking powder",
+      "Cocoa powder",
+      "Salt",
+      "Milk",
+      "Vanilla extract",
+      "Oil"
+    ],
+    "cookTime": 2,
+    "calories": 183,
+    "protein": 3,
+    "difficulty": "hard",
+    "steps": [
+      "Mix all dry ingredients",
+      "Add milk , vanilla extract and oil and until well blended",
+      "Spray a 10 to 12 ounce microwave-safe cup with cooking spray",
+      "Pour the batter into the cup",
+      "Microwave at full power for 1 minute",
+      "Depending upon the strength of your microwave and shape of your cup or container , you may need to cook the cake longer in 15 second increments until done",
+      "Microwave ? ! ? ! i can see some eyes rolling !",
+      "Don't worry",
+      "As long as you don't overcook , it won't turn rubbery",
+      "Since it contains no eggs , you don't have to worry about salmonella with the short cooking time",
+      "Also , the cake will puff up so don't fill a very small container",
+      "It needs some room to rise",
+      "It's not a fancy cake but when you eat it warm with whipped cream , ice cream or a chocolate glaze , it tastes pretty good",
+      "It's great for when you're craving for something sweet but don't want the temptation of an entire cake in your house",
+      "Plus , it's super fast to make",
+      "This recipe is pretty versatile",
+      "-you can change the flavor of the cake by adding drops of various extracts: almond , mint , etc",
+      "-you can add chocolate chips , dollops of jam , mini candy bar , peanut butter cup , shredded coconut etc",
+      "-if you don't like chocolate and want to make a white cake , you can omit the cocoa and add an extra tsp of flour , and candied ginger , various spices , citrus extracts or anything you like",
+      "-you can substitute the milk with different liquids"
+    ]
+  },
+  {
+    "id": 194,
+    "name": "1 Minute Chili Cheese Burritos",
+    "ingredients": [
+      "Fat-free refried beans",
+      "Hot taco sauce",
+      "Taco cheese",
+      "Flour tortillas"
+    ],
+    "cookTime": 3,
+    "calories": 129,
+    "protein": 4,
+    "difficulty": "hard",
+    "steps": [
+      "Take one flour tortilla , put it on a microwaveable plate and spread a layer of refried beans in the middle of the tortilla leaving lots of room free on the sides for easy rolling",
+      "I put on about 2t , my husband maybe 3t of beans",
+      "Pour a strip of taco sauce long ways down the beans , about 1-2t",
+      "Grab a handful of cheese and put on top of the beans and sauce , about 1 / 4 cup",
+      "Microwave 30 seconds on high",
+      "Roll it up like a burrito and microwave 20-30 seconds more",
+      "Repeat for remaining tortillas , or for however many you can eat",
+      "All ingredients can stay in fridge for later",
+      "Enjoy while piping hot !"
+    ]
+  },
+  {
+    "id": 195,
+    "name": "1 Minute Meatballs",
+    "ingredients": [
+      "Sausage",
+      "Oil"
+    ],
+    "cookTime": 13,
+    "calories": 484,
+    "protein": 18,
+    "difficulty": "medium",
+    "steps": [
+      "Remove skin from sausages",
+      "Cut into 1-1 1 / 2\" pieces",
+      "Add oil , if using , and fry sausage until brown and no longer pink",
+      "Drain on paper towel and use in your favorite recipe"
+    ]
+  },
+  {
+    "id": 196,
+    "name": "1 Minute Stromboli",
+    "ingredients": [
+      "Tortilla",
+      "Mozzarella cheese",
+      "Pepperoni",
+      "Provolone cheese",
+      "Ham"
+    ],
+    "cookTime": 2,
+    "calories": 408,
+    "protein": 18,
+    "difficulty": "medium",
+    "steps": [
+      "Layer onto the tortilla the ingredients in the order they are listed",
+      "Roll up , face seam side down",
+      "Microwave for 35 seconds on high",
+      "Enjoy !"
+    ]
+  },
+  {
+    "id": 197,
+    "name": "1 Minute  No Bake  Cereal Bar",
+    "ingredients": [
+      "Raisin bran cereal",
+      "Wheat germ",
+      "Rolled oats",
+      "Allspice",
+      "No-sugar-added peanut butter",
+      "Brown sugar",
+      "Honey",
+      "Milk",
+      "Vanilla"
+    ],
+    "cookTime": 6,
+    "calories": 62,
+    "protein": 1,
+    "difficulty": "hard",
+    "steps": [
+      "Mix cereals and spices in a bowl",
+      "In a saucepan , bring milk , brown sugar , peanut butter and honey to a boil",
+      "Boil for 1 minute before removing from heat",
+      "Immediately add vanilla and cereal mix",
+      "Mix well",
+      "Pour onto cookie sheet lined with wax paper",
+      "Cover with another piece of wax paper",
+      "Flatten with a rolling pin , packing tightly",
+      "Cool completely",
+      "Cut into 25 rectangles"
+    ]
+  },
+  {
+    "id": 198,
+    "name": "1 Minute  No Bake  Chocolatey Cereal Bites",
+    "ingredients": [
+      "Shredded wheat cereal",
+      "Instant oats",
+      "Cocoa powder",
+      "Brown sugar",
+      "Honey",
+      "Peanut butter",
+      "Orange juice"
+    ],
+    "cookTime": 6,
+    "calories": 74,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "Line a tiny cookie sheet with waxed paper or greased plastic wrap that is twice as long as the sheet",
+      "In package , crush the shredded wheat",
+      "Combine with oats and cocoa",
+      "In a small saucepan , bring brown sugar , corn syrup , peanut butter and orange juice to a rolling boil",
+      "Without stirring or reducing heat , boil for 1 minute",
+      "Immediately add cereal / cocoa mixture",
+      "Stir until evenly coated",
+      "Pour onto prepared cookie sheet and fold the rest of the paper over top",
+      "Pack firmly using a rolling pin or hands",
+      "Cool coompletly",
+      "Cut into rectangles , squares , triangles , roll into bite-size balls , or use sharp cookie cutters to cut into shapes",
+      "Keep refrigerated"
+    ]
+  },
+  {
+    "id": 199,
+    "name": "1 Minute  No Bake  Cocoa Delicacy",
+    "ingredients": [
+      "Milk",
+      "Sugar",
+      "Butter",
+      "Cocoa",
+      "Oats",
+      "Coconut",
+      "Vanilla"
+    ],
+    "cookTime": 6,
+    "calories": 90,
+    "protein": 2,
+    "difficulty": "hard",
+    "steps": [
+      "In a saucepan , bring milk , sugar , butter and cocoa to a boil",
+      "Boil for 1 minute before removing from heat",
+      "Immediately add oats , coconut , and vanilla",
+      "Mix well",
+      "Pour onto cookie sheet lined with wax paper",
+      "Cool completely",
+      "Cut into 25 rectangles"
+    ]
+  },
+  {
+    "id": 200,
+    "name": "1 1 1 Tempura Batter",
+    "ingredients": [
+      "Egg",
+      "Flour",
+      "Water"
+    ],
+    "cookTime": 5,
+    "calories": 526,
+    "protein": 19,
+    "difficulty": "easy",
+    "steps": [
+      "Mix all ingredients together with whisk until smooth",
+      "Dip your favorite food for frying , remove and fry the food in hot grease"
+    ]
+  }
+]

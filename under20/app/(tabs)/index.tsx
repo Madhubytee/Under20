@@ -1,98 +1,223 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { useFavorites } from '@/context/FavoritesContext';
+import recipesData from '@/data/recipes.json';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+const C = {
+  darkGreen: '#1B4332',
+  medGreen: '#52B788',
+  salmon: '#E76F51',
+  cream: '#FAF7F0',
+  white: '#FFFFFF',
+  gray: '#6B7280',
+  border: '#E7E5E4',
+  text: '#111827',
+};
 
-export default function HomeScreen() {
+type Recipe = {
+  id: number;
+  name: string;
+  ingredients: string[];
+  cookTime: number;
+  calories: number;
+  protein: number;
+  difficulty: string;
+};
+
+function DifficultyBadge({ difficulty }: { difficulty: string }) {
+  const map: Record<string, { bg: string; color: string }> = {
+    easy:   { bg: '#ECFDF5', color: '#065F46' },
+    medium: { bg: '#FFFBEB', color: '#92400E' },
+    hard:   { bg: '#FEF2F2', color: '#991B1B' },
+  };
+  const s = map[difficulty] ?? map.easy;
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <View style={[styles.badge, { backgroundColor: s.bg }]}>
+      <Text style={[styles.badgeText, { color: s.color }]}>
+        {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
+      </Text>
+    </View>
+  );
+}
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+function RecipeCard({
+  recipe,
+  onToggleFavorite,
+  isFav,
+}: {
+  recipe: Recipe;
+  onToggleFavorite: () => void;
+  isFav: boolean;
+}) {
+  const router = useRouter();
+  return (
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => router.push({ pathname: '/recipe/[id]', params: { id: recipe.id } })}
+      activeOpacity={0.88}>
+      <View style={styles.cardTop}>
+        <Text style={styles.cardTitle} numberOfLines={2}>
+          {recipe.name}
+        </Text>
+        <TouchableOpacity
+          onPress={e => { e.stopPropagation?.(); onToggleFavorite(); }}
+          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
+          <Ionicons
+            name={isFav ? 'heart' : 'heart-outline'}
+            size={22}
+            color={isFav ? C.salmon : C.gray}
+          />
+        </TouchableOpacity>
+      </View>
+
+      <Text style={styles.statLine}>
+        {recipe.cookTime} min  ·  {recipe.calories} kcal  ·  {recipe.protein}g protein
+      </Text>
+
+      <View style={styles.cardBottom}>
+        <DifficultyBadge difficulty={recipe.difficulty} />
+        <Text style={styles.ingCount}>{recipe.ingredients.length} ingredients</Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+export default function RecipesScreen() {
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const recipes = recipesData as Recipe[];
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.logo}>
+          <Text style={styles.logoLight}>under</Text>
+          <Text style={styles.logoAccent}>20</Text>
+        </Text>
+        <Text style={styles.tagline}>Decide faster. Cook sooner. Eat better.</Text>
+      </View>
+
+      <View style={styles.countBar}>
+        <Text style={styles.countText}>{recipes.length} recipes</Text>
+      </View>
+
+      <FlatList
+        data={recipes}
+        keyExtractor={item => String(item.id)}
+        renderItem={({ item }) => (
+          <RecipeCard
+            recipe={item}
+            onToggleFavorite={() => toggleFavorite(item.id)}
+            isFav={isFavorite(item.id)}
+          />
+        )}
+        contentContainerStyle={styles.list}
+        showsVerticalScrollIndicator={false}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: C.cream,
+  },
+  header: {
+    backgroundColor: C.cream,
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+  },
+  logo: {
+    fontSize: 30,
+    fontWeight: '800',
+    letterSpacing: -0.5,
+    marginBottom: 2,
+  },
+  logoLight: {
+    color: C.text,
+  },
+  logoAccent: {
+    color: C.salmon,
+  },
+  tagline: {
+    fontSize: 13,
+    color: C.gray,
+    fontStyle: 'italic',
+  },
+  countBar: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  countText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.darkGreen,
+  },
+  list: {
+    paddingHorizontal: 16,
+    paddingBottom: 28,
+  },
+  card: {
+    backgroundColor: C.white,
+    borderRadius: 14,
+    padding: 16,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: C.border,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.04,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  cardTop: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 6,
+  },
+  cardTitle: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: '700',
+    color: C.text,
+    marginRight: 10,
+    lineHeight: 22,
+  },
+  statLine: {
+    fontSize: 13,
+    color: C.gray,
+    marginBottom: 10,
+  },
+  cardBottom: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    gap: 8,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  badge: {
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    borderRadius: 20,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  badgeText: {
+    fontSize: 11,
+    fontWeight: '600',
+    letterSpacing: 0.2,
+  },
+  ingCount: {
+    fontSize: 12,
+    color: C.gray,
   },
 });
