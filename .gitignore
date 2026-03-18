@@ -1,0 +1,83 @@
+# ─── Node / React Native / Expo ──────────────────────────────────────────────
+node_modules/
+.expo/
+dist/
+web-build/
+/ios
+/android
+.metro-health-check*
+*.tsbuildinfo
+expo-env.d.ts
+
+# ─── Backend (Node.js) ───────────────────────────────────────────────────────
+backend/node_modules/
+backend/dist/
+backend/build/
+
+# ─── Python (if used for scripts/ML) ─────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# ─── Environment variables ───────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# ─── Signing & secrets ───────────────────────────────────────────────────────
+*.jks
+*.p8
+*.p12
+*.key
+*.keystore
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
+# ─── Database ────────────────────────────────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+dump.rdb
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+logs/
+
+# ─── OS files ────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ─── Editor & IDE ────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Testing & coverage ──────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.pem
+.cache/
+tmp/
+temp/
