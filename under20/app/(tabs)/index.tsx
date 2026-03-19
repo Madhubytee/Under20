@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -94,22 +94,44 @@ function RecipeCard({
 }
 
 export default function RecipesScreen() {
-  const { toggleFavorite, isFavorite } = useFavorites();
-  const recipes = recipesData as Recipe[];
-  const [searchQuery, setSearchQuery] = useState('');
-  const normalizedQuery = searchQuery.trim().toLowerCase();
-  const filteredRecipes = recipes.filter((recipe) => {
-    if (!normalizedQuery) {
-      return true;
-    }
+  const [input, setInput] = React.useState("");
+  const [pantry, setPantry] = React.useState<string[]>([]);
 
-    return (
-      recipe.name.toLowerCase().includes(normalizedQuery) ||
-      recipe.ingredients.some((ingredient) =>
-        ingredient.toLowerCase().includes(normalizedQuery)
-      )
-    );
-  });
+  const { toggleFavorite, isFavorite } = useFavorites();
+
+  const addIngredient = () => {
+    if (!input.trim()) return;
+    setPantry([...pantry, input.trim().toLowerCase()]);
+    setInput("");
+  };
+
+  const allRecipes = recipesData as Recipe[];
+
+  let recipes = allRecipes;
+
+if (pantry.length > 0) {
+  recipes = allRecipes
+    .map(recipe => {
+      const recipeIngredients = recipe.ingredients.map(i =>
+        i.toLowerCase()
+      );
+
+      let matchCount = 0;
+
+      pantry.forEach(p => {
+        if (recipeIngredients.some(i => i.includes(p))) {
+          matchCount++;
+        }
+      });
+
+      return { ...recipe, matchCount };
+    })
+    .filter(recipe => recipe.matchCount > 0)
+    .sort((a, b) => b.matchCount - a.matchCount);
+} 
+
+  console.log("PANTRY:", pantry);
+  console.log("RECIPES SHOWN:", recipes.length);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -121,28 +143,49 @@ export default function RecipesScreen() {
         />
       </View>
 
-      <View style={styles.searchWrap}>
-        <View style={styles.searchBar}>
-          <Ionicons name="search" size={18} color={C.gray} />
-          <TextInput
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-            placeholder="Search recipes or ingredients"
-            placeholderTextColor={C.gray}
-            style={styles.searchInput}
-            autoCapitalize="none"
-            autoCorrect={false}
-            clearButtonMode="while-editing"
-          />
-        </View>
+      <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
+        <TextInput
+          placeholder="Add ingredient (e.g. egg)"
+          value={input}
+          onChangeText={setInput}
+          style={{
+            borderWidth: 1,
+            borderColor: "#E7E5E4",
+            borderRadius: 10,
+            padding: 10,
+            marginBottom: 8,
+            backgroundColor: "white"
+          }}
+        />
+
+        <TouchableOpacity
+          onPress={addIngredient}
+          style={{
+            backgroundColor: "#52B788",
+            padding: 10,
+            borderRadius: 10,
+            alignItems: "center",
+            marginBottom: 10
+          }}
+        >
+          <Text style={{ color: "white", fontWeight: "600" }}>
+            Add Ingredient
+          </Text>
+        </TouchableOpacity>
+
+        <Text style={{ fontSize: 12, color: "#6B7280" }}>
+          Pantry: {pantry.join(", ")}
+        </Text>
       </View>
 
       <View style={styles.countBar}>
-        <Text style={styles.countText}>{filteredRecipes.length} recipes</Text>
+        <Text style={styles.countText}>
+          {recipes.length} recipes
+        </Text>
       </View>
 
       <FlatList
-        data={filteredRecipes}
+        data={recipes}
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => (
           <RecipeCard
@@ -153,12 +196,6 @@ export default function RecipesScreen() {
         )}
         contentContainerStyle={styles.list}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={
-          <View style={styles.emptyState}>
-            <Text style={styles.emptyTitle}>No recipes found</Text>
-            <Text style={styles.emptyText}>Try a different keyword or ingredient.</Text>
-          </View>
-        }
       />
     </SafeAreaView>
   );
@@ -172,8 +209,8 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: C.cream,
     paddingHorizontal: 20,
-    paddingTop: 2,
-    paddingBottom: 8,
+    paddingTop: 8,
+    paddingBottom: 16,
     borderBottomWidth: 1,
     borderBottomColor: C.border,
   },
@@ -181,27 +218,24 @@ const styles = StyleSheet.create({
     width: 212,
     height: 52,
     marginLeft: -12,
+
   },
-  searchWrap: {
-    paddingHorizontal: 20,
-    paddingTop: 12,
+  logo: {
+    fontSize: 30,
+    fontWeight: '800',
+    letterSpacing: -0.5,
+    marginBottom: 2,
   },
-  searchBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: C.white,
-    borderWidth: 1,
-    borderColor: C.border,
-    borderRadius: 14,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    gap: 8,
-  },
-  searchInput: {
-    flex: 1,
-    fontSize: 15,
+  logoLight: {
     color: C.text,
-    padding: 0,
+  },
+  logoAccent: {
+    color: C.salmon,
+  },
+  tagline: {
+    fontSize: 13,
+    color: C.gray,
+    fontStyle: 'italic',
   },
   countBar: {
     paddingHorizontal: 20,
@@ -215,7 +249,6 @@ const styles = StyleSheet.create({
   list: {
     paddingHorizontal: 16,
     paddingBottom: 28,
-    flexGrow: 1,
   },
   card: {
     backgroundColor: C.white,
@@ -267,22 +300,5 @@ const styles = StyleSheet.create({
   ingCount: {
     fontSize: 12,
     color: C.gray,
-  },
-  emptyState: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 48,
-    paddingHorizontal: 24,
-  },
-  emptyTitle: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: C.text,
-    marginBottom: 6,
-  },
-  emptyText: {
-    fontSize: 14,
-    color: C.gray,
-    textAlign: 'center',
   },
 });
