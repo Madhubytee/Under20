@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Image,
+  TextInput,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -94,23 +96,53 @@ function RecipeCard({
 export default function RecipesScreen() {
   const { toggleFavorite, isFavorite } = useFavorites();
   const recipes = recipesData as Recipe[];
+  const [searchQuery, setSearchQuery] = useState('');
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const filteredRecipes = recipes.filter((recipe) => {
+    if (!normalizedQuery) {
+      return true;
+    }
+
+    return (
+      recipe.name.toLowerCase().includes(normalizedQuery) ||
+      recipe.ingredients.some((ingredient) =>
+        ingredient.toLowerCase().includes(normalizedQuery)
+      )
+    );
+  });
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.logo}>
-          <Text style={styles.logoLight}>under</Text>
-          <Text style={styles.logoAccent}>20</Text>
-        </Text>
-        <Text style={styles.tagline}>Decide faster. Cook sooner. Eat better.</Text>
+        <Image
+          source={require('@/assets/images/under20text.png')}
+          style={styles.logoImage}
+          resizeMode="contain"
+        />
+      </View>
+
+      <View style={styles.searchWrap}>
+        <View style={styles.searchBar}>
+          <Ionicons name="search" size={18} color={C.gray} />
+          <TextInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Search recipes or ingredients"
+            placeholderTextColor={C.gray}
+            style={styles.searchInput}
+            autoCapitalize="none"
+            autoCorrect={false}
+            clearButtonMode="while-editing"
+          />
+        </View>
       </View>
 
       <View style={styles.countBar}>
-        <Text style={styles.countText}>{recipes.length} recipes</Text>
+        <Text style={styles.countText}>{filteredRecipes.length} recipes</Text>
       </View>
 
       <FlatList
-        data={recipes}
+        data={filteredRecipes}
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => (
           <RecipeCard
@@ -121,6 +153,12 @@ export default function RecipesScreen() {
         )}
         contentContainerStyle={styles.list}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyTitle}>No recipes found</Text>
+            <Text style={styles.emptyText}>Try a different keyword or ingredient.</Text>
+          </View>
+        }
       />
     </SafeAreaView>
   );
@@ -134,27 +172,36 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: C.cream,
     paddingHorizontal: 20,
-    paddingTop: 8,
-    paddingBottom: 16,
+    paddingTop: 2,
+    paddingBottom: 8,
     borderBottomWidth: 1,
     borderBottomColor: C.border,
   },
-  logo: {
-    fontSize: 30,
-    fontWeight: '800',
-    letterSpacing: -0.5,
-    marginBottom: 2,
+  logoImage: {
+    width: 212,
+    height: 52,
+    marginLeft: -12,
   },
-  logoLight: {
+  searchWrap: {
+    paddingHorizontal: 20,
+    paddingTop: 12,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: C.white,
+    borderWidth: 1,
+    borderColor: C.border,
+    borderRadius: 14,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    gap: 8,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 15,
     color: C.text,
-  },
-  logoAccent: {
-    color: C.salmon,
-  },
-  tagline: {
-    fontSize: 13,
-    color: C.gray,
-    fontStyle: 'italic',
+    padding: 0,
   },
   countBar: {
     paddingHorizontal: 20,
@@ -168,6 +215,7 @@ const styles = StyleSheet.create({
   list: {
     paddingHorizontal: 16,
     paddingBottom: 28,
+    flexGrow: 1,
   },
   card: {
     backgroundColor: C.white,
@@ -219,5 +267,22 @@ const styles = StyleSheet.create({
   ingCount: {
     fontSize: 12,
     color: C.gray,
+  },
+  emptyState: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 48,
+    paddingHorizontal: 24,
+  },
+  emptyTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: C.text,
+    marginBottom: 6,
+  },
+  emptyText: {
+    fontSize: 14,
+    color: C.gray,
+    textAlign: 'center',
   },
 });
