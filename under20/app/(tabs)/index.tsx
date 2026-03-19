@@ -5,6 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Image,
   TextInput,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -135,13 +136,11 @@ if (pantry.length > 0) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.logo}>
-          <Text style={styles.logoLight}>under</Text>
-          <Text style={styles.logoAccent}>20</Text>
-        </Text>
-        <Text style={styles.tagline}>
-          Decide faster. Cook sooner. Eat better.
-        </Text>
+        <Image
+          source={require('@/assets/images/under20text.png')}
+          style={styles.logoImage}
+          resizeMode="contain"
+        />
       </View>
 
       <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
@@ -214,6 +213,12 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     borderBottomWidth: 1,
     borderBottomColor: C.border,
+  },
+  logoImage: {
+    width: 212,
+    height: 52,
+    marginLeft: -12,
+
   },
   logo: {
     fontSize: 30,
