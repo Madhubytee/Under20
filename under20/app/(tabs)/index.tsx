@@ -106,29 +106,28 @@ export default function RecipesScreen() {
 
   const allRecipes = recipesData as Recipe[];
 
-  const recipes =
-  pantry.length === 0
-    ? allRecipes
-    : allRecipes
-        .map(recipe => {
-          const recipeIngredients = recipe.ingredients.map(i =>
-            i.toLowerCase()
-          );
+  let recipes = allRecipes;
 
-          let matchCount = 0;
+if (pantry.length > 0) {
+  recipes = allRecipes
+    .map(recipe => {
+      const recipeIngredients = recipe.ingredients.map(i =>
+        i.toLowerCase()
+      );
 
-          pantry.forEach(p => {
-            if (
-              recipeIngredients.some(i => i.includes(p))
-            ) {
-              matchCount++;
-            }
-          });
+      let matchCount = 0;
 
-          return { ...recipe, matchCount };
-        })
-        .filter(recipe => recipe.matchCount > 0)
-        .sort((a, b) => b.matchCount - a.matchCount);
+      pantry.forEach(p => {
+        if (recipeIngredients.some(i => i.includes(p))) {
+          matchCount++;
+        }
+      });
+
+      return { ...recipe, matchCount };
+    })
+    .filter(recipe => recipe.matchCount > 0)
+    .sort((a, b) => b.matchCount - a.matchCount);
+} 
 
   console.log("PANTRY:", pantry);
   console.log("RECIPES SHOWN:", recipes.length);
