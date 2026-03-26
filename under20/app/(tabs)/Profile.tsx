@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  ScrollView,
   View,
   Text,
-  FlatList,
-  TouchableOpacity,
+  Pressable,
   StyleSheet,
+  TextInput,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import { useFavorites } from '@/context/FavoritesContext';
-import recipesData from '@/data/recipes.json';
 
 const C = {
   darkGreen: '#1B4332',
@@ -23,114 +21,147 @@ const C = {
   text: '#111827',
 };
 
-type Recipe = {
-  id: number;
-  name: string;
-  ingredients: string[];
-  cookTime: number;
-  calories: number;
-  protein: number;
-  difficulty: string;
-};
+const GOAL_OPTIONS = [
+  'Meal prep',
+  'Budget-friendly grocery list',
+  'Quick meals',
+  'High-protein meals',
+];
 
-function DifficultyBadge({ difficulty }: { difficulty: string }) {
-  const map: Record<string, { bg: string; color: string }> = {
-    easy:   { bg: '#ECFDF5', color: '#065F46' },
-    medium: { bg: '#FFFBEB', color: '#92400E' },
-    hard:   { bg: '#FEF2F2', color: '#991B1B' },
-  };
-  const s = map[difficulty] ?? map.easy;
-  return (
-    <View style={[styles.badge, { backgroundColor: s.bg }]}>
-      <Text style={[styles.badgeText, { color: s.color }]}>
-        {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
-      </Text>
-    </View>
-  );
-}
+const TIME_OPTIONS = ['Under 10 min', 'Under 20 min'];
 
-function FavoriteCard({
-  recipe,
-  onRemove,
-}: {
-  recipe: Recipe;
-  onRemove: () => void;
-}) {
-  const router = useRouter();
-  return (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => router.push({ pathname: '/recipe/[id]', params: { id: recipe.id } })}
-      activeOpacity={0.88}>
-      <View style={styles.cardTop}>
-        <Text style={styles.cardTitle} numberOfLines={2}>
-          {recipe.name}
-        </Text>
-        <TouchableOpacity
-          onPress={e => { e.stopPropagation?.(); onRemove(); }}
-          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
-          <Ionicons name="heart" size={22} color={C.salmon} />
-        </TouchableOpacity>
-      </View>
-
-      <Text style={styles.statLine}>
-        {recipe.cookTime} min  ·  {recipe.calories} kcal  ·  {recipe.protein}g protein
-      </Text>
-
-      <View style={styles.cardBottom}>
-        <DifficultyBadge difficulty={recipe.difficulty} />
-        <Text style={styles.ingCount}>{recipe.ingredients.length} ingredients</Text>
-      </View>
-    </TouchableOpacity>
-  );
-}
-
-export default function FavoritesScreen() {
-  const { favorites, toggleFavorite } = useFavorites();
-  const favoriteRecipes = (recipesData as Recipe[]).filter(r => favorites.includes(r.id));
+export default function ProfileScreen() {
+  const [name, setName] = useState('Kayla Inoa');
+  const [email, setEmail] = useState('kaylainoa@under20.app');
+  const [age, setAge] = useState('21');
+  const [height, setHeight] = useState(`5'2"`);
+  const [weight, setWeight] = useState('145 lb');
+  const [goal, setGoal] = useState('Meal prep');
+  const [preferredTime, setPreferredTime] = useState('Under 20 min');
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.logo}>
-          <Text style={styles.logoLight}>saved</Text>
-          <Text style={styles.logoAccent}> recipes</Text>
+          <Text style={styles.logoLight}>your</Text>
+          <Text style={styles.logoAccent}> profile</Text>
         </Text>
-        <Text style={styles.tagline}>Your favorites, all in one place.</Text>
+        <Text style={styles.tagline}>Dummy account details for now.</Text>
       </View>
 
-      {favoriteRecipes.length > 0 && (
-        <View style={styles.resultsBar}>
-          <Text style={styles.resultsCount}>
-            {favoriteRecipes.length} saved
-          </Text>
-          <Text style={styles.resultsLabel}>— tap heart to remove</Text>
+      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        <View style={styles.avatarWrap}>
+          <Ionicons name="person" size={40} color={C.darkGreen} />
         </View>
-      )}
 
-      <FlatList
-        data={favoriteRecipes}
-        keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => (
-          <FavoriteCard
-            recipe={item}
-            onRemove={() => toggleFavorite(item.id)}
-          />
-        )}
-        contentContainerStyle={
-          favoriteRecipes.length === 0 ? styles.emptyContainer : styles.list
-        }
-        showsVerticalScrollIndicator={false}
-        ListEmptyComponent={
-          <View style={styles.empty}>
-            <Ionicons name="heart-outline" size={48} color={C.border} />
-            <Text style={styles.emptyTitle}>No saved recipes yet</Text>
-            <Text style={styles.emptySub}>
-              Tap the heart on any recipe to save it here.
-            </Text>
+        <TextInput
+          value={name}
+          onChangeText={setName}
+          style={styles.nameInput}
+          placeholder="Your name"
+          placeholderTextColor={C.gray}
+        />
+        <TextInput
+          value={email}
+          onChangeText={setEmail}
+          style={styles.emailInput}
+          placeholder="Email"
+          placeholderTextColor={C.gray}
+          autoCapitalize="none"
+          keyboardType="email-address"
+        />
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Basic Stats</Text>
+
+          <View style={styles.fieldRow}>
+            <View style={styles.field}>
+              <Text style={styles.label}>Age</Text>
+              <TextInput
+                value={age}
+                onChangeText={setAge}
+                style={styles.input}
+                placeholder="Age"
+                placeholderTextColor={C.gray}
+                keyboardType="number-pad"
+              />
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.label}>Height</Text>
+              <TextInput
+                value={height}
+                onChangeText={setHeight}
+                style={styles.input}
+                placeholder="Height"
+                placeholderTextColor={C.gray}
+              />
+            </View>
           </View>
-        }
-      />
+
+          <View style={styles.field}>
+            <Text style={styles.label}>Weight</Text>
+            <TextInput
+              value={weight}
+              onChangeText={setWeight}
+              style={styles.input}
+              placeholder="Weight"
+              placeholderTextColor={C.gray}
+            />
+          </View>
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Why You Use Under20</Text>
+          <View style={styles.chipWrap}>
+            {GOAL_OPTIONS.map((option) => (
+              <Pressable
+                key={option}
+                onPress={() => setGoal(option)}
+                style={[
+                  styles.chip,
+                  goal === option ? styles.chipActive : styles.chipInactive,
+                ]}>
+                <Text
+                  style={[
+                    styles.chipText,
+                    goal === option ? styles.chipTextActive : styles.chipTextInactive,
+                  ]}>
+                  {option}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Preferred Cooking Time</Text>
+          <View style={styles.chipWrap}>
+            {TIME_OPTIONS.map((option) => (
+              <Pressable
+                key={option}
+                onPress={() => setPreferredTime(option)}
+                style={[
+                  styles.chip,
+                  preferredTime === option ? styles.chipActive : styles.chipInactive,
+                ]}>
+                <Text
+                  style={[
+                    styles.chipText,
+                    preferredTime === option
+                      ? styles.chipTextActive
+                      : styles.chipTextInactive,
+                  ]}>
+                  {option}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Save Changes</Text>
+        </Pressable>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -167,41 +198,43 @@ const styles = StyleSheet.create({
     color: C.gray,
     fontStyle: 'italic',
   },
-
-  // Results bar
-  resultsBar: {
-    flexDirection: 'row',
+  content: {
     alignItems: 'center',
-    gap: 4,
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingTop: 28,
+    paddingBottom: 36,
   },
-  resultsCount: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: C.darkGreen,
+  avatarWrap: {
+    width: 88,
+    height: 88,
+    borderRadius: 44,
+    backgroundColor: '#E7F6EE',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 16,
   },
-  resultsLabel: {
-    fontSize: 13,
+  nameInput: {
+    width: '100%',
+    fontSize: 24,
+    fontWeight: '800',
+    color: C.text,
+    textAlign: 'center',
+    paddingVertical: 0,
+  },
+  emailInput: {
+    width: '100%',
+    marginTop: 6,
+    marginBottom: 24,
+    fontSize: 14,
     color: C.gray,
+    textAlign: 'center',
+    paddingVertical: 0,
   },
-
-  // List
-  list: {
-    paddingHorizontal: 16,
-    paddingBottom: 28,
-  },
-  emptyContainer: {
-    flex: 1,
-    paddingHorizontal: 16,
-  },
-
-  // Card
   card: {
+    width: '100%',
     backgroundColor: C.white,
     borderRadius: 14,
     padding: 16,
-    marginBottom: 10,
     borderWidth: 1,
     borderColor: C.border,
     shadowColor: '#000',
@@ -209,62 +242,78 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.04,
     shadowRadius: 4,
     elevation: 2,
+    marginBottom: 16,
   },
-  cardTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 6,
-  },
-  cardTitle: {
-    flex: 1,
+  sectionTitle: {
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: '800',
     color: C.text,
-    marginRight: 10,
-    lineHeight: 22,
+    marginBottom: 14,
   },
-  statLine: {
-    fontSize: 13,
-    color: C.gray,
-    marginBottom: 10,
-  },
-  cardBottom: {
+  fieldRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    gap: 12,
   },
-  badge: {
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    borderRadius: 20,
+  field: {
+    flex: 1,
+    marginBottom: 12,
   },
-  badgeText: {
-    fontSize: 11,
-    fontWeight: '600',
-    letterSpacing: 0.2,
-  },
-  ingCount: {
-    fontSize: 12,
+  label: {
+    fontSize: 13,
+    fontWeight: '700',
     color: C.gray,
+    marginBottom: 8,
   },
-
-  // Empty
-  empty: {
-    alignItems: 'center',
-    paddingTop: 80,
+  input: {
+    backgroundColor: C.cream,
+    borderWidth: 1,
+    borderColor: C.border,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    fontSize: 15,
+    color: C.text,
+  },
+  chipWrap: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 10,
   },
-  emptyTitle: {
-    fontSize: 17,
-    fontWeight: '700',
-    color: C.text,
+  chip: {
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderWidth: 1,
   },
-  emptySub: {
-    fontSize: 14,
+  chipActive: {
+    backgroundColor: '#E7F6EE',
+    borderColor: C.medGreen,
+  },
+  chipInactive: {
+    backgroundColor: C.white,
+    borderColor: C.border,
+  },
+  chipText: {
+    fontSize: 13,
+    fontWeight: '700',
+  },
+  chipTextActive: {
+    color: C.darkGreen,
+  },
+  chipTextInactive: {
     color: C.gray,
-    textAlign: 'center',
-    paddingHorizontal: 32,
-    lineHeight: 20,
+  },
+  button: {
+    width: '100%',
+    marginTop: 4,
+    backgroundColor: C.darkGreen,
+    borderRadius: 14,
+    paddingVertical: 14,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 15,
+    fontWeight: '800',
+    color: C.white,
   },
 });
