@@ -1,18 +1,18 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  TextInput,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import { useFavorites } from '@/context/FavoritesContext';
 import recipesData from '@/data/recipes.json';
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import React from 'react';
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const C = {
   darkGreen: '#1B4332',
@@ -173,9 +173,46 @@ if (pantry.length > 0) {
           </Text>
         </TouchableOpacity>
 
-        <Text style={{ fontSize: 12, color: "#6B7280" }}>
+        {/* <Text style={{ fontSize: 12, color: "#6B7280" }}>
           Pantry: {pantry.join(", ")}
+        </Text> */} 
+      </View>
+
+      <View style={{ marginTop: 10}}>
+        <Text style={{fontSize: 14, fontWeight: "600", marginBottom: 6}}>
+          Pantry:
         </Text>
+        {pantry.length === 0 && (
+          <Text style={{ color: "#6B7280" }}>No ingredients added yet.</Text>
+        )}
+
+        {pantry.map((item, index) => (
+          <View
+            key={index}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 6,
+            }}
+          >
+            <Text style={{ color: "#6B7280" }}>{item}</Text>
+
+            <TouchableOpacity
+              onPress={() =>
+                setPantry(prev => prev.filter((_, i) => i !== index))
+              }
+              style={{
+                backgroundColor: ":EF4444",
+                paddingHorizontal: 8,
+                borderRadius: 6,
+              }}
+            >
+              <Text style={{ color: "blue", fontSize: 12, fontWeight: "600"}}>
+                Remove
+              </Text>
+            </TouchableOpacity>
+          </View>
+        ))}
       </View>
 
       <View style={styles.countBar}>
