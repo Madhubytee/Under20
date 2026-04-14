@@ -3,9 +3,11 @@ import {
   KeyboardAvoidingView,
   Platform,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
   Image,
   ActivityIndicator,
@@ -16,23 +18,38 @@ import { useRouter } from 'expo-router';
 import { C } from '@/constants/theme';
 import { useAuth } from '@/context/AuthContext';
 
-export default function LoginScreen() {
-  const { signIn } = useAuth();
+const COOKING_LEVELS = [
+  { key: 'beginner',     label: 'Beginner',      icon: 'leaf-outline',       desc: 'Just starting out' },
+  { key: 'home_cook',    label: 'Home Cook',      icon: 'home-outline',       desc: 'Comfortable in the kitchen' },
+  { key: 'advanced',     label: 'Advanced',       icon: 'flame-outline',      desc: 'Love to experiment' },
+  { key: 'chef',         label: 'Chef Level',     icon: 'restaurant-outline', desc: 'Culinary pro' },
+] as const;
+
+type CookingLevel = typeof COOKING_LEVELS[number]['key'];
+
+export default function SignUpScreen() {
+  const { signUp } = useAuth();
   const router = useRouter();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [cookingLevel, setCookingLevel] = useState<CookingLevel>('home_cook');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async () => {
-    if (!email.trim() || !password.trim()) {
-      setError('Please enter your email and password.');
+  const handleSignUp = async () => {
+    if (!name.trim() || !email.trim() || !password.trim()) {
+      setError('Please fill in all fields.');
+      return;
+    }
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters.');
       return;
     }
     setLoading(true);
     setError(null);
-    const err = await signIn(email.trim(), password);
+    const err = await signUp(email.trim(), password, name.trim(), cookingLevel);
     setLoading(false);
     if (err) setError(err);
   };
@@ -42,8 +59,15 @@ export default function LoginScreen() {
       <KeyboardAvoidingView
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <ScrollView
+          contentContainerStyle={styles.scroll}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled">
 
-        <View style={styles.content}>
+          {/* Back button */}
+          <Pressable onPress={() => router.back()} style={styles.back} hitSlop={8}>
+            <Ionicons name="arrow-back" size={20} color={C.text} />
+          </Pressable>
 
           {/* Logo + heading */}
           <View style={styles.hero}>
@@ -52,13 +76,31 @@ export default function LoginScreen() {
               style={styles.logo}
               resizeMode="contain"
             />
-            <Text style={styles.welcome}>Welcome back</Text>
-            <Text style={styles.title}>Sign in to Under 20</Text>
+            <Text style={styles.welcome}>Get started</Text>
+            <Text style={styles.title}>Create your account</Text>
             <Text style={styles.subtitle}>Decide Faster. Cook Sooner. Eat Better.</Text>
           </View>
 
           {/* Form card */}
           <View style={styles.card}>
+
+            {/* Name */}
+            <View style={styles.field}>
+              <Text style={styles.label}>Name</Text>
+              <View style={styles.inputWrap}>
+                <Ionicons name="person-outline" size={17} color={C.gray} />
+                <TextInput
+                  value={name}
+                  onChangeText={setName}
+                  placeholder="Your name"
+                  placeholderTextColor={C.gray}
+                  autoCapitalize="words"
+                  style={styles.input}
+                />
+              </View>
+            </View>
+
+            {/* Email */}
             <View style={styles.field}>
               <Text style={styles.label}>Email</Text>
               <View style={styles.inputWrap}>
@@ -75,19 +117,15 @@ export default function LoginScreen() {
               </View>
             </View>
 
+            {/* Password */}
             <View style={styles.field}>
-              <View style={styles.labelRow}>
-                <Text style={styles.label}>Password</Text>
-                <Pressable hitSlop={8}>
-                  <Text style={styles.forgot}>Forgot password?</Text>
-                </Pressable>
-              </View>
+              <Text style={styles.label}>Password</Text>
               <View style={styles.inputWrap}>
                 <Ionicons name="lock-closed-outline" size={17} color={C.gray} />
                 <TextInput
                   value={password}
                   onChangeText={setPassword}
-                  placeholder="Enter your password"
+                  placeholder="At least 6 characters"
                   placeholderTextColor={C.gray}
                   secureTextEntry={!showPassword}
                   style={styles.input}
@@ -102,28 +140,55 @@ export default function LoginScreen() {
               </View>
             </View>
 
+            {/* Cooking level */}
+            <View style={styles.field}>
+              <Text style={styles.label}>Cooking Level</Text>
+              <View style={styles.levelGrid}>
+                {COOKING_LEVELS.map(level => {
+                  const selected = cookingLevel === level.key;
+                  return (
+                    <TouchableOpacity
+                      key={level.key}
+                      style={[styles.levelCard, selected && styles.levelCardSelected]}
+                      onPress={() => setCookingLevel(level.key)}
+                      activeOpacity={0.8}>
+                      <Ionicons
+                        name={level.icon as any}
+                        size={22}
+                        color={selected ? C.medGreen : C.gray}
+                      />
+                      <Text style={[styles.levelLabel, selected && styles.levelLabelSelected]}>
+                        {level.label}
+                      </Text>
+                      <Text style={styles.levelDesc}>{level.desc}</Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </View>
+
             {error && <Text style={styles.errorText}>{error}</Text>}
 
             <Pressable
               style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-              onPress={handleSubmit}
+              onPress={handleSignUp}
               disabled={loading}>
               {loading
                 ? <ActivityIndicator color={C.white} />
-                : <Text style={styles.buttonText}>Sign In</Text>
+                : <Text style={styles.buttonText}>Create Account</Text>
               }
             </Pressable>
           </View>
 
           {/* Footer */}
           <View style={styles.footer}>
-            <Text style={styles.footerText}>Don't have an account? </Text>
-            <Pressable hitSlop={8} onPress={() => router.push('/signup')}>
-              <Text style={styles.footerLink}>Sign up</Text>
+            <Text style={styles.footerText}>Already have an account? </Text>
+            <Pressable hitSlop={8} onPress={() => router.back()}>
+              <Text style={styles.footerLink}>Sign in</Text>
             </Pressable>
           </View>
 
-        </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -137,20 +202,23 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
+  scroll: {
     paddingHorizontal: 28,
+    paddingBottom: 40,
     gap: 28,
+  },
+  back: {
+    marginTop: 8,
+    alignSelf: 'flex-start',
   },
   hero: {
     alignItems: 'center',
     gap: 6,
   },
   logo: {
-    width: 110,
-    height: 110,
-    marginBottom: 8,
+    width: 90,
+    height: 90,
+    marginBottom: 6,
   },
   welcome: {
     fontSize: 13,
@@ -188,20 +256,10 @@ const styles = StyleSheet.create({
   field: {
     gap: 7,
   },
-  labelRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
   label: {
     fontSize: 13,
     fontWeight: '700',
     color: C.text,
-  },
-  forgot: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: C.medGreen,
   },
   inputWrap: {
     flexDirection: 'row',
@@ -219,6 +277,37 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: C.text,
     padding: 0,
+  },
+  levelGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  levelCard: {
+    width: '47%',
+    backgroundColor: C.cream,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: C.border,
+    padding: 12,
+    gap: 4,
+    alignItems: 'flex-start',
+  },
+  levelCardSelected: {
+    borderColor: C.medGreen,
+    backgroundColor: '#ECFDF5',
+  },
+  levelLabel: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.text,
+  },
+  levelLabelSelected: {
+    color: C.darkGreen,
+  },
+  levelDesc: {
+    fontSize: 11,
+    color: C.gray,
   },
   errorText: {
     fontSize: 13,

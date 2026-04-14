@@ -9,31 +9,26 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
 import { useGroceryList } from '@/context/GroceryListContext';
+import { useAuth } from '@/context/AuthContext';
+import { C } from '@/constants/theme';
 
-const C = {
-  darkGreen: '#1B4332',
-  medGreen: '#52B788',
-  salmon: '#E76F51',
-  cream: '#FAF7F0',
-  white: '#FFFFFF',
-  gray: '#6B7280',
-  lightGray: '#F5F5F4',
-  border: '#E7E5E4',
-  text: '#111827',
-};
+const COOKING_LEVELS = [
+  { key: 'beginner',  label: 'Beginner'  },
+  { key: 'home_cook', label: 'Home Cook' },
+  { key: 'advanced',  label: 'Advanced'  },
+  { key: 'chef',      label: 'Chef'      },
+] as const;
 
-const SKILL_LEVELS = ['Beginner', 'Intermediate', 'Advanced'] as const;
-type SkillLevel = typeof SKILL_LEVELS[number];
+type CookingLevelKey = typeof COOKING_LEVELS[number]['key'];
 
 const DIETARY_OPTIONS = [
   { key: 'vegetarian', label: 'Vegetarian', icon: 'leaf-outline' },
-  { key: 'vegan', label: 'Vegan', icon: 'flower-outline' },
+  { key: 'vegan',      label: 'Vegan',      icon: 'flower-outline' },
   { key: 'glutenFree', label: 'Gluten-Free', icon: 'ban-outline' },
-  { key: 'dairyFree', label: 'Dairy-Free', icon: 'water-outline' },
+  { key: 'dairyFree',  label: 'Dairy-Free',  icon: 'water-outline' },
 ] as const;
 
 type DietKey = typeof DIETARY_OPTIONS[number]['key'];
@@ -43,11 +38,7 @@ function SectionLabel({ title }: { title: string }) {
 }
 
 function SettingsRow({
-  icon,
-  label,
-  right,
-  onPress,
-  last,
+  icon, label, right, onPress, last,
 }: {
   icon: string;
   label: string;
@@ -74,12 +65,20 @@ function SettingsRow({
 }
 
 export default function AccountScreen() {
-  const router = useRouter();
+  const { session, signOut, updateProfile } = useAuth();
   const { favorites } = useFavorites();
   const { pantry } = usePantry();
   const { groceryList } = useGroceryList();
 
-  const [skillLevel, setSkillLevel] = React.useState<SkillLevel>('Beginner');
+  const metadata = session?.user?.user_metadata ?? {};
+  const name: string = metadata.name ?? '';
+  const email: string = session?.user?.email ?? '';
+  const avatarLetter = name ? name[0].toUpperCase() : email ? email[0].toUpperCase() : '?';
+
+  const savedLevel = (metadata.cooking_level as CookingLevelKey) ?? 'home_cook';
+  const [cookingLevel, setCookingLevel] = React.useState<CookingLevelKey>(savedLevel);
+  const [savingLevel, setSavingLevel] = React.useState(false);
+
   const [dietary, setDietary] = React.useState<Record<DietKey, boolean>>({
     vegetarian: false,
     vegan: false,
@@ -91,6 +90,13 @@ export default function AccountScreen() {
 
   const toggleDiet = (key: DietKey) =>
     setDietary(prev => ({ ...prev, [key]: !prev[key] }));
+
+  const handleLevelChange = async (level: CookingLevelKey) => {
+    setCookingLevel(level);
+    setSavingLevel(true);
+    await updateProfile({ cooking_level: level });
+    setSavingLevel(false);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -105,16 +111,12 @@ export default function AccountScreen() {
         {/* Avatar card */}
         <View style={styles.avatarCard}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>S</Text>
+            <Text style={styles.avatarText}>{avatarLetter}</Text>
           </View>
           <View style={styles.avatarInfo}>
-            <Text style={styles.userName}>SWE Student</Text>
-            <Text style={styles.userEmail}>gators@example.com</Text>
+            <Text style={styles.userName}>{name || 'No name set'}</Text>
+            <Text style={styles.userEmail}>{email}</Text>
           </View>
-          <TouchableOpacity style={styles.editBtn} activeOpacity={0.7}>
-            <Ionicons name="pencil-outline" size={16} color={C.medGreen} />
-          </TouchableOpacity>
-      
         </View>
 
         {/* Stats */}
@@ -136,16 +138,16 @@ export default function AccountScreen() {
         </View>
 
         {/* Cooking level */}
-        <SectionLabel title="Cooking Level" />
+        <SectionLabel title={savingLevel ? 'Cooking Level — saving…' : 'Cooking Level'} />
         <View style={styles.card}>
           <View style={styles.skillRow}>
-            {SKILL_LEVELS.map(level => (
+            {COOKING_LEVELS.map(level => (
               <TouchableOpacity
-                key={level}
-                style={[styles.skillBtn, skillLevel === level && styles.skillBtnActive]}
-                onPress={() => setSkillLevel(level)}>
-                <Text style={[styles.skillBtnText, skillLevel === level && styles.skillBtnTextActive]}>
-                  {level}
+                key={level.key}
+                style={[styles.skillBtn, cookingLevel === level.key && styles.skillBtnActive]}
+                onPress={() => handleLevelChange(level.key)}>
+                <Text style={[styles.skillBtnText, cookingLevel === level.key && styles.skillBtnTextActive]}>
+                  {level.label}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -203,19 +205,6 @@ export default function AccountScreen() {
           />
         </View>
 
-        {/* Account */}
-        <SectionLabel title="Account" />
-        <View style={styles.card}>
-          <SettingsRow icon="person-outline" label="Edit profile" onPress={() => {}} />
-          <SettingsRow icon="lock-closed-outline" label="Change password" onPress={() => {}} />
-          <SettingsRow
-            icon="shield-checkmark-outline"
-            label="Privacy policy"
-            last
-            onPress={() => {}}
-          />
-        </View>
-
         {/* About */}
         <SectionLabel title="About" />
         <View style={styles.card}>
@@ -232,7 +221,7 @@ export default function AccountScreen() {
         {/* Sign out */}
         <TouchableOpacity
           style={styles.signOutBtn}
-          onPress={() => router.replace('/')}
+          onPress={signOut}
           activeOpacity={0.8}>
           <Ionicons name="log-out-outline" size={18} color={C.salmon} />
           <Text style={styles.signOutText}>Sign Out</Text>
@@ -268,8 +257,6 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 40,
   },
-
-  // Avatar
   avatarCard: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -308,11 +295,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: C.gray,
   },
-  editBtn: {
-    padding: 6,
-  },
-
-  // Stats
   statsCard: {
     flexDirection: 'row',
     backgroundColor: C.white,
@@ -342,8 +324,6 @@ const styles = StyleSheet.create({
     backgroundColor: C.border,
     marginVertical: 4,
   },
-
-  // Section label
   sectionLabel: {
     fontSize: 11,
     fontWeight: '700',
@@ -353,8 +333,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginLeft: 4,
   },
-
-  // Card
   card: {
     backgroundColor: C.white,
     borderRadius: 14,
@@ -363,8 +341,6 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     overflow: 'hidden',
   },
-
-  // Row
   row: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -395,8 +371,6 @@ const styles = StyleSheet.create({
     color: C.text,
     fontWeight: '500',
   },
-
-  // Skill level
   skillRow: {
     flexDirection: 'row',
     padding: 10,
@@ -416,21 +390,17 @@ const styles = StyleSheet.create({
     borderColor: C.darkGreen,
   },
   skillBtnText: {
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '600',
     color: C.gray,
   },
   skillBtnTextActive: {
     color: C.white,
   },
-
-  // Version text
   versionText: {
     fontSize: 13,
     color: C.gray,
   },
-
-  // Sign out
   signOutBtn: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -448,8 +418,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: C.salmon,
   },
-
-  // Footer
   footer: {
     textAlign: 'center',
     fontSize: 12,
