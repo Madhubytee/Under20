@@ -130,9 +130,6 @@ if (pantry.length > 0) {
     .sort((a, b) => b.matchCount - a.matchCount);
 } 
 
-  console.log("PANTRY:", pantry);
-  console.log("RECIPES SHOWN:", recipes.length);
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -143,74 +140,39 @@ if (pantry.length > 0) {
         />
       </View>
 
-      <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
-        <TextInput
-          placeholder="Add ingredient (e.g. egg)"
-          value={input}
-          onChangeText={setInput}
-          style={{
-            borderWidth: 1,
-            borderColor: "#E7E5E4",
-            borderRadius: 10,
-            padding: 10,
-            marginBottom: 8,
-            backgroundColor: "white"
-          }}
-        />
+      <View style={styles.inputSection}>
+        <View style={styles.inputRow}>
+          <TextInput
+            placeholder="Add ingredient (e.g. egg)"
+            value={input}
+            onChangeText={setInput}
+            onSubmitEditing={addIngredient}
+            returnKeyType="done"
+            style={styles.textInput}
+          />
+          <TouchableOpacity onPress={addIngredient} style={styles.addBtn}>
+            <Ionicons name="add" size={22} color={C.white} />
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity
-          onPress={addIngredient}
-          style={{
-            backgroundColor: "#52B788",
-            padding: 10,
-            borderRadius: 10,
-            alignItems: "center",
-            marginBottom: 10
-          }}
-        >
-          <Text style={{ color: "white", fontWeight: "600" }}>
-            Add Ingredient
-          </Text>
-        </TouchableOpacity>
-
-        {/* <Text style={{ fontSize: 12, color: "#6B7280" }}>
-          Pantry: {pantry.join(", ")}
-        </Text> */} 
-      </View>
-
-      <View style={{ marginTop: 10}}>
-        <Text style={{fontSize: 14, fontWeight: "600", marginBottom: 6}}>
-          Pantry:
-        </Text>
-        {pantry.length === 0 && (
-          <Text style={{ color: "#6B7280" }}>No ingredients added yet.</Text>
+        {pantry.length > 0 && (
+          <View style={styles.chipRow}>
+            {pantry.map((item, index) => (
+              <View key={index} style={styles.chip}>
+                <Text style={styles.chipText}>{item}</Text>
+                <TouchableOpacity
+                  onPress={() => removeFromPantry(index)}
+                  hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
+                  <Ionicons name="close-circle" size={15} color={C.medGreen} />
+                </TouchableOpacity>
+              </View>
+            ))}
+          </View>
         )}
 
-        {pantry.map((item, index) => (
-          <View
-            key={index}
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: 6,
-            }}
-          >
-            <Text style={{ color: "#6B7280" }}>{item}</Text>
-
-            <TouchableOpacity
-              onPress={() => removeFromPantry(index)}
-              style={{
-                backgroundColor: ":EF4444",
-                paddingHorizontal: 8,
-                borderRadius: 6,
-              }}
-            >
-              <Text style={{ color: "blue", fontSize: 12, fontWeight: "600"}}>
-                Remove
-              </Text>
-            </TouchableOpacity>
-          </View>
-        ))}
+        {pantry.length === 0 && (
+          <Text style={styles.pantryEmpty}>Add ingredients to filter recipes</Text>
+        )}
       </View>
 
       <View style={styles.countBar}>
@@ -335,5 +297,62 @@ const styles = StyleSheet.create({
   ingCount: {
     fontSize: 12,
     color: C.gray,
+  },
+  inputSection: {
+    paddingHorizontal: 20,
+    paddingTop: 12,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+  },
+  inputRow: {
+    flexDirection: 'row',
+    gap: 8,
+    marginBottom: 10,
+  },
+  textInput: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: C.border,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    backgroundColor: C.white,
+    fontSize: 14,
+    color: C.text,
+  },
+  addBtn: {
+    backgroundColor: C.medGreen,
+    borderRadius: 10,
+    width: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  chip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  chipText: {
+    fontSize: 13,
+    color: C.darkGreen,
+    fontWeight: '500',
+    textTransform: 'capitalize',
+  },
+  pantryEmpty: {
+    fontSize: 13,
+    color: C.gray,
+    fontStyle: 'italic',
   },
 });
