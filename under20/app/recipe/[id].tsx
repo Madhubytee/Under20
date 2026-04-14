@@ -219,15 +219,31 @@ export default function RecipeDetailScreen() {
                   );
                 })}
 
-                {/* Add all button */}
-                {missingIngredients.some(ing => !isInGrocery(ing)) && (
-                  <TouchableOpacity
-                    style={styles.addAllBtn}
-                    onPress={() => missingIngredients.forEach(ing => addToGrocery(ing))}>
-                    <Ionicons name="cart" size={16} color={C.white} />
-                    <Text style={styles.addAllBtnText}>Add all to grocery list</Text>
-                  </TouchableOpacity>
-                )}
+                {/* Add all / Remove all button */}
+                {(() => {
+                  const allAdded = missingIngredients.every(ing => isInGrocery(ing));
+                  return (
+                    <TouchableOpacity
+                      style={[styles.addAllBtn, allAdded && styles.addAllBtnAdded]}
+                      onPress={() => {
+                        if (allAdded) {
+                          missingIngredients.forEach(ing => {
+                            const idx = groceryList.indexOf(ing.trim().toLowerCase());
+                            if (idx !== -1) removeFromGrocery(idx);
+                          });
+                        } else {
+                          missingIngredients.forEach(ing => {
+                            if (!isInGrocery(ing)) addToGrocery(ing);
+                          });
+                        }
+                      }}>
+                      <Ionicons name={allAdded ? 'close-circle' : 'cart'} size={16} color={allAdded ? C.medGreen : C.white} />
+                      <Text style={[styles.addAllBtnText, allAdded && styles.addAllBtnTextAdded]}>
+                        {allAdded ? 'Remove all' : 'Add all to grocery list'}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })()}
               </View>
             )}
           </View>
@@ -522,10 +538,18 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     marginTop: 12,
   },
+  addAllBtnAdded: {
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+  },
   addAllBtnText: {
     fontSize: 13,
     fontWeight: '700',
     color: C.white,
+  },
+  addAllBtnTextAdded: {
+    color: C.medGreen,
   },
 
   // All good banner
