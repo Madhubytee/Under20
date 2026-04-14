@@ -140,44 +140,22 @@ if (pantry.length > 0) {
         />
       </View>
 
-      <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
-        <TextInput
-          placeholder="Add ingredient (e.g. egg)"
-          value={input}
-          onChangeText={setInput}
-          style={{
-            borderWidth: 1,
-            borderColor: "#E7E5E4",
-            borderRadius: 10,
-            padding: 10,
-            marginBottom: 8,
-            backgroundColor: "white"
-          }}
-        />
+      <View style={styles.inputSection}>
+        <View style={styles.inputRow}>
+          <TextInput
+            placeholder="Add ingredient (e.g. egg)"
+            value={input}
+            onChangeText={setInput}
+            onSubmitEditing={addIngredient}
+            returnKeyType="done"
+            style={styles.textInput}
+          />
+          <TouchableOpacity onPress={addIngredient} style={styles.addBtn}>
+            <Ionicons name="add" size={22} color={C.white} />
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity
-          onPress={addIngredient}
-          style={{
-            backgroundColor: "#52B788",
-            padding: 10,
-            borderRadius: 10,
-            alignItems: "center",
-            marginBottom: 10
-          }}
-        >
-          <Text style={{ color: "white", fontWeight: "600" }}>
-            Add Ingredient
-          </Text>
-        </TouchableOpacity>
-
-        {/* <Text style={{ fontSize: 12, color: "#6B7280" }}>
-          Pantry: {pantry.join(", ")}
-        </Text> */} 
-      </View>
-
-      {pantry.length > 0 && (
-        <View style={styles.pantrySection}>
-          <Text style={styles.pantryLabel}>My Pantry</Text>
+        {pantry.length > 0 && (
           <View style={styles.chipRow}>
             {pantry.map((item, index) => (
               <View key={index} style={styles.chip}>
@@ -190,8 +168,12 @@ if (pantry.length > 0) {
               </View>
             ))}
           </View>
-        </View>
-      )}
+        )}
+
+        {pantry.length === 0 && (
+          <Text style={styles.pantryEmpty}>Add ingredients to filter recipes</Text>
+        )}
+      </View>
 
       <View style={styles.countBar}>
         <Text style={styles.countText}>
@@ -316,19 +298,35 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: C.gray,
   },
-  pantrySection: {
+  inputSection: {
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingTop: 12,
+    paddingBottom: 10,
     borderBottomWidth: 1,
     borderBottomColor: C.border,
   },
-  pantryLabel: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: C.gray,
-    textTransform: 'uppercase',
-    letterSpacing: 0.6,
-    marginBottom: 8,
+  inputRow: {
+    flexDirection: 'row',
+    gap: 8,
+    marginBottom: 10,
+  },
+  textInput: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: C.border,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    backgroundColor: C.white,
+    fontSize: 14,
+    color: C.text,
+  },
+  addBtn: {
+    backgroundColor: C.medGreen,
+    borderRadius: 10,
+    width: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   chipRow: {
     flexDirection: 'row',
@@ -351,5 +349,10 @@ const styles = StyleSheet.create({
     color: C.darkGreen,
     fontWeight: '500',
     textTransform: 'capitalize',
+  },
+  pantryEmpty: {
+    fontSize: 13,
+    color: C.gray,
+    fontStyle: 'italic',
   },
 });
