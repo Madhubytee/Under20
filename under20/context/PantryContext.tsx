@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { supabase } from '@/lib/supabase';
-import { useAuth } from '@/context/AuthContext';
+import { useUserTable } from '@/hooks/useUserTable';
 
 type PantryRow = { id: string; item: string };
 
@@ -17,22 +17,7 @@ const PantryContext = createContext<PantryContextType>({
 });
 
 export function PantryProvider({ children }: { children: React.ReactNode }) {
-  const { session } = useAuth();
-  const userId = session?.user?.id ?? null;
-  const [rows, setRows] = useState<PantryRow[]>([]);
-
-  useEffect(() => {
-    if (!userId) {
-      setRows([]);
-      return;
-    }
-    supabase
-      .from('pantry_items')
-      .select('id, item')
-      .eq('user_id', userId)
-      .order('created_at')
-      .then(({ data }) => setRows(data ?? []));
-  }, [userId]);
+  const { userId, rows, setRows } = useUserTable<PantryRow>('pantry_items', 'id, item');
 
   const addToPantry = async (item: string) => {
     const normalized = item.trim().toLowerCase();

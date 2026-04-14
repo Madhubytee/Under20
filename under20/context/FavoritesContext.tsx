@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { supabase } from '@/lib/supabase';
-import { useAuth } from '@/context/AuthContext';
+import { useUserTable } from '@/hooks/useUserTable';
 
 type FavoriteRow = { id: string; recipe_id: number };
 
@@ -17,22 +17,7 @@ const FavoritesContext = createContext<FavoritesContextType>({
 });
 
 export function FavoritesProvider({ children }: { children: React.ReactNode }) {
-  const { session } = useAuth();
-  const userId = session?.user?.id ?? null;
-  const [rows, setRows] = useState<FavoriteRow[]>([]);
-
-  useEffect(() => {
-    if (!userId) {
-      setRows([]);
-      return;
-    }
-    supabase
-      .from('favorites')
-      .select('id, recipe_id')
-      .eq('user_id', userId)
-      .order('created_at')
-      .then(({ data }) => setRows(data ?? []));
-  }, [userId]);
+  const { userId, rows, setRows } = useUserTable<FavoriteRow>('favorites', 'id, recipe_id');
 
   const toggleFavorite = async (recipeId: number) => {
     if (!userId) return;

@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { supabase } from '@/lib/supabase';
-import { useAuth } from '@/context/AuthContext';
+import { useUserTable } from '@/hooks/useUserTable';
 
 type GroceryRow = { id: string; item: string };
 
@@ -23,22 +23,7 @@ const GroceryListContext = createContext<GroceryListContextType>({
 });
 
 export function GroceryListProvider({ children }: { children: React.ReactNode }) {
-  const { session } = useAuth();
-  const userId = session?.user?.id ?? null;
-  const [rows, setRows] = useState<GroceryRow[]>([]);
-
-  useEffect(() => {
-    if (!userId) {
-      setRows([]);
-      return;
-    }
-    supabase
-      .from('grocery_items')
-      .select('id, item')
-      .eq('user_id', userId)
-      .order('created_at')
-      .then(({ data }) => setRows(data ?? []));
-  }, [userId]);
+  const { userId, rows, setRows } = useUserTable<GroceryRow>('grocery_items', 'id, item');
 
   const addToGrocery = async (item: string) => {
     const normalized = item.trim().toLowerCase();
