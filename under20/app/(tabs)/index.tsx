@@ -130,9 +130,6 @@ if (pantry.length > 0) {
     .sort((a, b) => b.matchCount - a.matchCount);
 } 
 
-  console.log("PANTRY:", pantry);
-  console.log("RECIPES SHOWN:", recipes.length);
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -178,40 +175,23 @@ if (pantry.length > 0) {
         </Text> */} 
       </View>
 
-      <View style={{ marginTop: 10}}>
-        <Text style={{fontSize: 14, fontWeight: "600", marginBottom: 6}}>
-          Pantry:
-        </Text>
-        {pantry.length === 0 && (
-          <Text style={{ color: "#6B7280" }}>No ingredients added yet.</Text>
-        )}
-
-        {pantry.map((item, index) => (
-          <View
-            key={index}
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: 6,
-            }}
-          >
-            <Text style={{ color: "#6B7280" }}>{item}</Text>
-
-            <TouchableOpacity
-              onPress={() => removeFromPantry(index)}
-              style={{
-                backgroundColor: ":EF4444",
-                paddingHorizontal: 8,
-                borderRadius: 6,
-              }}
-            >
-              <Text style={{ color: "blue", fontSize: 12, fontWeight: "600"}}>
-                Remove
-              </Text>
-            </TouchableOpacity>
+      {pantry.length > 0 && (
+        <View style={styles.pantrySection}>
+          <Text style={styles.pantryLabel}>My Pantry</Text>
+          <View style={styles.chipRow}>
+            {pantry.map((item, index) => (
+              <View key={index} style={styles.chip}>
+                <Text style={styles.chipText}>{item}</Text>
+                <TouchableOpacity
+                  onPress={() => removeFromPantry(index)}
+                  hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
+                  <Ionicons name="close-circle" size={15} color={C.medGreen} />
+                </TouchableOpacity>
+              </View>
+            ))}
           </View>
-        ))}
-      </View>
+        </View>
+      )}
 
       <View style={styles.countBar}>
         <Text style={styles.countText}>
@@ -335,5 +315,41 @@ const styles = StyleSheet.create({
   ingCount: {
     fontSize: 12,
     color: C.gray,
+  },
+  pantrySection: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+  },
+  pantryLabel: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: C.gray,
+    textTransform: 'uppercase',
+    letterSpacing: 0.6,
+    marginBottom: 8,
+  },
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  chip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  chipText: {
+    fontSize: 13,
+    color: C.darkGreen,
+    fontWeight: '500',
+    textTransform: 'capitalize',
   },
 });

@@ -5,6 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Animated,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -22,15 +23,62 @@ const C = {
   text: '#111827',
 };
 
+type UndoState = {
+  item: string;
+  timeoutId: ReturnType<typeof setTimeout>;
+} | null;
+
 export default function GroceryScreen() {
-  const { groceryList, removeFromGrocery, clearGrocery } = useGroceryList();
+  const { groceryList, removeFromGrocery, addToGrocery, clearGrocery } = useGroceryList();
   const { addToPantry } = usePantry();
 
-  const moveToastMsg = React.useRef<string | null>(null);
+  const [undoState, setUndoState] = React.useState<UndoState>(null);
+  const toastOpacity = React.useRef(new Animated.Value(0)).current;
 
-  const handleMoveToParty = (item: string, index: number) => {
+  const showToast = () => {
+    Animated.timing(toastOpacity, { toValue: 1, duration: 200, useNativeDriver: true }).start();
+  };
+
+  const hideToast = () => {
+    Animated.timing(toastOpacity, { toValue: 0, duration: 200, useNativeDriver: true }).start();
+  };
+
+  // ✓ Bought — move to pantry and remove from list
+  const handleBought = (item: string, index: number) => {
     addToPantry(item);
     removeFromGrocery(index);
+  };
+
+  // X — remove entirely with undo
+  const handleRemove = (item: string, index: number) => {
+    if (undoState) clearTimeout(undoState.timeoutId);
+
+    removeFromGrocery(index);
+
+    const timeoutId = setTimeout(() => {
+      setUndoState(null);
+      hideToast();
+    }, 4000);
+
+    setUndoState({ item, timeoutId });
+    showToast();
+  };
+
+  const handleUndo = () => {
+    if (!undoState) return;
+    clearTimeout(undoState.timeoutId);
+    addToGrocery(undoState.item);
+    setUndoState(null);
+    hideToast();
+  };
+
+  const handleClearAll = () => {
+    if (undoState) {
+      clearTimeout(undoState.timeoutId);
+      setUndoState(null);
+      hideToast();
+    }
+    clearGrocery();
   };
 
   return (
@@ -44,7 +92,7 @@ export default function GroceryScreen() {
           <Text style={styles.tagline}>Items you need to pick up.</Text>
         </View>
         {groceryList.length > 0 && (
-          <TouchableOpacity onPress={clearGrocery} style={styles.clearBtn}>
+          <TouchableOpacity onPress={handleClearAll} style={styles.clearBtn}>
             <Text style={styles.clearBtnText}>Clear all</Text>
           </TouchableOpacity>
         )}
@@ -52,8 +100,10 @@ export default function GroceryScreen() {
 
       {groceryList.length > 0 && (
         <View style={styles.countBar}>
-          <Text style={styles.countText}>{groceryList.length} item{groceryList.length !== 1 ? 's' : ''}</Text>
-          <Text style={styles.countHint}> · tap check to move to pantry</Text>
+          <Text style={styles.countText}>
+            {groceryList.length} item{groceryList.length !== 1 ? 's' : ''}
+          </Text>
+          <Text style={styles.countHint}> · ✓ bought adds to pantry</Text>
         </View>
       )}
 
@@ -62,17 +112,21 @@ export default function GroceryScreen() {
         keyExtractor={(item, index) => `${item}-${index}`}
         renderItem={({ item, index }) => (
           <View style={styles.row}>
+            {/* Bought → moves to pantry */}
             <TouchableOpacity
-              style={styles.checkBtn}
-              onPress={() => handleMoveToParty(item, index)}
+              style={styles.boughtBtn}
+              onPress={() => handleBought(item, index)}
               hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-              <Ionicons name="checkmark-circle-outline" size={24} color={C.medGreen} />
+              <Ionicons name="checkmark-circle-outline" size={26} color={C.medGreen} />
             </TouchableOpacity>
+
             <Text style={styles.itemText}>{item}</Text>
+
+            {/* X → remove entirely with undo */}
             <TouchableOpacity
-              onPress={() => removeFromGrocery(index)}
+              onPress={() => handleRemove(item, index)}
               hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-              <Ionicons name="close-circle-outline" size={22} color={C.gray} />
+              <Ionicons name="close-circle-outline" size={24} color={C.gray} />
             </TouchableOpacity>
           </View>
         )}
@@ -90,6 +144,16 @@ export default function GroceryScreen() {
           </View>
         }
       />
+
+      {/* Undo toast */}
+      {undoState && (
+        <Animated.View style={[styles.toast, { opacity: toastOpacity }]}>
+          <Text style={styles.toastText}>Item removed</Text>
+          <TouchableOpacity onPress={handleUndo} style={styles.undoBtn}>
+            <Text style={styles.undoBtnText}>Undo</Text>
+          </TouchableOpacity>
+        </Animated.View>
+      )}
     </SafeAreaView>
   );
 }
@@ -157,7 +221,8 @@ const styles = StyleSheet.create({
   },
   list: {
     paddingHorizontal: 16,
-    paddingBottom: 28,
+    paddingTop: 4,
+    paddingBottom: 100,
   },
   emptyContainer: {
     flex: 1,
@@ -168,13 +233,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: C.white,
     borderRadius: 12,
-    padding: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
     marginBottom: 8,
     borderWidth: 1,
     borderColor: C.border,
     gap: 12,
   },
-  checkBtn: {
+  boughtBtn: {
     flexShrink: 0,
   },
   itemText: {
@@ -183,6 +249,44 @@ const styles = StyleSheet.create({
     color: C.text,
     textTransform: 'capitalize',
   },
+
+  // Undo toast
+  toast: {
+    position: 'absolute',
+    bottom: 24,
+    left: 20,
+    right: 20,
+    backgroundColor: C.darkGreen,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 18,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  toastText: {
+    color: C.white,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  undoBtn: {
+    backgroundColor: C.medGreen,
+    borderRadius: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+  },
+  undoBtnText: {
+    color: C.white,
+    fontSize: 13,
+    fontWeight: '700',
+  },
+
+  // Empty
   empty: {
     alignItems: 'center',
     paddingTop: 80,

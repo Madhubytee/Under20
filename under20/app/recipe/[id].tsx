@@ -50,7 +50,7 @@ export default function RecipeDetailScreen() {
   const router = useRouter();
   const { toggleFavorite, isFavorite } = useFavorites();
   const { pantry } = usePantry();
-  const { addToGrocery, isInGrocery } = useGroceryList();
+  const { addToGrocery, removeFromGrocery, isInGrocery, groceryList } = useGroceryList();
   const [missingExpanded, setMissingExpanded] = React.useState(false);
 
   const recipe = (recipesData as Recipe[]).find(r => r.id === Number(id));
@@ -195,13 +195,17 @@ export default function RecipeDetailScreen() {
 
                 {missingIngredients.map((ing, i) => {
                   const added = isInGrocery(ing);
+                  const groceryIndex = groceryList.indexOf(ing.trim().toLowerCase());
                   return (
                     <View key={i} style={styles.missingRow}>
                       <Text style={styles.missingIngText} numberOfLines={2}>{ing}</Text>
                       <TouchableOpacity
                         style={[styles.addBtn, added && styles.addBtnAdded]}
-                        onPress={() => addToGrocery(ing)}
-                        disabled={added}>
+                        onPress={() =>
+                          added
+                            ? removeFromGrocery(groceryIndex)
+                            : addToGrocery(ing)
+                        }>
                         <Ionicons
                           name={added ? 'checkmark' : 'add'}
                           size={14}
