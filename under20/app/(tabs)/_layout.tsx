@@ -45,6 +45,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="account"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <Ionicons size={26} name="person-circle-outline" color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
