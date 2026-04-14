@@ -48,13 +48,11 @@ export default function RecipeDetailScreen() {
   const isFav = isFavorite(recipe.id);
   const diff = difficultyMap[recipe.difficulty] ?? difficultyMap.easy;
 
-  // Compute missing ingredients (only when pantry has items)
-  const missingIngredients = pantry.length > 0
-    ? recipe.ingredients.filter(ing => {
-        const ingLower = ing.toLowerCase();
-        return !pantry.some(p => ingLower.includes(p));
-      })
-    : [];
+  const missingIngredients = recipe.ingredients.filter(ing => {
+    if (pantry.length === 0) return true;
+    const ingLower = ing.toLowerCase();
+    return !pantry.some(p => ingLower.includes(p));
+  });
 
   const hasMissing = missingIngredients.length > 0;
 
@@ -142,7 +140,7 @@ export default function RecipeDetailScreen() {
         </View>
 
         {/* Need more items? */}
-        {pantry.length > 0 && hasMissing && (
+        {hasMissing && (
           <View style={styles.missingSection}>
             <TouchableOpacity
               style={styles.missingToggleBtn}
@@ -224,7 +222,7 @@ export default function RecipeDetailScreen() {
         )}
 
         {/* All in pantry message */}
-        {pantry.length > 0 && !hasMissing && (
+        {pantry.length > 0 && !hasMissing && recipe.ingredients.length > 0 && (
           <View style={styles.allGoodBanner}>
             <Ionicons name="checkmark-circle" size={18} color={C.medGreen} />
             <Text style={styles.allGoodText}>You have all the ingredients!</Text>
