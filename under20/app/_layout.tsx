@@ -10,7 +10,7 @@ import { GroceryListProvider } from '@/context/GroceryListContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 
 export const unstable_settings = {
-  anchor: 'index',
+  anchor: 'login',
 };
 
 function RootNavigator() {
@@ -18,7 +18,6 @@ function RootNavigator() {
   const { session, loading } = useAuth();
   const segments = useSegments();
 
-  // Show nothing while auth state is loading
   if (loading) return null;
 
   const inTabs = segments[0] === '(tabs)';
@@ -28,16 +27,14 @@ function RootNavigator() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="login" options={{ headerShown: false }} />
         <Stack.Screen name="signup" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="recipe/[id]" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
 
-      {/* Redirect unauthenticated users away from protected routes */}
-      {!session && inProtectedRoute && <Redirect href="/" />}
-      {/* Redirect authenticated users away from auth screens */}
+      {!session && inProtectedRoute && <Redirect href={'/login' as any} />}
       {session && !inProtectedRoute && <Redirect href="/(tabs)" />}
 
       <StatusBar style="auto" />

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
 import { useGroceryList } from '@/context/GroceryListContext';
@@ -66,6 +67,7 @@ function SettingsRow({
 
 export default function AccountScreen() {
   const { session, signOut, updateProfile } = useAuth();
+  const router = useRouter();
   const { favorites } = useFavorites();
   const { pantry } = usePantry();
   const { groceryList } = useGroceryList();
@@ -221,7 +223,7 @@ export default function AccountScreen() {
         {/* Sign out */}
         <TouchableOpacity
           style={styles.signOutBtn}
-          onPress={signOut}
+          onPress={async () => { await signOut(); router.replace('/login' as any); }}
           activeOpacity={0.8}>
           <Ionicons name="log-out-outline" size={18} color={C.salmon} />
           <Text style={styles.signOutText}>Sign Out</Text>
