@@ -11,17 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useGroceryList } from '@/context/GroceryListContext';
 import { usePantry } from '@/context/PantryContext';
-
-const C = {
-  darkGreen: '#1B4332',
-  medGreen: '#52B788',
-  salmon: '#E76F51',
-  cream: '#FAF7F0',
-  white: '#FFFFFF',
-  gray: '#6B7280',
-  border: '#E7E5E4',
-  text: '#111827',
-};
+import { C } from '@/constants/theme';
 
 type UndoState = {
   item: string;

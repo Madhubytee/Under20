@@ -14,43 +14,9 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-const C = {
-  darkGreen: '#1B4332',
-  medGreen: '#52B788',
-  salmon: '#E76F51',
-  cream: '#FAF7F0',
-  white: '#FFFFFF',
-  gray: '#6B7280',
-  border: '#E7E5E4',
-  text: '#111827',
-};
-
-type Recipe = {
-  id: number;
-  name: string;
-  ingredients: string[];
-  cookTime: number;
-  calories: number;
-  protein: number;
-  difficulty: string;
-};
-
-function DifficultyBadge({ difficulty }: { difficulty: string }) {
-  const map: Record<string, { bg: string; color: string }> = {
-    easy:   { bg: '#ECFDF5', color: '#065F46' },
-    medium: { bg: '#FFFBEB', color: '#92400E' },
-    hard:   { bg: '#FEF2F2', color: '#991B1B' },
-  };
-  const s = map[difficulty] ?? map.easy;
-  return (
-    <View style={[styles.badge, { backgroundColor: s.bg }]}>
-      <Text style={[styles.badgeText, { color: s.color }]}>
-        {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
-      </Text>
-    </View>
-  );
-}
+import { C } from '@/constants/theme';
+import { DifficultyBadge } from '@/components/DifficultyBadge';
+import { Recipe } from '@/types/recipe';
 
 function RecipeCard({
   recipe,
@@ -283,16 +249,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  badge: {
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    borderRadius: 20,
-  },
-  badgeText: {
-    fontSize: 11,
-    fontWeight: '600',
-    letterSpacing: 0.2,
   },
   ingCount: {
     fontSize: 12,

@@ -13,31 +13,8 @@ import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
 import { useGroceryList } from '@/context/GroceryListContext';
 import recipesData from '@/data/recipes.json';
-
-const C = {
-  darkGreen: '#1B4332',
-  medGreen: '#52B788',
-  salmon: '#E76F51',
-  cream: '#FAF7F0',
-  white: '#FFFFFF',
-  gray: '#6B7280',
-  lightGray: '#F5F5F4',
-  border: '#E7E5E4',
-  text: '#111827',
-  amber: '#F59E0B',
-  amberLight: '#FFFBEB',
-};
-
-type Recipe = {
-  id: number;
-  name: string;
-  ingredients: string[];
-  cookTime: number;
-  calories: number;
-  protein: number;
-  difficulty: string;
-  steps: string[];
-};
+import { C } from '@/constants/theme';
+import { Recipe } from '@/types/recipe';
 
 const difficultyMap: Record<string, { bg: string; color: string }> = {
   easy:   { bg: '#ECFDF5', color: '#065F46' },
@@ -50,7 +27,7 @@ export default function RecipeDetailScreen() {
   const router = useRouter();
   const { toggleFavorite, isFavorite } = useFavorites();
   const { pantry } = usePantry();
-  const { addToGrocery, removeFromGrocery, isInGrocery, groceryList } = useGroceryList();
+  const { addToGrocery, removeFromGrocery, removeManyFromGrocery, isInGrocery, groceryList } = useGroceryList();
   const [missingExpanded, setMissingExpanded] = React.useState(false);
 
   const recipe = (recipesData as Recipe[]).find(r => r.id === Number(id));
@@ -227,10 +204,7 @@ export default function RecipeDetailScreen() {
                       style={[styles.addAllBtn, allAdded && styles.addAllBtnAdded]}
                       onPress={() => {
                         if (allAdded) {
-                          missingIngredients.forEach(ing => {
-                            const idx = groceryList.indexOf(ing.trim().toLowerCase());
-                            if (idx !== -1) removeFromGrocery(idx);
-                          });
+                          removeManyFromGrocery(missingIngredients);
                         } else {
                           missingIngredients.forEach(ing => {
                             if (!isInGrocery(ing)) addToGrocery(ing);

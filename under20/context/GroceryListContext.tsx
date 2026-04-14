@@ -4,6 +4,7 @@ type GroceryListContextType = {
   groceryList: string[];
   addToGrocery: (item: string) => void;
   removeFromGrocery: (index: number) => void;
+  removeManyFromGrocery: (items: string[]) => void;
   clearGrocery: () => void;
   isInGrocery: (item: string) => boolean;
 };
@@ -12,6 +13,7 @@ const GroceryListContext = createContext<GroceryListContextType>({
   groceryList: [],
   addToGrocery: () => {},
   removeFromGrocery: () => {},
+  removeManyFromGrocery: () => {},
   clearGrocery: () => {},
   isInGrocery: () => false,
 });
@@ -32,6 +34,11 @@ export function GroceryListProvider({ children }: { children: React.ReactNode })
     setGroceryList(prev => prev.filter((_, i) => i !== index));
   };
 
+  const removeManyFromGrocery = (items: string[]) => {
+    const normalized = items.map(i => i.trim().toLowerCase());
+    setGroceryList(prev => prev.filter(item => !normalized.includes(item)));
+  };
+
   const clearGrocery = () => setGroceryList([]);
 
   const isInGrocery = (item: string) =>
@@ -39,7 +46,7 @@ export function GroceryListProvider({ children }: { children: React.ReactNode })
 
   return (
     <GroceryListContext.Provider
-      value={{ groceryList, addToGrocery, removeFromGrocery, clearGrocery, isInGrocery }}>
+      value={{ groceryList, addToGrocery, removeFromGrocery, removeManyFromGrocery, clearGrocery, isInGrocery }}>
       {children}
     </GroceryListContext.Provider>
   );
