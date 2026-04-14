@@ -1,52 +1,85 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabase';
+import { useAuth } from '@/context/AuthContext';
+
+type GroceryRow = { id: string; item: string };
 
 type GroceryListContextType = {
   groceryList: string[];
-  addToGrocery: (item: string) => void;
-  removeFromGrocery: (index: number) => void;
-  removeManyFromGrocery: (items: string[]) => void;
-  clearGrocery: () => void;
+  addToGrocery: (item: string) => Promise<void>;
+  removeFromGrocery: (index: number) => Promise<void>;
+  removeManyFromGrocery: (items: string[]) => Promise<void>;
+  clearGrocery: () => Promise<void>;
   isInGrocery: (item: string) => boolean;
 };
 
 const GroceryListContext = createContext<GroceryListContextType>({
   groceryList: [],
-  addToGrocery: () => {},
-  removeFromGrocery: () => {},
-  removeManyFromGrocery: () => {},
-  clearGrocery: () => {},
+  addToGrocery: async () => {},
+  removeFromGrocery: async () => {},
+  removeManyFromGrocery: async () => {},
+  clearGrocery: async () => {},
   isInGrocery: () => false,
 });
 
 export function GroceryListProvider({ children }: { children: React.ReactNode }) {
-  const [groceryList, setGroceryList] = useState<string[]>([]);
+  const { session } = useAuth();
+  const userId = session?.user?.id ?? null;
+  const [rows, setRows] = useState<GroceryRow[]>([]);
 
-  const addToGrocery = (item: string) => {
+  useEffect(() => {
+    if (!userId) {
+      setRows([]);
+      return;
+    }
+    supabase
+      .from('grocery_items')
+      .select('id, item')
+      .eq('user_id', userId)
+      .order('created_at')
+      .then(({ data }) => setRows(data ?? []));
+  }, [userId]);
+
+  const addToGrocery = async (item: string) => {
     const normalized = item.trim().toLowerCase();
-    if (!normalized) return;
-    setGroceryList(prev => {
-      if (prev.includes(normalized)) return prev;
-      return [...prev, normalized];
-    });
+    if (!normalized || !userId) return;
+    if (rows.some(r => r.item === normalized)) return;
+    const { data, error } = await supabase
+      .from('grocery_items')
+      .insert({ user_id: userId, item: normalized })
+      .select('id, item')
+      .single();
+    if (!error && data) setRows(prev => [...prev, data]);
   };
 
-  const removeFromGrocery = (index: number) => {
-    setGroceryList(prev => prev.filter((_, i) => i !== index));
+  const removeFromGrocery = async (index: number) => {
+    const row = rows[index];
+    if (!row) return;
+    const { error } = await supabase.from('grocery_items').delete().eq('id', row.id);
+    if (!error) setRows(prev => prev.filter((_, i) => i !== index));
   };
 
-  const removeManyFromGrocery = (items: string[]) => {
+  const removeManyFromGrocery = async (items: string[]) => {
+    if (!userId) return;
     const normalized = items.map(i => i.trim().toLowerCase());
-    setGroceryList(prev => prev.filter(item => !normalized.includes(item)));
+    const ids = rows.filter(r => normalized.includes(r.item)).map(r => r.id);
+    if (!ids.length) return;
+    const { error } = await supabase.from('grocery_items').delete().in('id', ids);
+    if (!error) setRows(prev => prev.filter(r => !ids.includes(r.id)));
   };
 
-  const clearGrocery = () => setGroceryList([]);
+  const clearGrocery = async () => {
+    if (!userId) return;
+    const { error } = await supabase.from('grocery_items').delete().eq('user_id', userId);
+    if (!error) setRows([]);
+  };
 
   const isInGrocery = (item: string) =>
-    groceryList.includes(item.trim().toLowerCase());
+    rows.some(r => r.item === item.trim().toLowerCase());
 
   return (
     <GroceryListContext.Provider
-      value={{ groceryList, addToGrocery, removeFromGrocery, removeManyFromGrocery, clearGrocery, isInGrocery }}>
+      value={{ groceryList: rows.map(r => r.item), addToGrocery, removeFromGrocery, removeManyFromGrocery, clearGrocery, isInGrocery }}>
       {children}
     </GroceryListContext.Provider>
   );
