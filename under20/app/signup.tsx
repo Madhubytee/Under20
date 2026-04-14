@@ -16,6 +16,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { C } from '@/constants/theme';
+import { authStyles } from '@/constants/authStyles';
 import { useAuth } from '@/context/AuthContext';
 
 const COOKING_LEVELS = [
@@ -55,39 +56,35 @@ export default function SignUpScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={authStyles.container}>
       <KeyboardAvoidingView
-        style={styles.flex}
+        style={authStyles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <ScrollView
           contentContainerStyle={styles.scroll}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
 
-          {/* Back button */}
           <Pressable onPress={() => router.back()} style={styles.back} hitSlop={8}>
             <Ionicons name="arrow-back" size={20} color={C.text} />
           </Pressable>
 
-          {/* Logo + heading */}
-          <View style={styles.hero}>
+          <View style={authStyles.hero}>
             <Image
               source={require('@/assets/images/under20icon.png')}
               style={styles.logo}
               resizeMode="contain"
             />
-            <Text style={styles.welcome}>Get started</Text>
-            <Text style={styles.title}>Create your account</Text>
-            <Text style={styles.subtitle}>Decide Faster. Cook Sooner. Eat Better.</Text>
+            <Text style={authStyles.welcome}>Get started</Text>
+            <Text style={authStyles.title}>Create your account</Text>
+            <Text style={authStyles.subtitle}>Decide Faster. Cook Sooner. Eat Better.</Text>
           </View>
 
-          {/* Form card */}
-          <View style={styles.card}>
+          <View style={authStyles.card}>
 
-            {/* Name */}
-            <View style={styles.field}>
-              <Text style={styles.label}>Name</Text>
-              <View style={styles.inputWrap}>
+            <View style={authStyles.field}>
+              <Text style={authStyles.label}>Name</Text>
+              <View style={authStyles.inputWrap}>
                 <Ionicons name="person-outline" size={17} color={C.gray} />
                 <TextInput
                   value={name}
@@ -95,15 +92,14 @@ export default function SignUpScreen() {
                   placeholder="Your name"
                   placeholderTextColor={C.gray}
                   autoCapitalize="words"
-                  style={styles.input}
+                  style={authStyles.input}
                 />
               </View>
             </View>
 
-            {/* Email */}
-            <View style={styles.field}>
-              <Text style={styles.label}>Email</Text>
-              <View style={styles.inputWrap}>
+            <View style={authStyles.field}>
+              <Text style={authStyles.label}>Email</Text>
+              <View style={authStyles.inputWrap}>
                 <Ionicons name="mail-outline" size={17} color={C.gray} />
                 <TextInput
                   value={email}
@@ -112,15 +108,14 @@ export default function SignUpScreen() {
                   placeholderTextColor={C.gray}
                   autoCapitalize="none"
                   keyboardType="email-address"
-                  style={styles.input}
+                  style={authStyles.input}
                 />
               </View>
             </View>
 
-            {/* Password */}
-            <View style={styles.field}>
-              <Text style={styles.label}>Password</Text>
-              <View style={styles.inputWrap}>
+            <View style={authStyles.field}>
+              <Text style={authStyles.label}>Password</Text>
+              <View style={authStyles.inputWrap}>
                 <Ionicons name="lock-closed-outline" size={17} color={C.gray} />
                 <TextInput
                   value={password}
@@ -128,7 +123,7 @@ export default function SignUpScreen() {
                   placeholder="At least 6 characters"
                   placeholderTextColor={C.gray}
                   secureTextEntry={!showPassword}
-                  style={styles.input}
+                  style={authStyles.input}
                 />
                 <Pressable onPress={() => setShowPassword(p => !p)} hitSlop={8}>
                   <Ionicons
@@ -140,9 +135,8 @@ export default function SignUpScreen() {
               </View>
             </View>
 
-            {/* Cooking level */}
-            <View style={styles.field}>
-              <Text style={styles.label}>Cooking Level</Text>
+            <View style={authStyles.field}>
+              <Text style={authStyles.label}>Cooking Level</Text>
               <View style={styles.levelGrid}>
                 {COOKING_LEVELS.map(level => {
                   const selected = cookingLevel === level.key;
@@ -167,24 +161,23 @@ export default function SignUpScreen() {
               </View>
             </View>
 
-            {error && <Text style={styles.errorText}>{error}</Text>}
+            {error && <Text style={authStyles.errorText}>{error}</Text>}
 
             <Pressable
-              style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
+              style={({ pressed }) => [authStyles.button, pressed && authStyles.buttonPressed]}
               onPress={handleSignUp}
               disabled={loading}>
               {loading
                 ? <ActivityIndicator color={C.white} />
-                : <Text style={styles.buttonText}>Create Account</Text>
+                : <Text style={authStyles.buttonText}>Create Account</Text>
               }
             </Pressable>
           </View>
 
-          {/* Footer */}
-          <View style={styles.footer}>
-            <Text style={styles.footerText}>Already have an account? </Text>
+          <View style={authStyles.footer}>
+            <Text style={authStyles.footerText}>Already have an account? </Text>
             <Pressable hitSlop={8} onPress={() => router.back()}>
-              <Text style={styles.footerLink}>Sign in</Text>
+              <Text style={authStyles.footerLink}>Sign in</Text>
             </Pressable>
           </View>
 
@@ -195,13 +188,6 @@ export default function SignUpScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: C.cream,
-  },
-  flex: {
-    flex: 1,
-  },
   scroll: {
     paddingHorizontal: 28,
     paddingBottom: 40,
@@ -211,72 +197,10 @@ const styles = StyleSheet.create({
     marginTop: 8,
     alignSelf: 'flex-start',
   },
-  hero: {
-    alignItems: 'center',
-    gap: 6,
-  },
   logo: {
     width: 90,
     height: 90,
     marginBottom: 6,
-  },
-  welcome: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: C.salmon,
-    textTransform: 'uppercase',
-    letterSpacing: 1.2,
-  },
-  title: {
-    fontSize: 26,
-    fontWeight: '800',
-    color: C.darkGreen,
-    textAlign: 'center',
-    lineHeight: 32,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: C.gray,
-    textAlign: 'center',
-    lineHeight: 20,
-  },
-  card: {
-    backgroundColor: C.white,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: C.border,
-    padding: 20,
-    gap: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  field: {
-    gap: 7,
-  },
-  label: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: C.text,
-  },
-  inputWrap: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: C.cream,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: C.border,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-    gap: 8,
-  },
-  input: {
-    flex: 1,
-    fontSize: 15,
-    color: C.text,
-    padding: 0,
   },
   levelGrid: {
     flexDirection: 'row',
@@ -308,40 +232,5 @@ const styles = StyleSheet.create({
   levelDesc: {
     fontSize: 11,
     color: C.gray,
-  },
-  errorText: {
-    fontSize: 13,
-    color: C.salmon,
-    textAlign: 'center',
-  },
-  button: {
-    backgroundColor: C.darkGreen,
-    borderRadius: 14,
-    paddingVertical: 15,
-    alignItems: 'center',
-    marginTop: 2,
-  },
-  buttonPressed: {
-    opacity: 0.85,
-  },
-  buttonText: {
-    fontSize: 15,
-    fontWeight: '800',
-    color: C.white,
-    letterSpacing: 0.3,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  footerText: {
-    fontSize: 14,
-    color: C.gray,
-  },
-  footerLink: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: C.darkGreen,
   },
 });

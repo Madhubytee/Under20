@@ -1,55 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import { useFavorites } from '@/context/FavoritesContext';
 import recipesData from '@/data/recipes.json';
 import { C } from '@/constants/theme';
-import { DifficultyBadge } from '@/components/DifficultyBadge';
+import { RecipeCard, cardStyles } from '@/components/RecipeCard';
 import { Recipe } from '@/types/recipe';
-
-function FavoriteCard({
-  recipe,
-  onRemove,
-}: {
-  recipe: Recipe;
-  onRemove: () => void;
-}) {
-  const router = useRouter();
-  return (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => router.push({ pathname: '/recipe/[id]', params: { id: recipe.id } })}
-      activeOpacity={0.88}>
-      <View style={styles.cardTop}>
-        <Text style={styles.cardTitle} numberOfLines={2}>
-          {recipe.name}
-        </Text>
-        <TouchableOpacity
-          onPress={e => { e.stopPropagation?.(); onRemove(); }}
-          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
-          <Ionicons name="heart" size={22} color={C.salmon} />
-        </TouchableOpacity>
-      </View>
-
-      <Text style={styles.statLine}>
-        {recipe.cookTime} min  ·  {recipe.calories} kcal  ·  {recipe.protein}g protein
-      </Text>
-
-      <View style={styles.cardBottom}>
-        <DifficultyBadge difficulty={recipe.difficulty} />
-        <Text style={styles.ingCount}>{recipe.ingredients.length} ingredients</Text>
-      </View>
-    </TouchableOpacity>
-  );
-}
 
 export default function FavoritesScreen() {
   const { favorites, toggleFavorite } = useFavorites();
@@ -67,9 +24,7 @@ export default function FavoritesScreen() {
 
       {favoriteRecipes.length > 0 && (
         <View style={styles.resultsBar}>
-          <Text style={styles.resultsCount}>
-            {favoriteRecipes.length} saved
-          </Text>
+          <Text style={styles.resultsCount}>{favoriteRecipes.length} saved</Text>
           <Text style={styles.resultsLabel}>— tap heart to remove</Text>
         </View>
       )}
@@ -78,20 +33,21 @@ export default function FavoritesScreen() {
         data={favoriteRecipes}
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => (
-          <FavoriteCard
+          <RecipeCard
             recipe={item}
-            onRemove={() => toggleFavorite(item.id)}
+            isFav={true}
+            onToggleFavorite={() => toggleFavorite(item.id)}
           />
         )}
         contentContainerStyle={
-          favoriteRecipes.length === 0 ? styles.emptyContainer : styles.list
+          favoriteRecipes.length === 0 ? cardStyles.emptyContainer : cardStyles.list
         }
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
-          <View style={styles.empty}>
+          <View style={cardStyles.empty}>
             <Ionicons name="heart-outline" size={48} color={C.border} />
-            <Text style={styles.emptyTitle}>No saved recipes yet</Text>
-            <Text style={styles.emptySub}>
+            <Text style={cardStyles.emptyTitle}>No saved recipes yet</Text>
+            <Text style={cardStyles.emptySub}>
               Tap the heart on any recipe to save it here.
             </Text>
           </View>
@@ -106,8 +62,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: C.cream,
   },
-
-  // Header
   header: {
     backgroundColor: C.cream,
     paddingHorizontal: 20,
@@ -133,8 +87,6 @@ const styles = StyleSheet.create({
     color: C.gray,
     fontStyle: 'italic',
   },
-
-  // Results bar
   resultsBar: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -150,77 +102,5 @@ const styles = StyleSheet.create({
   resultsLabel: {
     fontSize: 13,
     color: C.gray,
-  },
-
-  // List
-  list: {
-    paddingHorizontal: 16,
-    paddingBottom: 28,
-  },
-  emptyContainer: {
-    flex: 1,
-    paddingHorizontal: 16,
-  },
-
-  // Card
-  card: {
-    backgroundColor: C.white,
-    borderRadius: 14,
-    padding: 16,
-    marginBottom: 10,
-    borderWidth: 1,
-    borderColor: C.border,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.04,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  cardTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 6,
-  },
-  cardTitle: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: '700',
-    color: C.text,
-    marginRight: 10,
-    lineHeight: 22,
-  },
-  statLine: {
-    fontSize: 13,
-    color: C.gray,
-    marginBottom: 10,
-  },
-  cardBottom: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  ingCount: {
-    fontSize: 12,
-    color: C.gray,
-  },
-
-  // Empty
-  empty: {
-    alignItems: 'center',
-    paddingTop: 80,
-    gap: 10,
-  },
-  emptyTitle: {
-    fontSize: 17,
-    fontWeight: '700',
-    color: C.text,
-  },
-  emptySub: {
-    fontSize: 14,
-    color: C.gray,
-    textAlign: 'center',
-    paddingHorizontal: 32,
-    lineHeight: 20,
   },
 });
