@@ -5,6 +5,8 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { FavoritesProvider } from '@/context/FavoritesContext';
+import { PantryProvider } from '@/context/PantryContext';
+import { GroceryListProvider } from '@/context/GroceryListContext';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -14,6 +16,8 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
+    <GroceryListProvider>
+    <PantryProvider>
     <FavoritesProvider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
@@ -25,5 +29,7 @@ export default function RootLayout() {
         <StatusBar style="auto" />
       </ThemeProvider>
     </FavoritesProvider>
+    </PantryProvider>
+    </GroceryListProvider>
   );
 }

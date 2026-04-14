@@ -1,4 +1,5 @@
 import { useFavorites } from '@/context/FavoritesContext';
+import { usePantry } from '@/context/PantryContext';
 import recipesData from '@/data/recipes.json';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -95,13 +96,12 @@ function RecipeCard({
 
 export default function RecipesScreen() {
   const [input, setInput] = React.useState("");
-  const [pantry, setPantry] = React.useState<string[]>([]);
-
+  const { pantry, addToPantry, removeFromPantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
 
   const addIngredient = () => {
     if (!input.trim()) return;
-    setPantry([...pantry, input.trim().toLowerCase()]);
+    addToPantry(input.trim());
     setInput("");
   };
 
@@ -198,9 +198,7 @@ if (pantry.length > 0) {
             <Text style={{ color: "#6B7280" }}>{item}</Text>
 
             <TouchableOpacity
-              onPress={() =>
-                setPantry(prev => prev.filter((_, i) => i !== index))
-              }
+              onPress={() => removeFromPantry(index)}
               style={{
                 backgroundColor: ":EF4444",
                 paddingHorizontal: 8,
