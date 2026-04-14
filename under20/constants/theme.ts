@@ -5,6 +5,20 @@
 
 import { Platform } from 'react-native';
 
+export const C = {
+  darkGreen: '#1B4332',
+  medGreen: '#52B788',
+  salmon: '#E76F51',
+  cream: '#FAF7F0',
+  white: '#FFFFFF',
+  gray: '#6B7280',
+  lightGray: '#F5F5F4',
+  border: '#E7E5E4',
+  text: '#111827',
+  amber: '#F59E0B',
+  amberLight: '#FFFBEB',
+};
+
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 

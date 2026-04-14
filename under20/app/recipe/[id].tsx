@@ -10,30 +10,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useFavorites } from '@/context/FavoritesContext';
+import { usePantry } from '@/context/PantryContext';
+import { useGroceryList } from '@/context/GroceryListContext';
 import recipesData from '@/data/recipes.json';
-
-const C = {
-  darkGreen: '#1B4332',
-  medGreen: '#52B788',
-  salmon: '#E76F51',
-  cream: '#FAF7F0',
-  white: '#FFFFFF',
-  gray: '#6B7280',
-  lightGray: '#F5F5F4',
-  border: '#E7E5E4',
-  text: '#111827',
-};
-
-type Recipe = {
-  id: number;
-  name: string;
-  ingredients: string[];
-  cookTime: number;
-  calories: number;
-  protein: number;
-  difficulty: string;
-  steps: string[];
-};
+import { C } from '@/constants/theme';
+import { Recipe } from '@/types/recipe';
 
 const difficultyMap: Record<string, { bg: string; color: string }> = {
   easy:   { bg: '#ECFDF5', color: '#065F46' },
@@ -45,6 +26,9 @@ export default function RecipeDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { pantry } = usePantry();
+  const { addToGrocery, removeFromGrocery, removeManyFromGrocery, isInGrocery, groceryList } = useGroceryList();
+  const [missingExpanded, setMissingExpanded] = React.useState(false);
 
   const recipe = (recipesData as Recipe[]).find(r => r.id === Number(id));
 
@@ -63,6 +47,14 @@ export default function RecipeDetailScreen() {
 
   const isFav = isFavorite(recipe.id);
   const diff = difficultyMap[recipe.difficulty] ?? difficultyMap.easy;
+
+  const missingIngredients = recipe.ingredients.filter(ing => {
+    if (pantry.length === 0) return true;
+    const ingLower = ing.toLowerCase();
+    return !pantry.some(p => ingLower.includes(p));
+  });
+
+  const hasMissing = missingIngredients.length > 0;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -118,13 +110,124 @@ export default function RecipeDetailScreen() {
             <Text style={styles.sectionTitle}>Ingredients</Text>
             <Text style={styles.sectionCount}>{recipe.ingredients.length} items</Text>
           </View>
-          {recipe.ingredients.map((ing, i) => (
-            <View key={i} style={styles.ingRow}>
-              <View style={styles.ingDot} />
-              <Text style={styles.ingText}>{ing}</Text>
+          {recipe.ingredients.map((ing, i) => {
+            const ingLower = ing.toLowerCase();
+            const inPantry = pantry.length > 0 && pantry.some(p => ingLower.includes(p));
+            return (
+              <View key={i} style={styles.ingRow}>
+                <View style={[styles.ingDot, inPantry && styles.ingDotHave]} />
+                <Text style={[styles.ingText, inPantry && styles.ingTextHave]}>{ing}</Text>
+                {inPantry && (
+                  <Ionicons name="checkmark-circle" size={16} color={C.medGreen} />
+                )}
+              </View>
+            );
+          })}
+
+          {/* Pantry legend */}
+          {pantry.length > 0 && (
+            <View style={styles.legend}>
+              <View style={styles.legendItem}>
+                <View style={[styles.ingDot, styles.ingDotHave]} />
+                <Text style={styles.legendText}>in your pantry</Text>
+              </View>
+              <View style={styles.legendItem}>
+                <View style={styles.ingDot} />
+                <Text style={styles.legendText}>not in pantry</Text>
+              </View>
             </View>
-          ))}
+          )}
         </View>
+
+        {/* Need more items? */}
+        {hasMissing && (
+          <View style={styles.missingSection}>
+            <TouchableOpacity
+              style={styles.missingToggleBtn}
+              onPress={() => setMissingExpanded(prev => !prev)}
+              activeOpacity={0.8}>
+              <View style={styles.missingToggleLeft}>
+                <Ionicons name="cart-outline" size={18} color={C.amber} />
+                <Text style={styles.missingToggleText}>
+                  Need more items?
+                </Text>
+                <View style={styles.missingBadge}>
+                  <Text style={styles.missingBadgeText}>{missingIngredients.length}</Text>
+                </View>
+              </View>
+              <Ionicons
+                name={missingExpanded ? 'chevron-up' : 'chevron-down'}
+                size={18}
+                color={C.amber}
+              />
+            </TouchableOpacity>
+
+            {missingExpanded && (
+              <View style={styles.missingList}>
+                <Text style={styles.missingSubtitle}>
+                  These ingredients aren't in your pantry yet:
+                </Text>
+
+                {missingIngredients.map((ing, i) => {
+                  const added = isInGrocery(ing);
+                  const groceryIndex = groceryList.indexOf(ing.trim().toLowerCase());
+                  return (
+                    <View key={i} style={styles.missingRow}>
+                      <Text style={styles.missingIngText} numberOfLines={2}>{ing}</Text>
+                      <TouchableOpacity
+                        style={[styles.addBtn, added && styles.addBtnAdded]}
+                        onPress={() =>
+                          added
+                            ? removeFromGrocery(groceryIndex)
+                            : addToGrocery(ing)
+                        }>
+                        <Ionicons
+                          name={added ? 'checkmark' : 'add'}
+                          size={14}
+                          color={added ? C.medGreen : C.white}
+                        />
+                        <Text style={[styles.addBtnText, added && styles.addBtnTextAdded]}>
+                          {added ? 'Added' : 'Add to list'}
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
+                  );
+                })}
+
+                {/* Add all / Remove all button */}
+                {(() => {
+                  const allAdded = missingIngredients.every(ing => isInGrocery(ing));
+                  return (
+                    <TouchableOpacity
+                      style={[styles.addAllBtn, allAdded && styles.addAllBtnAdded]}
+                      onPress={() => {
+                        if (allAdded) {
+                          removeManyFromGrocery(missingIngredients);
+                        } else {
+                          missingIngredients.forEach(ing => {
+                            if (!isInGrocery(ing)) addToGrocery(ing);
+                          });
+                        }
+                      }}>
+                      <Ionicons name={allAdded ? 'close-circle' : 'cart'} size={16} color={allAdded ? C.medGreen : C.white} />
+                      <Text style={[styles.addAllBtnText, allAdded && styles.addAllBtnTextAdded]}>
+                        {allAdded ? 'Remove all' : 'Add all to grocery list'}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })()}
+              </View>
+            )}
+          </View>
+        )}
+
+        {/* All in pantry message */}
+        {pantry.length > 0 && !hasMissing && recipe.ingredients.length > 0 && (
+          <View style={styles.allGoodBanner}>
+            <Ionicons name="checkmark-circle" size={18} color={C.medGreen} />
+            <Text style={styles.allGoodText}>You have all the ingredients!</Text>
+          </View>
+        )}
 
         {/* Steps */}
         <View style={styles.section}>
@@ -276,14 +379,169 @@ const styles = StyleSheet.create({
     width: 6,
     height: 6,
     borderRadius: 3,
-    backgroundColor: C.medGreen,
+    backgroundColor: C.border,
     flexShrink: 0,
+  },
+  ingDotHave: {
+    backgroundColor: C.medGreen,
   },
   ingText: {
     fontSize: 14,
     color: C.text,
     flex: 1,
     lineHeight: 20,
+  },
+  ingTextHave: {
+    color: C.darkGreen,
+    fontWeight: '500',
+  },
+
+  // Legend
+  legend: {
+    flexDirection: 'row',
+    gap: 16,
+    marginTop: 12,
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: C.border,
+  },
+  legendItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  legendText: {
+    fontSize: 11,
+    color: C.gray,
+  },
+
+  // Missing section
+  missingSection: {
+    marginHorizontal: 16,
+    marginBottom: 16,
+    backgroundColor: C.amberLight,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: '#FDE68A',
+    overflow: 'hidden',
+  },
+  missingToggleBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 14,
+  },
+  missingToggleLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  missingToggleText: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#92400E',
+  },
+  missingBadge: {
+    backgroundColor: C.amber,
+    borderRadius: 10,
+    paddingHorizontal: 7,
+    paddingVertical: 1,
+  },
+  missingBadgeText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: C.white,
+  },
+  missingList: {
+    paddingHorizontal: 14,
+    paddingBottom: 14,
+    borderTopWidth: 1,
+    borderTopColor: '#FDE68A',
+  },
+  missingSubtitle: {
+    fontSize: 12,
+    color: '#92400E',
+    marginBottom: 10,
+    marginTop: 10,
+  },
+  missingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 7,
+    borderBottomWidth: 1,
+    borderBottomColor: '#FDE68A',
+    gap: 10,
+  },
+  missingIngText: {
+    flex: 1,
+    fontSize: 13,
+    color: C.text,
+  },
+  addBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: C.darkGreen,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 8,
+  },
+  addBtnAdded: {
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: C.medGreen,
+  },
+  addBtnText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: C.white,
+  },
+  addBtnTextAdded: {
+    color: C.medGreen,
+  },
+  addAllBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    backgroundColor: C.darkGreen,
+    borderRadius: 10,
+    paddingVertical: 10,
+    marginTop: 12,
+  },
+  addAllBtnAdded: {
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+  },
+  addAllBtnText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.white,
+  },
+  addAllBtnTextAdded: {
+    color: C.medGreen,
+  },
+
+  // All good banner
+  allGoodBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginHorizontal: 16,
+    marginBottom: 16,
+    backgroundColor: '#ECFDF5',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+  },
+  allGoodText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#065F46',
   },
 
   // Steps
