@@ -105,11 +105,11 @@ export default function AccountScreen() {
         {/* Avatar card */}
         <View style={styles.avatarCard}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>KI</Text>
+            <Text style={styles.avatarText}>S</Text>
           </View>
           <View style={styles.avatarInfo}>
-            <Text style={styles.userName}>Kayla Inoa</Text>
-            <Text style={styles.userEmail}>kayla@example.com</Text>
+            <Text style={styles.userName}>SWE Student</Text>
+            <Text style={styles.userEmail}>gators@example.com</Text>
           </View>
           <TouchableOpacity style={styles.editBtn} activeOpacity={0.7}>
             <Ionicons name="pencil-outline" size={16} color={C.medGreen} />
