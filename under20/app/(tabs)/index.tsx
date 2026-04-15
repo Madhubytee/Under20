@@ -110,6 +110,7 @@ if (pantry.length > 0) {
         <View style={styles.inputRow}>
           <TextInput
             placeholder="Add ingredient (e.g. egg)"
+            placeholderTextColor={C.gray}
             value={input}
             onChangeText={setInput}
             onSubmitEditing={addIngredient}

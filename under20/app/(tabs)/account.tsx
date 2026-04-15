@@ -453,7 +453,7 @@ const styles = StyleSheet.create({
   footer: {
     textAlign: 'center',
     fontSize: 12,
-    color: C.border,
+    color: C.gray,
     fontStyle: 'italic',
   },
 });
