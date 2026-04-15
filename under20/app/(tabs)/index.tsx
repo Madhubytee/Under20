@@ -22,11 +22,11 @@ function RecipeCard({
   recipe,
   onToggleFavorite,
   isFav,
-}: {
+}: Readonly<{
   recipe: Recipe;
   onToggleFavorite: () => void;
   isFav: boolean;
-}) {
+}>) {
   const router = useRouter();
   return (
     <TouchableOpacity
