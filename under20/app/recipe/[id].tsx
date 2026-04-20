@@ -12,6 +12,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
 import { useGroceryList } from '@/context/GroceryListContext';
+import { useRecentlyViewed } from '@/context/RecentlyViewedContext';
 import recipesData from '@/data/recipes.json';
 import { C } from '@/constants/theme';
 import { Recipe } from '@/types/recipe';
@@ -30,8 +31,13 @@ export default function RecipeDetailScreen() {
   const { addToGrocery, removeFromGrocery, removeManyFromGrocery, isInGrocery, groceryList } = useGroceryList();
   const [missingExpanded, setMissingExpanded] = React.useState(false);
   const [servings, setServings] = React.useState(1);
+  const { addRecentlyViewed } = useRecentlyViewed();
 
   const recipe = (recipesData as Recipe[]).find(r => r.id === Number(id));
+
+  React.useEffect(() => {
+    if (recipe) addRecentlyViewed(recipe.id);
+  }, [recipe?.id]);
 
   if (!recipe) {
     return (

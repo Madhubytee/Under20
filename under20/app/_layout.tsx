@@ -9,6 +9,7 @@ import { PantryProvider } from '@/context/PantryContext';
 import { GroceryListProvider } from '@/context/GroceryListContext';
 import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { DietaryProvider } from '@/context/DietaryContext';
+import { RecentlyViewedProvider } from '@/context/RecentlyViewedContext';
 
 export const unstable_settings = {
   anchor: 'login',
@@ -46,15 +47,17 @@ function RootNavigator() {
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <DietaryProvider>
-        <GroceryListProvider>
-          <PantryProvider>
-            <FavoritesProvider>
-              <RootNavigator />
-            </FavoritesProvider>
-          </PantryProvider>
-        </GroceryListProvider>
-      </DietaryProvider>
+      <RecentlyViewedProvider>
+        <DietaryProvider>
+          <GroceryListProvider>
+            <PantryProvider>
+              <FavoritesProvider>
+                <RootNavigator />
+              </FavoritesProvider>
+            </PantryProvider>
+          </GroceryListProvider>
+        </DietaryProvider>
+      </RecentlyViewedProvider>
     </AuthProvider>
   );
 }

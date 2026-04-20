@@ -1,11 +1,13 @@
 import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
 import { useDietary } from '@/context/DietaryContext';
+import { useRecentlyViewed } from '@/context/RecentlyViewedContext';
 import recipesData from '@/data/recipes.json';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import {
   FlatList,
+  ScrollView,
   Image,
   StyleSheet,
   Text,
@@ -50,6 +52,12 @@ export default function RecipesScreen() {
   const { pantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
   const { dietary } = useDietary();
+  const { recentIds } = useRecentlyViewed();
+
+  const allRecipesList = recipesData as Recipe[];
+  const recentRecipes = recentIds
+    .map(id => allRecipesList.find(r => r.id === id))
+    .filter(Boolean) as Recipe[];
 
   const toggleFilter = (f: Filter) =>
     setActiveFilters(prev => prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]);
@@ -100,6 +108,23 @@ export default function RecipesScreen() {
           resizeMode="contain"
         />
       </View>
+
+      {recentRecipes.length > 0 && (
+        <View style={styles.recentSection}>
+          <Text style={styles.recentTitle}>Recently Viewed</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.recentScroll}>
+            {recentRecipes.map(item => (
+              <TouchableOpacity
+                key={item.id}
+                style={styles.recentCard}
+                onPress={() => require('expo-router').router.push(`/recipe/${item.id}` as any)}>
+                <Text style={styles.recentName} numberOfLines={2}>{item.name}</Text>
+                <Text style={styles.recentMeta}>{item.cookTime} min · {item.protein}g protein</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      )}
 
       {activeDietLabels.length > 0 && (
         <View style={styles.dietBanner}>
@@ -214,5 +239,44 @@ const styles = StyleSheet.create({
   },
   filterChipTextActive: {
     color: C.white,
+  },
+  recentSection: {
+    paddingTop: 12,
+    paddingBottom: 4,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+  },
+  recentTitle: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.darkGreen,
+    paddingHorizontal: 20,
+    marginBottom: 8,
+  },
+  recentScroll: {
+    paddingHorizontal: 16,
+    gap: 10,
+    paddingBottom: 12,
+  },
+  recentCard: {
+    backgroundColor: C.white,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: C.border,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    width: 140,
+    justifyContent: 'space-between',
+    gap: 6,
+  },
+  recentName: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.text,
+    lineHeight: 18,
+  },
+  recentMeta: {
+    fontSize: 11,
+    color: C.gray,
   },
 });
