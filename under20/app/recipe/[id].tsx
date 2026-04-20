@@ -29,6 +29,7 @@ export default function RecipeDetailScreen() {
   const { pantry } = usePantry();
   const { addToGrocery, removeFromGrocery, removeManyFromGrocery, isInGrocery, groceryList } = useGroceryList();
   const [missingExpanded, setMissingExpanded] = React.useState(false);
+  const [servings, setServings] = React.useState(1);
 
   const recipe = (recipesData as Recipe[]).find(r => r.id === Number(id));
 
@@ -86,6 +87,26 @@ export default function RecipeDetailScreen() {
           <Text style={styles.recipeName}>{recipe.name}</Text>
         </View>
 
+        {/* Servings adjuster */}
+        <View style={styles.servingsRow}>
+          <Text style={styles.servingsLabel}>Servings</Text>
+          <View style={styles.servingsControls}>
+            <TouchableOpacity
+              onPress={() => setServings(s => Math.max(1, s - 1))}
+              style={styles.servingsBtn}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+              <Ionicons name="remove" size={16} color={C.darkGreen} />
+            </TouchableOpacity>
+            <Text style={styles.servingsCount}>{servings}</Text>
+            <TouchableOpacity
+              onPress={() => setServings(s => Math.min(10, s + 1))}
+              style={styles.servingsBtn}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+              <Ionicons name="add" size={16} color={C.darkGreen} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
         {/* Stats row */}
         <View style={styles.statsRow}>
           <View style={styles.statBox}>
@@ -94,12 +115,12 @@ export default function RecipeDetailScreen() {
           </View>
           <View style={styles.statDivider} />
           <View style={styles.statBox}>
-            <Text style={styles.statValue}>{recipe.calories}</Text>
+            <Text style={styles.statValue}>{recipe.calories * servings}</Text>
             <Text style={styles.statLabel}>calories</Text>
           </View>
           <View style={styles.statDivider} />
           <View style={styles.statBox}>
-            <Text style={styles.statValue}>{recipe.protein}g</Text>
+            <Text style={styles.statValue}>{recipe.protein * servings}g</Text>
             <Text style={styles.statLabel}>protein</Text>
           </View>
         </View>
@@ -571,6 +592,48 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: C.text,
     lineHeight: 22,
+  },
+
+  // Servings
+  servingsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    marginBottom: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    backgroundColor: C.white,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: C.border,
+  },
+  servingsLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: C.text,
+  },
+  servingsControls: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+  },
+  servingsBtn: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  servingsCount: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: C.darkGreen,
+    minWidth: 20,
+    textAlign: 'center',
   },
 
   // Not found
