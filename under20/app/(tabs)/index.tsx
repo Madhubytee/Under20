@@ -11,9 +11,11 @@ import {
   Image,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { C } from '@/constants/theme';
 import { RecipeCard, cardStyles } from '@/components/RecipeCard';
@@ -48,13 +50,16 @@ const FILTERS = ['Vegetarian', 'Vegan', 'High Protein', 'Quick (<10 min)'] as co
 type Filter = typeof FILTERS[number];
 
 export default function RecipesScreen() {
+  const [search, setSearch] = React.useState('');
   const [activeFilters, setActiveFilters] = React.useState<Filter[]>([]);
   const { pantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
   const { dietary } = useDietary();
   const { recentIds } = useRecentlyViewed();
+  const router = useRouter();
 
   const allRecipesList = recipesData as Recipe[];
+
   const recentRecipes = recentIds
     .map(id => allRecipesList.find(r => r.id === id))
     .filter(Boolean) as Recipe[];
@@ -62,12 +67,20 @@ export default function RecipesScreen() {
   const toggleFilter = (f: Filter) =>
     setActiveFilters(prev => prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]);
 
-  const allRecipes = recipesData as Recipe[];
+  let recipes = allRecipesList;
 
-  let recipes = allRecipes;
+  // Search filter
+  if (search.trim()) {
+    const q = search.trim().toLowerCase();
+    recipes = recipes.filter(r =>
+      r.name.toLowerCase().includes(q) ||
+      r.ingredients.some(i => i.toLowerCase().includes(q))
+    );
+  }
 
-  if (pantry.length > 0) {
-    recipes = allRecipes
+  // Pantry matching (only when no search query)
+  if (!search.trim() && pantry.length > 0) {
+    recipes = recipes
       .map(recipe => {
         const recipeIngredients = recipe.ingredients.map(i => i.toLowerCase());
         let matchCount = 0;
@@ -107,9 +120,26 @@ export default function RecipesScreen() {
           style={styles.logoImage}
           resizeMode="contain"
         />
+        <View style={styles.searchRow}>
+          <Ionicons name="search-outline" size={16} color={C.gray} style={styles.searchIcon} />
+          <TextInput
+            placeholder="Search recipes or ingredients..."
+            placeholderTextColor={C.gray}
+            value={search}
+            onChangeText={setSearch}
+            style={styles.searchInput}
+            returnKeyType="search"
+            clearButtonMode="while-editing"
+          />
+          {search.length > 0 && (
+            <TouchableOpacity onPress={() => setSearch('')} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+              <Ionicons name="close-circle" size={16} color={C.gray} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
-      {recentRecipes.length > 0 && (
+      {!search && recentRecipes.length > 0 && (
         <View style={styles.recentSection}>
           <Text style={styles.recentTitle}>Recently Viewed</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.recentScroll}>
@@ -117,7 +147,7 @@ export default function RecipesScreen() {
               <TouchableOpacity
                 key={item.id}
                 style={styles.recentCard}
-                onPress={() => require('expo-router').router.push(`/recipe/${item.id}` as any)}>
+                onPress={() => router.push(`/recipe/${item.id}` as any)}>
                 <Text style={styles.recentName} numberOfLines={2}>{item.name}</Text>
                 <Text style={styles.recentMeta}>{item.cookTime} min · {item.protein}g protein</Text>
               </TouchableOpacity>
@@ -164,6 +194,13 @@ export default function RecipesScreen() {
         )}
         contentContainerStyle={cardStyles.list}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={
+          <View style={styles.emptyState}>
+            <Ionicons name="search-outline" size={40} color={C.border} />
+            <Text style={styles.emptyText}>No recipes found</Text>
+            <Text style={styles.emptySub}>Try a different search or clear your filters</Text>
+          </View>
+        }
       />
     </SafeAreaView>
   );
@@ -178,14 +215,74 @@ const styles = StyleSheet.create({
     backgroundColor: C.cream,
     paddingHorizontal: 20,
     paddingTop: 8,
-    paddingBottom: 16,
+    paddingBottom: 12,
     borderBottomWidth: 1,
     borderBottomColor: C.border,
+    gap: 10,
   },
   logoImage: {
     width: 212,
     height: 52,
     marginLeft: -12,
+  },
+  searchRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: C.white,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: C.border,
+    paddingHorizontal: 12,
+    paddingVertical: 9,
+    gap: 8,
+  },
+  searchIcon: {
+    flexShrink: 0,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    color: C.text,
+    padding: 0,
+  },
+  recentSection: {
+    paddingTop: 12,
+    paddingBottom: 4,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+  },
+  recentTitle: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.darkGreen,
+    paddingHorizontal: 20,
+    marginBottom: 8,
+  },
+  recentScroll: {
+    paddingHorizontal: 16,
+    gap: 10,
+    paddingBottom: 12,
+  },
+  recentCard: {
+    backgroundColor: C.white,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: C.border,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    width: 140,
+    justifyContent: 'space-between',
+    gap: 6,
+  },
+  recentName: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: C.text,
+    lineHeight: 18,
+  },
+  recentMeta: {
+    fontSize: 11,
+    color: C.gray,
   },
   dietBanner: {
     flexDirection: 'row',
@@ -240,43 +337,19 @@ const styles = StyleSheet.create({
   filterChipTextActive: {
     color: C.white,
   },
-  recentSection: {
-    paddingTop: 12,
-    paddingBottom: 4,
-    borderBottomWidth: 1,
-    borderBottomColor: C.border,
+  emptyState: {
+    alignItems: 'center',
+    paddingTop: 60,
+    gap: 8,
   },
-  recentTitle: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: C.darkGreen,
-    paddingHorizontal: 20,
-    marginBottom: 8,
-  },
-  recentScroll: {
-    paddingHorizontal: 16,
-    gap: 10,
-    paddingBottom: 12,
-  },
-  recentCard: {
-    backgroundColor: C.white,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: C.border,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    width: 140,
-    justifyContent: 'space-between',
-    gap: 6,
-  },
-  recentName: {
-    fontSize: 13,
+  emptyText: {
+    fontSize: 16,
     fontWeight: '700',
     color: C.text,
-    lineHeight: 18,
   },
-  recentMeta: {
-    fontSize: 11,
+  emptySub: {
+    fontSize: 13,
     color: C.gray,
+    textAlign: 'center',
   },
 });
