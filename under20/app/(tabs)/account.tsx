@@ -14,6 +14,7 @@ import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
 import { useGroceryList } from '@/context/GroceryListContext';
 import { useAuth } from '@/context/AuthContext';
+import { useDietary } from '@/context/DietaryContext';
 import { C } from '@/constants/theme';
 
 const COOKING_LEVELS = [
@@ -81,17 +82,9 @@ export default function AccountScreen() {
   const [cookingLevel, setCookingLevel] = React.useState<CookingLevelKey>(savedLevel);
   const [savingLevel, setSavingLevel] = React.useState(false);
 
-  const [dietary, setDietary] = React.useState<Record<DietKey, boolean>>({
-    vegetarian: false,
-    vegan: false,
-    glutenFree: false,
-    dairyFree: false,
-  });
+  const { dietary, toggleDiet } = useDietary();
   const [notifications, setNotifications] = React.useState(true);
   const [weeklyDigest, setWeeklyDigest] = React.useState(false);
-
-  const toggleDiet = (key: DietKey) =>
-    setDietary(prev => ({ ...prev, [key]: !prev[key] }));
 
   const handleLevelChange = async (level: CookingLevelKey) => {
     setCookingLevel(level);

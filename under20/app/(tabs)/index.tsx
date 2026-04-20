@@ -1,5 +1,6 @@
 import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
+import { useDietary } from '@/context/DietaryContext';
 import recipesData from '@/data/recipes.json';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
@@ -8,7 +9,6 @@ import {
   Image,
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -18,7 +18,8 @@ import { RecipeCard, cardStyles } from '@/components/RecipeCard';
 import { Recipe } from '@/types/recipe';
 
 const MEAT_KEYWORDS = ['chicken','beef','pork','lamb','turkey','bacon','sausage','ham','fish','salmon','tuna','shrimp','crab','lobster','steak','veal','duck','anchovy','sardine','pepperoni','prosciutto','meat','venison','lard'];
-const DAIRY_EGG_KEYWORDS = ['milk','butter','cream','cheese','egg','yogurt','honey','ghee','whey','mayo','mayonnaise'];
+const DAIRY_EGG_KEYWORDS = ['milk','butter','cream','cheese','egg','yogurt','honey','ghee','whey','mayo','mayonnaise','paneer','ricotta','mozzarella','feta','cheddar','parmesan'];
+const GLUTEN_KEYWORDS = ['flour','bread','pasta','wheat','barley','rye','noodle','soy sauce','breadcrumb','tortilla','pita','couscous','seitan'];
 
 function isVegetarian(ingredients: string[]) {
   const lower = ingredients.map(i => i.toLowerCase());
@@ -31,23 +32,27 @@ function isVegan(ingredients: string[]) {
          !DAIRY_EGG_KEYWORDS.some(k => lower.some(i => i.includes(k)));
 }
 
+function isGlutenFree(ingredients: string[]) {
+  const lower = ingredients.map(i => i.toLowerCase());
+  return !GLUTEN_KEYWORDS.some(k => lower.some(i => i.includes(k)));
+}
+
+function isDairyFree(ingredients: string[]) {
+  const lower = ingredients.map(i => i.toLowerCase());
+  return !DAIRY_EGG_KEYWORDS.some(k => lower.some(i => i.includes(k)));
+}
+
 const FILTERS = ['Vegetarian', 'Vegan', 'High Protein', 'Quick (<10 min)'] as const;
 type Filter = typeof FILTERS[number];
 
 export default function RecipesScreen() {
-  const [input, setInput] = React.useState("");
   const [activeFilters, setActiveFilters] = React.useState<Filter[]>([]);
-  const { pantry, addToPantry, removeFromPantry } = usePantry();
+  const { pantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { dietary } = useDietary();
 
   const toggleFilter = (f: Filter) =>
     setActiveFilters(prev => prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]);
-
-  const addIngredient = () => {
-    if (!input.trim()) return;
-    addToPantry(input.trim());
-    setInput("");
-  };
 
   const allRecipes = recipesData as Recipe[];
 
@@ -67,10 +72,24 @@ export default function RecipesScreen() {
       .sort((a, b) => b.matchCount - a.matchCount);
   }
 
+  // Manual filter chips
   if (activeFilters.includes('Vegetarian')) recipes = recipes.filter(r => isVegetarian(r.ingredients));
   if (activeFilters.includes('Vegan')) recipes = recipes.filter(r => isVegan(r.ingredients));
   if (activeFilters.includes('High Protein')) recipes = recipes.filter(r => r.protein >= 15);
   if (activeFilters.includes('Quick (<10 min)')) recipes = recipes.filter(r => r.cookTime <= 10);
+
+  // Dietary preferences from Profile settings
+  if (dietary.vegetarian) recipes = recipes.filter(r => isVegetarian(r.ingredients));
+  if (dietary.vegan) recipes = recipes.filter(r => isVegan(r.ingredients));
+  if (dietary.glutenFree) recipes = recipes.filter(r => isGlutenFree(r.ingredients));
+  if (dietary.dairyFree) recipes = recipes.filter(r => isDairyFree(r.ingredients));
+
+  const activeDietLabels = [
+    dietary.vegetarian && 'Vegetarian',
+    dietary.vegan && 'Vegan',
+    dietary.glutenFree && 'Gluten-Free',
+    dietary.dairyFree && 'Dairy-Free',
+  ].filter(Boolean) as string[];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -82,40 +101,14 @@ export default function RecipesScreen() {
         />
       </View>
 
-      <View style={styles.inputSection}>
-        <View style={styles.inputRow}>
-          <TextInput
-            placeholder="Add ingredient (e.g. egg)"
-            value={input}
-            onChangeText={setInput}
-            onSubmitEditing={addIngredient}
-            returnKeyType="done"
-            style={styles.textInput}
-          />
-          <TouchableOpacity onPress={addIngredient} style={styles.addBtn}>
-            <Ionicons name="add" size={22} color={C.white} />
-          </TouchableOpacity>
+      {activeDietLabels.length > 0 && (
+        <View style={styles.dietBanner}>
+          <Ionicons name="options-outline" size={13} color={C.darkGreen} />
+          <Text style={styles.dietBannerText}>
+            Filtering by: {activeDietLabels.join(', ')}
+          </Text>
         </View>
-
-        {pantry.length > 0 && (
-          <View style={styles.chipRow}>
-            {pantry.map((item, index) => (
-              <View key={index} style={styles.chip}>
-                <Text style={styles.chipText}>{item}</Text>
-                <TouchableOpacity
-                  onPress={() => removeFromPantry(index)}
-                  hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
-                  <Ionicons name="close-circle" size={15} color={C.medGreen} />
-                </TouchableOpacity>
-              </View>
-            ))}
-          </View>
-        )}
-
-        {pantry.length === 0 && (
-          <Text style={styles.pantryEmpty}>Add ingredients to filter recipes</Text>
-        )}
-      </View>
+      )}
 
       <View style={styles.filterRow}>
         {FILTERS.map(f => (
@@ -169,6 +162,21 @@ const styles = StyleSheet.create({
     height: 52,
     marginLeft: -12,
   },
+  dietBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    backgroundColor: '#ECFDF5',
+    borderBottomWidth: 1,
+    borderBottomColor: '#A7F3D0',
+  },
+  dietBannerText: {
+    fontSize: 12,
+    color: C.darkGreen,
+    fontWeight: '600',
+  },
   countBar: {
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -177,63 +185,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '700',
     color: C.darkGreen,
-  },
-  inputSection: {
-    paddingHorizontal: 20,
-    paddingTop: 12,
-    paddingBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: C.border,
-  },
-  inputRow: {
-    flexDirection: 'row',
-    gap: 8,
-    marginBottom: 10,
-  },
-  textInput: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: C.border,
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    backgroundColor: C.white,
-    fontSize: 14,
-    color: C.text,
-  },
-  addBtn: {
-    backgroundColor: C.medGreen,
-    borderRadius: 10,
-    width: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  chipRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-  },
-  chip: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    backgroundColor: '#ECFDF5',
-    borderWidth: 1,
-    borderColor: '#A7F3D0',
-    borderRadius: 20,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-  },
-  chipText: {
-    fontSize: 13,
-    color: C.darkGreen,
-    fontWeight: '500',
-    textTransform: 'capitalize',
-  },
-  pantryEmpty: {
-    fontSize: 13,
-    color: C.gray,
-    fontStyle: 'italic',
   },
   filterRow: {
     flexDirection: 'row',
