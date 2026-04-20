@@ -23,7 +23,7 @@ export default function TabLayout() {
         options={{
           title: 'Recipes',
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={26} name="fork.knife" color={color} />
+            <Ionicons size={26} name="restaurant-outline" color={color} />
           ),
         }}
       />
@@ -32,7 +32,16 @@ export default function TabLayout() {
         options={{
           title: 'Favorites',
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={26} name="heart.fill" color={color} />
+            <Ionicons size={26} name="heart-outline" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="pantry"
+        options={{
+          title: 'Pantry',
+          tabBarIcon: ({ color }) => (
+            <Ionicons size={26} name="nutrition-outline" color={color} />
           ),
         }}
       />

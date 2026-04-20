@@ -17,10 +17,31 @@ import { C } from '@/constants/theme';
 import { RecipeCard, cardStyles } from '@/components/RecipeCard';
 import { Recipe } from '@/types/recipe';
 
+const MEAT_KEYWORDS = ['chicken','beef','pork','lamb','turkey','bacon','sausage','ham','fish','salmon','tuna','shrimp','crab','lobster','steak','veal','duck','anchovy','sardine','pepperoni','prosciutto','meat','venison','lard'];
+const DAIRY_EGG_KEYWORDS = ['milk','butter','cream','cheese','egg','yogurt','honey','ghee','whey','mayo','mayonnaise'];
+
+function isVegetarian(ingredients: string[]) {
+  const lower = ingredients.map(i => i.toLowerCase());
+  return !MEAT_KEYWORDS.some(k => lower.some(i => i.includes(k)));
+}
+
+function isVegan(ingredients: string[]) {
+  const lower = ingredients.map(i => i.toLowerCase());
+  return !MEAT_KEYWORDS.some(k => lower.some(i => i.includes(k))) &&
+         !DAIRY_EGG_KEYWORDS.some(k => lower.some(i => i.includes(k)));
+}
+
+const FILTERS = ['Vegetarian', 'Vegan', 'High Protein', 'Quick (<10 min)'] as const;
+type Filter = typeof FILTERS[number];
+
 export default function RecipesScreen() {
   const [input, setInput] = React.useState("");
+  const [activeFilters, setActiveFilters] = React.useState<Filter[]>([]);
   const { pantry, addToPantry, removeFromPantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
+
+  const toggleFilter = (f: Filter) =>
+    setActiveFilters(prev => prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]);
 
   const addIngredient = () => {
     if (!input.trim()) return;
@@ -45,6 +66,11 @@ export default function RecipesScreen() {
       .filter(recipe => recipe.matchCount > 0)
       .sort((a, b) => b.matchCount - a.matchCount);
   }
+
+  if (activeFilters.includes('Vegetarian')) recipes = recipes.filter(r => isVegetarian(r.ingredients));
+  if (activeFilters.includes('Vegan')) recipes = recipes.filter(r => isVegan(r.ingredients));
+  if (activeFilters.includes('High Protein')) recipes = recipes.filter(r => r.protein >= 15);
+  if (activeFilters.includes('Quick (<10 min)')) recipes = recipes.filter(r => r.cookTime <= 10);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -89,6 +115,19 @@ export default function RecipesScreen() {
         {pantry.length === 0 && (
           <Text style={styles.pantryEmpty}>Add ingredients to filter recipes</Text>
         )}
+      </View>
+
+      <View style={styles.filterRow}>
+        {FILTERS.map(f => (
+          <TouchableOpacity
+            key={f}
+            onPress={() => toggleFilter(f)}
+            style={[styles.filterChip, activeFilters.includes(f) && styles.filterChipActive]}>
+            <Text style={[styles.filterChipText, activeFilters.includes(f) && styles.filterChipTextActive]}>
+              {f}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
 
       <View style={styles.countBar}>
@@ -195,5 +234,34 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: C.gray,
     fontStyle: 'italic',
+  },
+  filterRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+  },
+  filterChip: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: C.border,
+    backgroundColor: C.white,
+  },
+  filterChipActive: {
+    backgroundColor: C.darkGreen,
+    borderColor: C.darkGreen,
+  },
+  filterChipText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: C.gray,
+  },
+  filterChipTextActive: {
+    color: C.white,
   },
 });
