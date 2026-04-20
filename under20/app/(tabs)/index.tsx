@@ -46,12 +46,9 @@ function isDairyFree(ingredients: string[]) {
   return !DAIRY_EGG_KEYWORDS.some(k => lower.some(i => i.includes(k)));
 }
 
-const FILTERS = ['Vegetarian', 'Vegan', 'High Protein', 'Quick (<10 min)'] as const;
-type Filter = typeof FILTERS[number];
-
 export default function RecipesScreen() {
   const [search, setSearch] = React.useState('');
-  const [activeFilters, setActiveFilters] = React.useState<Filter[]>([]);
+  const [recentExpanded, setRecentExpanded] = React.useState(false);
   const { pantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
   const { dietary } = useDietary();
@@ -64,12 +61,8 @@ export default function RecipesScreen() {
     .map(id => allRecipesList.find(r => r.id === id))
     .filter(Boolean) as Recipe[];
 
-  const toggleFilter = (f: Filter) =>
-    setActiveFilters(prev => prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]);
-
   let recipes = allRecipesList;
 
-  // Search filter
   if (search.trim()) {
     const q = search.trim().toLowerCase();
     recipes = recipes.filter(r =>
@@ -78,7 +71,6 @@ export default function RecipesScreen() {
     );
   }
 
-  // Pantry matching (only when no search query)
   if (!search.trim() && pantry.length > 0) {
     recipes = recipes
       .map(recipe => {
@@ -93,13 +85,6 @@ export default function RecipesScreen() {
       .sort((a, b) => b.matchCount - a.matchCount);
   }
 
-  // Manual filter chips
-  if (activeFilters.includes('Vegetarian')) recipes = recipes.filter(r => isVegetarian(r.ingredients));
-  if (activeFilters.includes('Vegan')) recipes = recipes.filter(r => isVegan(r.ingredients));
-  if (activeFilters.includes('High Protein')) recipes = recipes.filter(r => r.protein >= 15);
-  if (activeFilters.includes('Quick (<10 min)')) recipes = recipes.filter(r => r.cookTime <= 10);
-
-  // Dietary preferences from Profile settings
   if (dietary.vegetarian) recipes = recipes.filter(r => isVegetarian(r.ingredients));
   if (dietary.vegan) recipes = recipes.filter(r => isVegan(r.ingredients));
   if (dietary.glutenFree) recipes = recipes.filter(r => isGlutenFree(r.ingredients));
@@ -141,42 +126,42 @@ export default function RecipesScreen() {
 
       {!search && recentRecipes.length > 0 && (
         <View style={styles.recentSection}>
-          <Text style={styles.recentTitle}>Recently Viewed</Text>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.recentScroll}>
-            {recentRecipes.map(item => (
-              <TouchableOpacity
-                key={item.id}
-                style={styles.recentCard}
-                onPress={() => router.push(`/recipe/${item.id}` as any)}>
-                <Text style={styles.recentName} numberOfLines={2}>{item.name}</Text>
-                <Text style={styles.recentMeta}>{item.cookTime} min · {item.protein}g protein</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+          <TouchableOpacity
+            style={styles.recentHeader}
+            onPress={() => setRecentExpanded(prev => !prev)}
+            activeOpacity={0.7}>
+            <View style={styles.recentHeaderLeft}>
+              <Ionicons name="time-outline" size={15} color={C.darkGreen} />
+              <Text style={styles.recentTitle}>Recently Viewed</Text>
+              <View style={styles.recentBadge}>
+                <Text style={styles.recentBadgeText}>{recentRecipes.length}</Text>
+              </View>
+            </View>
+            <Ionicons name={recentExpanded ? 'chevron-up' : 'chevron-down'} size={15} color={C.gray} />
+          </TouchableOpacity>
+
+          {recentExpanded && (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.recentScroll}>
+              {recentRecipes.map(item => (
+                <TouchableOpacity
+                  key={item.id}
+                  style={styles.recentCard}
+                  onPress={() => router.push(`/recipe/${item.id}` as any)}>
+                  <Text style={styles.recentName} numberOfLines={2}>{item.name}</Text>
+                  <Text style={styles.recentMeta}>{item.cookTime} min · {item.protein}g protein</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          )}
         </View>
       )}
 
       {activeDietLabels.length > 0 && (
         <View style={styles.dietBanner}>
           <Ionicons name="options-outline" size={13} color={C.darkGreen} />
-          <Text style={styles.dietBannerText}>
-            Filtering by: {activeDietLabels.join(', ')}
-          </Text>
+          <Text style={styles.dietBannerText}>Filtering by: {activeDietLabels.join(', ')}</Text>
         </View>
       )}
-
-      <View style={styles.filterRow}>
-        {FILTERS.map(f => (
-          <TouchableOpacity
-            key={f}
-            onPress={() => toggleFilter(f)}
-            style={[styles.filterChip, activeFilters.includes(f) && styles.filterChipActive]}>
-            <Text style={[styles.filterChipText, activeFilters.includes(f) && styles.filterChipTextActive]}>
-              {f}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
 
       <View style={styles.countBar}>
         <Text style={styles.countText}>{recipes.length} recipes</Text>
@@ -198,7 +183,7 @@ export default function RecipesScreen() {
           <View style={styles.emptyState}>
             <Ionicons name="search-outline" size={40} color={C.border} />
             <Text style={styles.emptyText}>No recipes found</Text>
-            <Text style={styles.emptySub}>Try a different search or clear your filters</Text>
+            <Text style={styles.emptySub}>Try a different search or adjust your filters in Profile</Text>
           </View>
         }
       />
@@ -246,17 +231,36 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   recentSection: {
-    paddingTop: 12,
-    paddingBottom: 4,
     borderBottomWidth: 1,
     borderBottomColor: C.border,
+  },
+  recentHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+  },
+  recentHeaderLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
   },
   recentTitle: {
     fontSize: 13,
     fontWeight: '700',
     color: C.darkGreen,
-    paddingHorizontal: 20,
-    marginBottom: 8,
+  },
+  recentBadge: {
+    backgroundColor: C.darkGreen,
+    borderRadius: 10,
+    paddingHorizontal: 6,
+    paddingVertical: 1,
+  },
+  recentBadgeText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: C.white,
   },
   recentScroll: {
     paddingHorizontal: 16,
@@ -308,35 +312,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: C.darkGreen,
   },
-  filterRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: C.border,
-  },
-  filterChip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: C.border,
-    backgroundColor: C.white,
-  },
-  filterChipActive: {
-    backgroundColor: C.darkGreen,
-    borderColor: C.darkGreen,
-  },
-  filterChipText: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: C.gray,
-  },
-  filterChipTextActive: {
-    color: C.white,
-  },
   emptyState: {
     alignItems: 'center',
     paddingTop: 60,
@@ -351,5 +326,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: C.gray,
     textAlign: 'center',
+    paddingHorizontal: 32,
   },
 });
