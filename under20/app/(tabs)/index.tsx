@@ -1,25 +1,25 @@
+import { RecipeCard, cardStyles } from '@/components/RecipeCard';
+import { C } from '@/constants/theme';
+import { useDietary } from '@/context/DietaryContext';
 import { useFavorites } from '@/context/FavoritesContext';
 import { usePantry } from '@/context/PantryContext';
-import { useDietary } from '@/context/DietaryContext';
 import { useRecentlyViewed } from '@/context/RecentlyViewedContext';
 import recipesData from '@/data/recipes.json';
+import { Recipe } from '@/types/recipe';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React from 'react';
 import {
   FlatList,
-  ScrollView,
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { C } from '@/constants/theme';
-import { RecipeCard, cardStyles } from '@/components/RecipeCard';
-import { Recipe } from '@/types/recipe';
 
 const MEAT_KEYWORDS = ['chicken','beef','pork','lamb','turkey','bacon','sausage','ham','fish','salmon','tuna','shrimp','crab','lobster','steak','veal','duck','anchovy','sardine','pepperoni','prosciutto','meat','venison','lard'];
 const DAIRY_EGG_KEYWORDS = ['milk','butter','cream','cheese','egg','yogurt','honey','ghee','whey','mayo','mayonnaise','paneer','ricotta','mozzarella','feta','cheddar','parmesan'];
@@ -48,6 +48,8 @@ function isDairyFree(ingredients: string[]) {
 
 export default function RecipesScreen() {
   const [search, setSearch] = React.useState('');
+  const [proteinFilter, setProteinFilter] = React.useState('');
+  const [calorieFilter, setCalorieFilter] = React.useState('');
   const [recentExpanded, setRecentExpanded] = React.useState(false);
   const { pantry } = usePantry();
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -89,12 +91,26 @@ export default function RecipesScreen() {
   if (dietary.vegan) recipes = recipes.filter(r => isVegan(r.ingredients));
   if (dietary.glutenFree) recipes = recipes.filter(r => isGlutenFree(r.ingredients));
   if (dietary.dairyFree) recipes = recipes.filter(r => isDairyFree(r.ingredients));
+  if (proteinFilter.trim()) {
+    const minProtein = parseInt(proteinFilter);
+    if (!isNaN(minProtein)) {
+      recipes = recipes.filter(r => r.protein >= minProtein);
+    }
+  }
+  if (calorieFilter.trim()) {
+  const minCalories = parseInt(calorieFilter);
+  if (!isNaN(minCalories)) {
+    recipes = recipes.filter(r => r.calories >= minCalories);
+    }
+  }
+
 
   const activeDietLabels = [
     dietary.vegetarian && 'Vegetarian',
     dietary.vegan && 'Vegan',
     dietary.glutenFree && 'Gluten-Free',
     dietary.dairyFree && 'Dairy-Free',
+    proteinFilter && `${proteinFilter}g+ Protein`,
   ].filter(Boolean) as string[];
 
   return (
@@ -121,6 +137,30 @@ export default function RecipesScreen() {
               <Ionicons name="close-circle" size={16} color={C.gray} />
             </TouchableOpacity>
           )}
+        </View>
+    
+        <View style={[styles.searchRow, { marginTop: 8 }]}>
+          <Ionicons name="barbell-outline" size={16} color={C.gray} />
+          <TextInput
+            placeholder="Min protein (g)..."
+            placeholderTextColor={C.gray}
+            value={proteinFilter}
+            onChangeText={setProteinFilter}
+            keyboardType="numeric"
+            style={[styles.searchInput, { fontWeight: '600' }]}
+          />
+        </View>
+
+        <View style={[styles.searchRow, { marginTop: 8 }]}>
+          <Ionicons name="flame-outline" size={16} color={C.gray} />
+          <TextInput
+            placeholder="Min calories..."
+            placeholderTextColor={C.gray}
+            value={calorieFilter}
+            onChangeText={setCalorieFilter}
+            keyboardType="numeric"
+            style={styles.searchInput}
+           />
         </View>
       </View>
 
